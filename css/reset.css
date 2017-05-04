@@ -98,3 +98,6 @@
     input, select {
         vertical-align:middle;
     }
+    ul li,ol li{
+    	list-style: none;
+    }

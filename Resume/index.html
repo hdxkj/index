@@ -21,7 +21,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- start menu -->
   
 </head>
-<body>
+<body id="print-content">
 <!-- header -->
 <div class="col-sm-3 col-md-2 sidebar">
 		 <div class="sidebar_top">
@@ -46,100 +46,162 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---->
 <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
 <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.jqprint-0.3.js"></script>
+<script type="text/javascript" src="../js/data.js"></script>
 	<!---//pop-up-box---->			
 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 	 <div class="content">
 		 <div class="details_header">
 			 <ul>
 				 <li><a href="index.html"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>Resume</a></li>
-				 <li><a href="#"><span class="glyphicon glyphicon-print" aria-hidden="true"></span>Print CV</a></li>
-				 <li><a href="contact.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>Email me</a></li>
-				 <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>View photo</a></li>
+				 <li><a href="#"><span class="glyphicon glyphicon-print" aria-hidden="true" id="print">Print it</span></a></li>
+				 <li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Projects</a></li>
 				 <div id="small-dialog" class="mfp-hide">
-					 <img src="images/g4.jpg" alt=""/>
 				 </div>
 				 <script>
 						$(document).ready(function() {
-						$('.popup-with-zoom-anim').magnificPopup({
-							type: 'inline',
-							fixedContentPos: false,
-							fixedBgPos: true,
-							overflowY: 'auto',
-							closeBtnInside: true,
-							preloader: false,
-							midClick: true,
-							removalDelay: 300,
-							mainClass: 'my-mfp-zoom-in'
+							$('.popup-with-zoom-anim').magnificPopup({
+								type: 'inline',
+								fixedContentPos: false,
+								fixedBgPos: true,
+								overflowY: 'auto',
+								closeBtnInside: true,
+								preloader: false,
+								midClick: true,
+								removalDelay: 300,
+								mainClass: 'my-mfp-zoom-in'
+							});
+							
+							$("#print").click(function(){
+						         $("#print-content").jqprint();
+							})
 						});
-																						
-						});
+						
 				</script>
 			 </ul>
 		 </div>
 		 <div class="company">
-			 <h3 class="clr1">Previous Employment</h3>
+			 <h3 class="clr1">工作经历</h3>
 			 <div class="company_details">
-				 <h4>Company Name <span>JUNE 2015 - PRESENT</span></h4>
-				 <h6>WEB DESIGNER</h6>
-				 <p class="cmpny1">Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo.
-				 Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet.
-				 Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
+				 <h4>莹辉集团<span>2013.08- 2015.10</span></h4>
+				 <h6>网销课课长</h6>
+				 <p class="cmpny1">负责日常淘宝店铺的运营维护，以及莹辉在线商城的开发实现，维护与运营</p>
 			 </div>
 			 <div class="company_details">
-				 <h4>Company Name <span>NOVEMBER 2007 - MAY 2015</span></h4>
-				 <h6>WEB DESIGNER</h6>
-				 <p>Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo.
-				 Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet.
-				 Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
+				 <h4>北京鑫利缘技术服务有限公司 <span>2015.10 – 2017.3</span></h4>
+				 <h6>前端开发工程师</h6>
+				 <p>参与产品的讨论与需求确定。负责前台界面的优化与实现，webapp的前台开发，以及后期维护调整</p>
 			 </div>
 		 </div>
 		 <div class="skills">
-			 <h3 class="clr2">Professional skills</h3>
+			 <h3 class="clr2">专业技能</h3>
 			 <div class="skill_info">
-			 <p>Duis egestas tortor metus, vitae venenatis tortor tristique at. Pellentesque dignissim purus vitae enim blandit, sed tristique enim malesuada. Maecenas dolor erat,
-			 volutpat a tellus eu, euismod iaculis urna. Nulla dui purus, viverra viverra dolor non, malesuada dictum purus.</p>
+			 <p>精通html5、css3、JavaScript、jQuery等web，webapp开发技术；熟练使用flash、ps、AI等网页设计工具，有大型项目开发经验，项目管理经验以及部门管理经验，轻松解决web兼容性以及响应式兼容问题；熟练使用bootstrap、vue等前端开发框架。了解java php python，可单独开发php网站，能够制作jsp页面以及简单的python爬虫</p>
 			 </div>
 			 <div class="skill_list">
 				 <div class="skill1">
-					 <h4>Software</h4>
+					 <h4>软件</h4>
 					 <ul>					 
 						<li>Photoshop</li>
 						<li>Flash</li>
-						<li>Dreemweeaver</li>
-						<li>In Design</li>
+						<li>Illustrator</li>
+						<li>Hbuider</li>
+						<li>spring tool suite</li>
 					 </ul>
 				 </div>
 				 <div class="skill2">
-					 <h4>Languages</h4>
+					 <h4>语言</h4>
 					 <ul>					 
-						<li>HTML/CSS</li>
-						<li>ActionScript</li>
+						<li>HTML/CSS/JavaScript</li>
+						<li>jsp</li>
 						<li>PHP</li>
-						<li>Ruby on Rais</li>
+						<li>vue.js</li>
 					 </ul>
 				 </div>
 				 <div class="clearfix"></div>
 			 </div>
 		 </div>
-         <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >免费网站模板</a></div>
 		 <div class="education">
-			 <h3 class="clr3">Education</h3>
+			 <h3 class="clr3">教育经历</h3>
 			 <div class="education_details">
-				 <h4>University of Awesome<span>JANUARY 2004 - OCTOBER 2015</span></h4>
-				 <h6>MAJOR PHD</h6>
-				 <p class="cmpny1">Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo.
-				 Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet.
-				 Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
+				 <h4>北京财经专修学院<span>2009.09 - 2013.06</span></h4>
+				 <h6>移动互联网视觉工程</h6>
+				 <p class="cmpny1">专业技能介绍：UI设计（对软件的人机交互、操作逻辑、界面美观的整体设计），UE(用户体验)，Flash动画，前端HTML5，CSS3，jquery开发</p>
 			 </div>
-			 <div class="education_details">
-				 <h4>University of Techonology, Newyork <span>APRIL 2001 - SEPTEMBER 2003</span></h4>
-				 <h6>BACHELORS OF ARTS</h6>
-				 <p>Nulla volutpat at est sed ultricies. In ac sem consequat, posuere nulla varius, molestie lorem. Duis quis nibh leo.
-				 Curabitur a quam eu mi convallis auctor nec id mauris. Nullam mattis turpis eu turpis tincidunt, et pellentesque leo imperdiet.
-				 Vivamus malesuada, sem laoreet dictum pulvinar, orci lectus rhoncus sapien, ut consectetur augue nibh in neque. In tincidunt sed enim et tincidunt.</p>
+			 <div class="clearfix"></div>
+		 </div>
+		 <div class="skills">
+			 <h3 class="clr2" style="padding: 5px 290px 5px 30px;background: #ec122a;">项目经验</h3>
+			 <div class="company_details">
+				 <h4>莹辉在线商城<span>2013.08- 2015.10</span></h4>
+				 <p class="cmpny1">该项目是属于网上购物商城，主要负责灯具的在线销售以及售后处理目的是解决线下销售渠道的不足.1.产品项目的发起人，负责产品的业务逻辑，莹辉在线商城的周期制作安排，项目对接
+2.在线产品的优化，图片处理
+3.在线活动的指定</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>莹辉在线ios app <span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目是一个在线灯具选择搭配软件，主要是用来方便客户可以根据家庭装修风格实现在线搭配1.该项目的发起人，负责产品业务逻辑，产品制作周期安排
+2.在线灯具以及在线场景处理
+3.场景灯具选择功能完善
+4.丰富在线场景以及在线产品图库</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>linkelab<span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目属于一个以医疗平台app,主要是用来方便护士监控病人状况，以及方便病人与客户沟通1.个人中心模块制作优化
+2.病人详情的表单正则验证
+3.详情展示页面兼容处理主要针对手机端
+4.整体结构的bug修改</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>建材竞价网<span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目主要是用来进行建筑材料的竞价对笔，方便客户选择最好最优质的建筑材料，以及方便用户推广建筑材料的一个在线渠道1.不同用户不同身份判定的逻辑实现以及页面制作效果优化
+2.商户信息页面制作表单正则验证
+3.发布产品页面表单制作，验证以及整体效果实现
+4.首页2改
+5.多级筛选功能优化
+6.图片上传组建功能优化
+7.整体页面兼容处理至IE6
+8.参与产品详情发布产品业务逻辑讨论</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>360ope<span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目是一个关于视频推广的在线广告类网站，方便用户用来浏览不同的广告模式选择合适的广告公司1.负责首页2.3次改版
+2.整体页面响应式处理
+3.视频播放详情页面功能优化以及页面制作
+4.视频分类页面制作效果实现
+5.活动详情页面效果实现
+6.个人中信模块的制作开发包括前端页面实现，身份证上传功能优化以及页面整体效果优化</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>工业云平台<span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目方便与企业用户，主要是用来基于云平台企业管理的一个在线平台1.负责首页的第2.3.4.5次改版以及首页制作效果实现
+2.整体网站百分之八十的页面制作包括云双创，全景，智造，金融，政务，企业用户中心的页面制作及效果实现
+3.参与产品需求的讨论云金融，和融资租赁模块
+4.企业用户中心的2.3.4次改版，页面效果优化
+5.结合后端java调整用户中信的下单及配送流程
+6.1版2版前端bug的修缮</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>煤小二<span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目是用来方便用户与客户之间，线上交易线下付款的app1.优化产品发布页百度地图插件
+2.优化分享功能</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>经济日报社<span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目是经济日报社发起并研发的一个图片资讯共享平台1.负责后台管理页面签约摄影师页面管理，活动管理制作效果实现
+2.负责前台签约摄影师注册页面，详情页面，分享详情页面的制作效果实现
+3.制作后台摄影作品筛选功能
+4.修改图片上传功能组建</p>
+			 </div>
+			 <div class="company_details">
+				 <h4>麒麟车宝<span>2015.10 – 2017.3</span></h4>
+				 <p class="cmpny1">该项目是人人网发起并研发的一款关于汽车资讯以及汽车销售的app平台制作个人中心模块，车辆管理模块，车辆详情模块，车辆分享模块，车辆发布模块，公告模块等设计图</p>
+			 </div>
+				 <div class="clearfix"></div>
 			 </div>
 		 </div>
-		 <div class="copywrite">
+		 <div class="copyright">
 			 <p>Copyright &copy; 2017.liupengju All rights reserved.</a></p>
 		 </div>
 	 </div>

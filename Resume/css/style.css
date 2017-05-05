@@ -182,18 +182,18 @@ h3.clr2{
 h3.clr3{
 	background:#3eb991;
 }
-.copywrite{
+.copyright{
 	padding-left:2em;
 	margin-top:1em;
 }
-.copywrite p{
+.copyright p{
 	color:#999;
 	font-size:0.9em;
 }
-.copywrite p a{
+.copyright p a{
 	color:#999;
 }
-.copywrite p a:hover{
+.copyright p a:hover{
 	color:#6ecadc;
 }
 .contact-grid form{
@@ -406,7 +406,7 @@ address {
 address {
   margin-bottom: 0px;
 }
-.copywrite{
+.copyright{
 	padding-left:1em;
 }
 .map iframe {
@@ -487,7 +487,7 @@ address {
 .education h3 {
   padding: 5px 190px 5px 16px;
 }
-.copywrite p{
+.copyright p{
 	font-size:0.7em;
 }
 }

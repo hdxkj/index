@@ -71,54 +71,8 @@ $(document).ready(function(){
         tooltip.remove();
     });
 
-
 	
-		function contentHtml(){
-			var con = {};
-			con[0] = {
-						name:"OPE全球视频资源分享平台", 
-						href:"ope.html",
-						img:"img/ope/logo.jpg"
-					}
-			con[1] = {  
-					    name:"建材竞价网",  
-					    href:"jcjjw.html",
-					    img:"img/jcjjw/logo.jpg"
-					}
-			con[2] = {  
-					    name:"LinkLab医疗平台项目",  
-					    href:"linklab.html",
-					    img:"img/linklab/logo.jpg",
-					}
-			con[3] ={  
-					    name:"长沙工业云平台",  
-					    href:"csicloud.html",
-					    img:"img/csicloud/logo.jpg",
-					}
-			con[4] ={  
-					    name:"莹辉在线",  
-					    href:"brightonline.html",
-					    img:"img/brightonline/logo.jpg",
-					}
-			con[5] ={  
-					    name:"煤小二",  
-					    href:"mxer.html",
-					    img:"img/mxer/logo.jpg",
-					}
-			con[6] ={  
-					    name:"莹辉ipad app",  
-					    href:"brightonline2.html",
-					    img:"img/brightonline/logoapp.jpg",
-					} 
-			for(var x in con){
-				var content = $("#content");  
-				var strHtml = "";
-				strHtml += "<div class='work'><a href="+con[x].href+"><img src="+con[x].img+" class='media' alt=''/><div class='caption'><div class='work_title'><h1>"+con[x].name+"</h1></div></div></a></div>";
-				content.append(strHtml)
-			}
-		}
 		
-	contentHtml()
 	//主体内容
 	/*$.getJSON("../db/content.json",function(data){  
 	            var content = $("#content");  

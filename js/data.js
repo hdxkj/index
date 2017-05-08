@@ -22,21 +22,35 @@ $(function(){
 					    img:"img/csicloud/logo.jpg",
 					}
 			items[4] ={  
-					    name:"莹辉在线",  
-					    href:"brightonline.html",
-					    img:"img/brightonline/logo.jpg",
-					}
-			items[5] ={  
 					    name:"煤小二",  
 					    href:"mxer.html",
 					    img:"img/mxer/logo.jpg",
 					}
-			items[6] ={  
+			items[5] ={  
 					    name:"莹辉ipad app",  
 					    href:"brightonline2.html",
 					    img:"img/brightonline/logoapp.jpg",
-					} 
-	
+					}
+			items[6] ={  
+					    name:"莹辉在线",  
+					    href:"brightonline.html",
+					    img:"img/brightonline/logo.jpg",
+					}
+			items[7] ={  
+					    name:"莹辉在线微信服务号",  
+					    href:"brightonline3.html",
+					    img:"img/brightonline/logowechat.jpg",
+					}
+			items[8] ={  
+					    name:"人人网-麒麟车宝",  
+					    href:"qlcb.html",
+					    img:"img/renren/logo-big.jpg",
+					}
+			items[9] ={  
+					    name:"中经摄",  
+					    href:"zjs.html",
+					    img:"img/edpbook/logo.jpg",
+					}
 	
 	var projectItem = {
 		projectHtml : function(content){
@@ -54,7 +68,6 @@ $(function(){
 				content.append(strHtml)
 			}
 		}
-		
 	
 	}
 	//projectItem.itemList()

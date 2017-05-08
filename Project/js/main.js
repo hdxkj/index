@@ -73,19 +73,26 @@ $(document).ready(function(){
 
 	
 		
-	//主体内容
 	/*$.getJSON("../db/content.json",function(data){  
 	            var content = $("#content");  
-	            var strHtml = "";//存储数据的变量  
-	            content.empty();//清空内容  
+	            var strHtml = "";
+	            content.empty();
 	            $.each(data,function(infoIndex,info){  
             		strHtml += "<div class='work'><a href="+info["href"]+"><img src="+info["img"]+" class='media' alt=''/><div class='caption'><div class='work_title'><h1>"+info["name"]+"</h1></div></div></a></div>"; 
 	                })  
-	            content.html(strHtml);//显示处理后的数据     
+	            content.html(strHtml);
 	            })  */
-});
+	
+})
 
 
-
+var imgWrap= {
+		imgContent : function(sinNum,maxNum,folderName){
+			for(var i = sinNum ; i < maxNum ; i++){
+				var img = "<img src='img/"+folderName+"/pic-"+i+".png' />"
+				$("#img-content").append(img)
+			}
+		}      
+	}
 
 

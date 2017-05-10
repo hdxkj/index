@@ -51,6 +51,11 @@ $(function(){
 					    href:"zjs.html",
 					    img:"img/edpbook/logo.jpg",
 					}
+			items[10] ={  
+					    name:"知识服务平台",  
+					    href:"zsfw.html",
+					    img:"img/zsfw/logo.jpg",
+					}		
 	
 	var projectItem = {
 		projectHtml : function(content){

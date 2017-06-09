@@ -1,0 +1,27 @@
+section{
+	background: white;
+}
+.booklist img{
+	width: 90px;
+	float: left;
+	margin-right: 10px;
+	vertical-align: top;
+	margin-top: -5px;
+}
+.booklist .bookitem{
+	min-height: 110px;
+	padding-bottom: 20px;
+	margin-top: 10px;
+	border-bottom: 1px solid #e7e6e6;
+}
+.booklist .bookitem dl dt{
+	margin-bottom: 10px;
+	font-size: 16px;
+	color: #4e4e4e;
+	font-weight: bold;
+}
+.booklist .bookitem dl dd{
+	color: #888888;
+	line-height: 20px;
+	font-size: 14px;
+}

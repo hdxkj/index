@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/bookdetail.css" />
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+    <script>
+    	$(function(){
+    		$("nav div a").click(function(){
+    			var index = $(this).index()
+    			//alert(index)
+    			$(this).addClass("active")
+    			$(this).siblings("a").removeClass("active")
+    			$("article").hide()
+    			$("article").eq(index).show();
+    		})
+    	})
+    </script>
+    <title>青年文摘</title>
+</head>
+<body>
+	<header>
+		<img src="img/pic-7.png" width="128px" class="fl" />
+		<div class="main">
+			<dl>
+				<dt>《青年文摘手机报》</dt>
+				<dd>智慧泉、情感坊、人生课、大都会、新视野
+	五大主题贯穿一月，每期内含丰富的情感小
+	品、生活随笔和实用资讯。
+	
+				</dd>
+				<dd>
+					<a href="vipyd.html"><img src="img/pic-6.png" /></a>
+				</dd>
+			</dl>
+		</div>
+	</header>
+		<nav>
+			<div class="main">
+				<a>推荐</a>
+				<a>目录</a>
+				<a class="active">评论</a>
+			</div>
+		</nav>
+	
+	<article id="tj" style="display: none;">
+		<ol>
+			<li>
+				       《青年文摘 · 播》有声杂志，有心倾听——《青
+年文摘 · 播》周刊，每周五出版上线，由专业播音员
+为您倾情演绎来自《青年文摘》的经典文章.每周都有
+好故事、好声音，为您呈现完美“心”声。
+			</li>
+			<li>
+				       《青年文摘 · 播》有声杂志，有心倾听——《青
+年文摘 · 播》周刊，每周五出版上线，由专业播音员
+为您倾情演绎来自《青年文摘》的经典文章.每周都有
+好故事、好声音，为您呈现完美“心”声。
+			</li>
+		</ol>
+	</article>
+	<article id="kdml" style="display: none;">
+		<div class="main">
+			<p class="title">
+				【开卷】把余生藏好
+			</p>
+			<dl>
+				<dt>关注</dt>
+				<dd>
+					<label>
+						【话题】
+					</label>
+				20岁的中年危机和30岁的宝宝：被打乱的年龄轴
+				</dd>
+				<dd>
+					<label>【话题】</label>中华武术到底厉害在哪？
+				</dd>
+				<dd>
+					<label>【话题】</label>民谣的“返城高峰”
+				</dd>
+				<dd>
+					<label>【人物】</label>“暴躁95后”池子和他的爆炸式脱口秀
+				</dd>
+				<dd>
+					<label>【人物】</label>贝聿铭：从狮子林里走出的国际建筑大师
+				</dd>
+				<dd>
+					<label>【声音】</label>你最大的机会是跨界
+				</dd>
+			</dl>
+			<dl>
+				<dt>乐活</dt>
+				<dd>
+					<label>【方式】</label>去陌生人家里办公，共享经济还可以这么玩</dd>
+				<dd>
+					<label>【达人】</label>你好，我想出租自己</dd>
+				<dd>
+					<label>【悦己】</label>世界上最伤人的三个字是“不用了”</dd>
+				<dd>
+					<label>【攻略】</label>如何巧妙地拒绝别人借钱？</dd>
+				<dd>
+					<label>【游记】</label>杜布罗夫尼克——天堂就是这个样子</dd>
+				<dd>
+					<label>【赏味】</label>去日本，拼死吃河豚</dd>
+				
+			</dl>
+		</div>
+	</article>
+	
+	
+	<article id="pl">
+		<div class="main">
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+		</div>
+	</article>
+</body>
+</html>

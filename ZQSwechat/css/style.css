@@ -1,0 +1,492 @@
+.ydnr nav{
+	width: 100%;
+	height: 58px;
+	background: #ebf4ea;
+	line-height: 58px;
+	text-align: center;
+}
+.ydnr nav a{
+	line-height: 30px;
+	color: #75d06f;
+	padding: 2px 6px;
+	border-radius: 30px;
+	border: 1px solid #75D06F;
+	margin-right: 5px;
+}
+.ydnr nav a:nth-child(4){
+	border-radius: 0;
+	border: none;
+	border-left:1px solid #75D06F;
+	vertical-align: middle;
+	float: right;
+	margin-top: 12px;
+	margin-left: 5px;
+}
+.ydnr nav a:nth-child(5){
+	background:#75D06F;
+	float: right;
+	color: white;
+	margin-top: 12px;
+}
+.ydnr article{
+	background: #f8f8f8;
+}
+.ydnr article p{
+	padding-top: 10px;
+}
+
+.paysuccess dl{
+	margin-top: 60px;
+	text-align: center;
+}
+.paysuccess dl dd:nth-child(2){
+	font-size: 14px;
+	color: #77C072;
+}
+.paysuccess dl dd:nth-child(3){
+	font-size: 30px;
+	color: #353535;
+	font-weight: bold;
+	margin-bottom: 60px;
+	margin-top: 40px;
+}
+.paysuccess dl dd:nth-child(4){
+	text-align: left;
+	padding-top: 20px;
+	border-top: 1px solid #C9C9C9;
+} 
+.paysuccess dl dd:nth-child(4) span{
+	float: right;
+}
+.paysuccess dl dd:nth-child(4) span img{
+	vertical-align: middle;
+	width: 24px;
+	margin-right: 5px;
+}
+.paysuccess dl dd:nth-child(5){
+	margin-top: 80px;
+}
+.paysuccess dl dd:nth-child(5) a{
+	width: 80%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	border: 1px solid #75D06F;
+	color: #75D06F;
+	border-radius: 5px;
+}
+
+.byconfirm{
+	background: #f2f2f2;
+	padding-top: 20px;
+}
+.byconfirm article{
+	background: white;
+}
+.byconfirm article dl dt,.byconfirm article dl dd{
+	border-bottom: 1px solid #C9C9C9;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+}
+.byconfirm article dl dt{
+	font-weight: bold;
+}
+.byconfirm article dl dt b{
+	float: right;
+	color: #75D06F;
+}
+.byconfirm article dl dt:nth-child(2) b{
+	color: #9ca19a;
+	font-weight: normal;
+}
+.byconfirm article dl dt:last-child{
+	border: none;
+}
+.byconfirm b.title{
+	height: 50px;
+	line-height: 50px;
+	color: #7d7d7d;
+}
+.byconfirm article dl dd img{
+	width: 20px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.byconfirm article dl dd i{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: url(../img/ico-9.png) no-repeat center center;
+	background-size: cover;
+	float: right;
+	vertical-align: middle;
+	margin-top: 18px;
+}
+.byconfirm article dl dd i.active{
+	background: url(../img/ico-9b.png) no-repeat center center;
+	background-size: cover;
+}
+.byconfirm article dl dd:last-child{
+	border: none;
+	text-align: center;
+}
+.byconfirm article dl dd:last-child a{
+	width: 80%;
+	height: 50px;
+	background: #75D06F;
+	border-radius: 5px;
+	color: white;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+.user header{
+	height: 100px;
+	background: #75D06F;
+}
+.user dl{
+	background: white;
+	border-radius: 5px;
+	margin-top: -60px;
+	height: 90px;
+	padding-top: 20px;
+	margin-bottom: 20px;
+}
+.user dl dt{
+	float: left;
+	height: 100%;
+}
+.user dl dt img{
+	width: 80px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: -10px;
+}
+.user dl dd{
+	line-height: 24px;
+	font-size: 14px;
+	color: #878787;
+}
+.user dl dd:last-child{
+	font-weight: 600;
+	color: #4E4E4E;
+}
+.user article{
+	background: white;
+	margin-bottom: 10px;
+}
+.user article ol li{
+	line-height: 50px;
+	height: 50px;
+	border-bottom: 1px solid #C9C9C9;
+}
+.user article ol li:last-child{
+	border: none;
+}
+.user article ol li img{
+	width: 20px;
+	vertical-align: middle;
+	margin-right: 16px;
+}
+.user article ol li img:last-child{
+	float: right;
+	width: 14px;
+	margin-top: 12px;
+}
+.user p{
+	text-align: center;
+	margin-top: 40px;
+}
+.user p a{
+	background: #75D06F;
+	border-radius: 5px;
+	width: 80%;
+	margin: auto;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+}
+
+.viplp{
+	margin-top: 10px;
+	background: white;
+}
+.viplp dl{
+	border-bottom: 1px solid #C9C9C9;
+	padding: 20px 0;
+	min-height: 80px;
+}
+.viplp dl dt{
+	height: 100%;
+	float: left;
+}
+.viplp dl dt img{
+	width: 90px;
+	margin-right: 10px;
+}
+.viplp dl dd{
+	margin-top: 10px;
+	color: #8b8f8b;
+}
+.viplp dl dd.title{
+	font-weight: bold;
+	color: #4E4E4E;
+}
+.viplp dl dd span{
+	margin-left: 20px;
+}
+.viplp dl dd b{
+	color: #f2a218;
+}
+.viplp dl:last-child{
+	border: none;
+}
+
+.vipqy{
+	margin-top: 10px;
+	background: white;
+}
+.vipqy dl{
+	padding-bottom: 60px;
+}
+.vipqy dl dt{
+	border-bottom: 1px solid #C9C9C9;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-weight: bold;
+	color: #4E4E4E;
+	line-height: 24px;
+}
+.vipqy dl dd{
+	margin-top: 20px;
+	line-height: 24px;
+	color: #808080;
+}
+
+.vipyd header{
+	margin-top: 10px;
+	background: white;
+}
+.vipyd header dl{
+	min-height: 110px;
+	padding: 20px 0;
+}
+.vipyd header dl dt{
+	float: left;
+	border-right: 1px dotted #C9C9C9;
+	padding-right: 10px;
+	margin-right: 10px;
+	height: 100%;
+}
+.vipyd header dl dt span{
+	display: inline-block;
+	background: url(../img/pic-16.png) no-repeat center center;
+	background-size: 100%;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-indent: -10px;
+	text-align: center;
+	color: white;
+	vertical-align: bottom;
+	font-size: 18px;
+	font-weight: bold;
+}
+.vipyd article{
+	background: white;
+}
+.vipyd header dl dd{
+	color: #9CA19A;
+	margin-top: 10px;
+	font-size: 14px;
+}
+.vipyd header dl dd:nth-child(2){
+	font-weight: bold;
+	color: #4E4E4E;
+}
+.vipyd header dl dd:nth-child(2) b{
+	color: #F2A218;
+}
+.vipyd header dl dd a{
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	background: #75D06F;
+	border-radius: 5px;
+	width: 80px;
+	text-align: center;
+}
+p.rmtj{
+	color: #7D7D7D;
+	height: 40px;
+	line-height: 40px;
+}
+.vipyd article dl dt{
+	float: left;
+	margin-right: 10px;
+	height: 100%;
+}
+.vipyd article dl{
+	min-height: 120px;
+	padding: 20px 0;
+	border-bottom: 1px solid #C9C9C9;
+}
+.vipyd article dl dt img{
+	width: 90px;
+}
+.vipyd article dl dd{
+	color: #888888;
+	line-height: 20px;
+	font-size: 14px;
+}
+.vipyd article dl dd:nth-child(2){
+	color: #4E4E4E;
+	font-size: 18px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+}
+
+.myjf header{
+	height: 200px;
+	background: url(../img/pic-14.png) no-repeat top center;
+	text-align: center;
+	line-height: 340px;
+	color: white;
+}
+.myjf header b{
+	font-size: 20px;
+	color: #F2A218;
+	margin-left: 10px;
+}
+
+aside.jfdh{
+	height: 40px;
+	line-height: 40px;
+	background: white;
+	border-bottom: 1px solid #C9C9C9;
+	color: #9ea19e;
+}
+.myjf dl{
+	margin: 10px 0 0 0;
+	height: 80px;
+	background: url(../img/pic-15.png) no-repeat left top;
+	background-size: 100%;
+	padding-top: 14px;
+}
+.myjf dl dt{
+	line-height: 24px;
+	margin-left: 70px;
+	color: #697069;
+	font-size: 14px;
+	border-right: 1px dotted #C9C9C9;
+	width: 160px;
+	height: 40px;
+	vertical-align: middle;
+}
+.myjf dl dt b{
+	color: #F2A218;
+}
+.myjf dl dd{
+	float: right;
+}
+.myjf dl dd a{
+	background: #75D06F;
+	border-radius: 5px;
+	width: 40px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	vertical-align: middle;
+	margin-top: -55px;
+	margin-right: 20px;
+}
+
+.jyconfirm{
+	background: white;
+	margin-top: 20px;
+}
+.jyconfirm header dl{
+	padding: 20px;
+	text-align: center;
+}
+.jyconfirm header dl dt{
+	margin-top: 30px;
+	font-weight: bold;
+	color: #4E4E4E;
+	font-size: 30px;
+}
+.jyconfirm article ol{
+	border: 1px solid #C9C9C9;
+	border-left: 0;
+	border-right: 0;
+	padding: 20px 0;
+	color: #a8a8a8;
+}
+.jyconfirm article ol li{
+	line-height: 30px;
+}
+.jyconfirm article ol li span{
+	float: right;
+	color: #4E4E4E;
+}
+.jyconfirm article{
+	min-height: 400px;
+}
+.jyconfirm article p{
+	text-align: center;
+}
+.jyconfirm article p a{
+	width: 80%;
+	margin-top: 20px;
+	background: #75D06F;
+	border-radius: 5px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.jyconfirm-zf{
+	display: none;
+}
+.jyconfirm-zf img{
+	height: 100%;
+	position: fixed;
+	bottom: 0;
+}
+
+.wxlogin{
+	text-align: center;
+}
+.wxlogin dl{
+	margin-top: 40px;
+	font-size: 14px;
+}
+.wxlogin dl dt img{
+	width: 90px;
+}
+.wxlogin dl dd{
+	margin-bottom: 10px;
+	text-align: left;
+	width: 80%;
+	margin: auto;
+	line-height: 24px;
+	color: #9B9B9B;
+}
+
+.wxlogin dl dd:nth-child(2){
+	color: #4E4E4E;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+.wxlogin dl dd a{
+	background: #75D06F;
+	border-radius: 5px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 100%;
+	font-size: 16px;
+	margin-top: 40px;
+}

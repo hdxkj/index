@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/bookdetail.css" />
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+    <script>
+    	$(function(){
+    		$("nav div a").click(function(){
+    			var index = $(this).index()
+    			//alert(index)
+    			$(this).addClass("active")
+    			$(this).siblings("a").removeClass("active")
+    			$("article").hide()
+    			$("article").eq(index).show();
+    		})
+    	})
+    </script>
+    <title>青年文摘</title>
+</head>
+<body>
+	<header>
+		<img src="img/pic-7.png" width="128px" class="fl" />
+		<div class="main">
+			<dl>
+				<dt>《青年文摘·播》</dt>
+				<dd>有声杂志，有心倾听.每周五出版上线，由专业播音员
+为您倾情演绎.每周都有
+好故事、好声音，为您呈现完美“心”声。
+	
+				</dd>
+				<dd>
+					<a href="vipyd.html" class="fr" style="margin-right: 20px;"><img src="img/pic-6.png" /></a>
+				</dd>
+			</dl>
+		</div>
+	</header>
+		<nav>
+			<div class="main">
+				<a>推荐</a>
+				<a>目录</a>
+				<a class="active">评论</a>
+			</div>
+		</nav>
+	
+	<article id="tj" style="display: none;">
+		<ol>
+			<li>
+				       《青年文摘 · 播》有声杂志，有心倾听——《青
+年文摘 · 播》周刊，每周五出版上线，由专业播音员
+为您倾情演绎来自《青年文摘》的经典文章.每周都有
+好故事、好声音，为您呈现完美“心”声。
+			</li>
+		</ol>
+	</article>
+	<article id="ml" style="display: none;">
+		<div class="main">
+		<dl>
+			<dt style="padding-top: 10px;">
+				01/<b>被囚的公主</b><img src="img/ico-11.png" />
+			</dt>
+			<dd>
+				     一次，因为误解。两个国王发生一点争端、
+暴躁、冷酷的国王一怒之下绑架了邻国...
+
+			</dd>
+			<dd><img src="img/ico-12.png" />王维实<span>(编译/班超)</span></dd>
+		</dl>
+		<dl>
+			<dt>
+				02/<b>海知道就够了</b><img src="img/ico-11.png" />
+			</dt>
+			<dd>
+				        彼此我们坐在岸边看日落，他随手在沙滩边
+写下“I`am here”，然后我们一起看着这行字被
+海浪吞没，沙滩重新恢复平整...
+
+			</dd>
+			<dd><img src="img/ico-12.png" />李国全<span>(文/灰姑娘)</span></dd>
+		</dl>
+		<dl>
+			<dt>
+				03/<b>你打算用什么打动别人？</b><img src="img/ico-11.png" />
+			</dt>
+			<dd>
+				             我的工作就是解决问题，你有任何问题可以
+找我，他的字典里没有责任划分区域，从不抱怨，六六说“她
+当时有个感觉，这个年轻人未来无限美好...
+
+			</dd>
+			<dd><img src="img/ico-12.png" />李国全<span>(文/灰姑娘)</span></dd>
+		</dl>
+		</div>
+	</article>
+	
+	
+	<article id="pl">
+		<div class="main">
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+		</div>
+	</article>
+</body>
+</html>

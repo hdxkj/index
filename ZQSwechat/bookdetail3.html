@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/bookdetail.css" />
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+    <script>
+    	$(function(){
+    		$("nav div a").click(function(){
+    			var index = $(this).index()
+    			//alert(index)
+    			$(this).addClass("active")
+    			$(this).siblings("a").removeClass("active")
+    			$("article").hide()
+    			$("article").eq(index).show();
+    		})
+    	})
+    </script>
+    <title>青年文摘</title>
+</head>
+<body>
+	<header>
+		<img src="img/pic-12.png" width="90px" class="fl" style="margin: 10px;" />
+		<div class="main">
+			<dl>
+				<dt>《青年文摘手机报》</dt>
+				<dd>智慧泉、情感坊、人生课、大都会、新视野
+	五大主题贯穿一月，每期内含丰富的情感小
+	品、生活随笔和实用资讯。
+	
+				</dd>
+				<dd>
+					<a href="vipyd.html" class="fr" style="margin-right: 20px;"><img src="img/pic-6.png" /></a>
+				</dd>
+			</dl>
+		</div>
+	</header>
+		<nav>
+			<div class="main">
+				<a>推荐</a>
+				<a>目录</a>
+				<a class="active">评论</a>
+			</div>
+		</nav>
+	
+	<article id="tj" style="display: none;">
+		<ol>
+			<li>
+				       智慧泉、情感坊、人生课、大都会、新视野
+五大主题贯穿一月，每期内含丰富的情感小
+品、生活随笔和实用资讯。
+			</li>
+		</ol>
+	</article>
+	<article id="ml" style="display: none;">
+		<div class="main">
+		<dl>
+			<dt style="padding-top: 10px;">
+				【大小事】
+			</dt>
+			<dd>
+				     据新华社报道，在中国游客猛增的背景下，日本的中文导游数量却远远未能跟上。日本首都圈以外的地区，通过资格认证的中文导游十分稀缺，9个中国团导游只有1个合法...
+			</dd>
+			<dd><span>新华社起底日本“黑导游” 等</span></dd>
+			<dd class="clear"></dd>
+		</dl>
+		<dl>
+			<dt>
+				【日知录】
+			</dt>
+			<dd>
+				     有一位开发商请崔永元去给新楼盘剪彩，价格是一剪子50万元。面对这多少人梦寐以求的大好事，崔永元却拒绝了。他对杨澜说：“我觉得我抵制不住。一旦我爱上了剪彩之后，谁都拦不住我。唯一的办法就是别去碰它...
+			</dd>
+			<dd><span>别去碰它</span></dd>
+			<dd class="clear"></dd>
+		</dl>
+		<dl>
+			<dt>
+				【智慧泉】
+			</dt>
+			<dd>
+				     如果你是一个吃货，如果你想了解金融，那么请睁大你的双眼，一大波吃货福利即将来袭！...
+			</dd>
+			<dd><span>一个吃货眼中的金融世界</span></dd>
+			<dd class="clear"></dd>
+		</dl>
+		<dl>
+			<dt>
+				【短镜头】
+			</dt>
+			<dd>
+				    1932年3月，在日本真崎大和铅笔株式会社，数元三郎正在训斥一个来自中国的实习生：“看什么看？即使你到下辈子，中国也不会制造笔芯，也办不成铅笔工业。”这个实习生就是吴羹梅，一个主张实业救国的青年。...
+			</dd>
+			<dd><span>用铅笔抗日的吴羹梅</span></dd>
+			<dd class="clear"></dd>
+		</dl>
+		<dl>
+			<dt>
+				【生活禅】
+			</dt>
+			<dd>
+				   那是一个晚霞黄昏，我跟一位学音乐的朋友盘桓于一个石头巷，一支幽幽的乐曲，从人家围墙内徐徐送出，清绝，空旷，似晚风穿越松林，拂得人内外净凉。那奇特的音质所描绘的，仿若人踪灭、鸟飞绝的境界，寒旷缥缈；一道渐淡的弧线，勾出空中铃音隐隐的痕迹...
+			</dd>
+			<dd><span>一尺八寸的禅意</span></dd>
+			<dd class="clear"></dd>
+		</dl>
+		<dl>
+			<dt>
+				【优乐活】
+			</dt>
+			<dd>
+				  喝水本来是一件非常简单的事，却被一些“花式补水”给弄得乌烟瘴气。所谓的功效没达到不说，还有可能带来健康危害...
+			</dd>
+			<dd><span>“花式乱饮水”谣言，你中招了吗</span></dd>
+			<dd class="clear"></dd>
+		</dl>
+		<dl>
+			<dt>
+				【视觉志】
+			</dt>
+			<dd>
+				     自然摄影师马可-比斯托近日在葡萄牙拍到了一组令人难以置信的照片：一对鹳鸟夫妇将爱巢筑在波涛环绕的悬崖峭壁上来抚养爱子，完全无惧周围的惊涛骇浪...
+			</dd>
+			<dd><span>筑巢养子，不惧波涛</span></dd>
+			<dd class="clear"></dd>
+		</dl>
+		</div>
+	</article>
+	
+	
+	<article id="pl">
+		<div class="main">
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+			<dl>
+				<dt>
+					<a><img src="img/ico-13.png" /></a>
+					<ol>
+						<li class="name">阿明</li>
+						<li><i class="active"></i><i></i><i></i><i></i><i></i></li>
+					</ol>
+				</dt>
+				<dd>
+					        非常好的一期，专业播音倾情演绎，丰富动
+	人的故事让我沉醉其中。期待下一期！
+				</dd>
+				<dd>2017-2-26 23:17                                                    </dd>
+			</dl>
+		</div>
+	</article>
+</body>
+</html>

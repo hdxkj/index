@@ -391,7 +391,7 @@ aside.jfdh{
 	float: right;
 }
 .myjf dl dd a{
-	background: #75D06F;
+	background: #d6d6d6;
 	border-radius: 5px;
 	width: 40px;
 	height: 30px;
@@ -400,6 +400,9 @@ aside.jfdh{
 	vertical-align: middle;
 	margin-top: -55px;
 	margin-right: 20px;
+}
+.myjf dl dd a.active{
+	background: #75D06F;
 }
 
 .jyconfirm{

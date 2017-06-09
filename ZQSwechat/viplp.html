@@ -6,6 +6,92 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>会员礼品</title>
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+    <script>
+    	$(function(){
+	   // 长按  
+		$.fn.longPress = function(fn) {  
+		    var timeout = undefined;  
+		    var $this = this;  
+		    $($this).each(function(i){  
+		        $this[i].addEventListener('touchstart', function(event) {  
+		          timeout = setTimeout(function(e){  
+		              $('.tc').show();
+		              $($this).eq(i).addClass("longPress")
+		            }, 800);  //长按时间超过800ms，则执行传入的方法  
+		            }, false);  
+		        $this[i].addEventListener('touchend', function(event) {  
+		            clearTimeout(timeout);  //长按时间少于800ms，不会执行传入的方法  
+		        }, false);  
+		    }) 
+		}  
+		  
+		$('section div.main dl').longPress(function(e){
+			
+		});  
+		$('.tc li a.confirm').on('touchend',function(){ 
+			alert("兑换成功")
+		    $('section div.main dl.longPress').remove();
+		    $(".tc").hide()
+		    window.location.href='user.html'
+		    //$('.deletefont').remove();  
+			});
+			$('.tc li a.cancel').on('touchend',function(){
+				$(".tc").hide()
+		})
+		
+	})
+
+    </script>
+    <style>
+.tc{
+	display: none;
+}
+.tc p{
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	top: 0;
+	left: auto;0
+}
+.tc ul{
+	width: 80%;
+	height:108px;
+	position: fixed;
+	z-index: 1;
+	background: white;
+	top: 50%;
+	left: 50%;
+	margin-top: -92px;
+	margin-left: -40%;
+	border-radius: 5px;
+}
+.tc ul li{
+	height: 52px;
+	line-height: 52px;
+	text-align: center;
+	color: #333333;
+	border-bottom: 1px solid #d9dbe4;
+}
+.tc ul li:nth-child(2){
+	border: none;
+}
+.tc ul li a{
+	color: #2995f8;
+}
+.tc ul li i{
+	height: 35px;
+	width: 1px;
+	display: inline-block;
+	margin: 0 35px;
+	background: #d9dbe4;
+	vertical-align: middle;
+}
+.tc ul li a.cancel{
+	color: #a4a9ae;
+}
+    </style>
 </head>
 <body style="height: 100%;background: #F2F2F2;">
 	
@@ -54,6 +140,13 @@
 			</div>
 		</section>
 	</div>
+		<aside class="tc">
+			<p></p>
+			<ul>
+				<li>确认兑换？</li>
+				<li><a class="confirm" href="user.html">确认</a><i></i><a class="cancel ">取消</a></li>
+			</ul>
+		</aside>
 	
 </body>
 </html>

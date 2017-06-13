@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+		<header>
+			<div class="main">
+				<a href="tnews.html"></a>
+				<b>新闻详情</b>
+			</div>
+		</header>
+<section style="padding-top: 100px;">
+	<div class="main">
+	</div>
+</section>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script>
+			$(function(){
+				var url='http://192.168.10.249:8080/touchScreen/newsDetail';
+				var paraString = window.location.href;
+		    	var id= paraString.substring(paraString.indexOf("=")+1,paraString.Length).split("&");
+					    $.ajax({
+							    type: 'POST',
+							    url: url,
+							    dataType: 'json',
+							    data:"id="+id,
+							    success:function(msg){
+							    	console.log(msg)
+						            var html = [];
+						            var info = msg.data;
+			            			html.push('<dl style="color:white;font-size:20px;width:95%;margin:auto;line-height:32px">')
+									html.push('<dt>'+info.title+'</dt>')
+									html.push('<dd>'+info.createdtime+'</dd>')
+									html.push('<dd>'+info.fulltxt+'</dd>')
+									html.push('</dl>')
+									
+		            				$("section .main").append(html.join(""))
+						  }
+						});
+			})
+		</script>
+</body>
+</html>

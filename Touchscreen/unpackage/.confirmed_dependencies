@@ -1,0 +1,47 @@
+{
+	"index.html": {
+		"resources": [
+			"images/mobile/ico-4.png",
+			"images/mobile/ico-2.png",
+			"css/mobile.css",
+			"images/mobile/ico-5.png",
+			"images/mobile/ico-3.png",
+			"css/reset.css",
+			"collection.html",
+			"booklist.html"
+		],
+		"refer": [
+			"collection.html",
+			"booklist.html"
+		]
+	},
+	"collection.html": {
+		"resources": [
+			"js/main.js",
+			"images/mobile/retrurn.png",
+			"images/mobile/pic-1.png",
+			"js/jquery-1.8.0.min.js",
+			"images/mobile/ico-1.png",
+			"index.html",
+			"css/mobile.css",
+			"css/reset.css"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"booklist.html": {
+		"resources": [
+			"js/main.js",
+			"images/mobile/retrurn.png",
+			"images/mobile/pic-2.png",
+			"js/jquery-1.8.0.min.js",
+			"index.html",
+			"css/mobile.css",
+			"css/reset.css"
+		],
+		"refer": [
+			"index.html"
+		]
+	}
+}

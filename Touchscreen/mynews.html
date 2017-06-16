@@ -16,27 +16,30 @@
 		<header>
 			<div class="main">
 				<a class="fl" onclick="javascript:window.history.go(-1)"></a>
-				<h1>精品图书</h1>
+				<h1>新闻内容</h1>
 			</div>
 		</header>
-		<section>
-			<div class="main" id="booklist">
+		<section class="newsdetail">
 				<script>
 					$(function(){
-						//alert(1)
-						getHtml.bookList($("#booklist"))
+						getHtml.mynewsDetail($(".newsdetail"))
 					})
 				</script>
-				
-			</div>
+				<!--<dl>
+					<dt>高考</dt>
+					<dd>网易新闻<span>25分钟前</span></dd>
+					<dd class="text">
+						<img src="images/mobile/pic-3.png" />
+						<p>         高考是对知识能力的考量，也是对心理毅力
+等综合素质的检验。在高考备考中，衡水 2 中开
+展系列励志教育活动，以科学的方法鼓舞学生士
+气，帮助学生将心理状态调节到最佳。5 月 24 日
+上午，衡水 2 中举行了高三学生 2017 高考出征
+壮行仪式。校党委书记、校长秦海地，副校长王
+锦旭等校领导出席大会。</p>
+					</dd>
+				</dl>-->
 		</section>
-		<aside class="tc">
-			<p></p>
-			<ul>
-				<li>删除后不可恢复，确定删除？</li>
-				<li><a class="confirm ">确认</a><i></i><a class="cancel ">取消</a></li>
-			</ul>
-		</aside>
 	</body>
 
 </html>

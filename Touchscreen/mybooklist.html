@@ -16,11 +16,18 @@
 		<header>
 			<div class="main">
 				<a class="fl" onclick="javascript:window.history.go(-1)"></a>
-				<h1>我的收藏</h1>
+				<h1>精品图书</h1>
 			</div>
 		</header>
-		<section style="background: none;">
-			<div class="collection">
+		<section>
+			<div class="main" id="booklist">
+				<script>
+					$(function(){
+						//alert(1)
+						getHtml.favoriteBook($("#booklist"))
+					})
+				</script>
+				
 			</div>
 		</section>
 		<aside class="tc">
@@ -30,11 +37,6 @@
 				<li><a class="confirm ">确认</a><i></i><a class="cancel ">取消</a></li>
 			</ul>
 		</aside>
-		<script>
-			$(function(){
-				getHtml.favorite($(".collection"))
-			})
-		</script>
 	</body>
 
 </html>

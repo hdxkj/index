@@ -34,7 +34,7 @@
 						  	var content = $(".columns");  
 				            var strHtml = "";
 						  	$.each(msg.data,function(infoIndex,info){ 
-	            			strHtml += "<div class='item' onclick='window.location.href=\"tnewsdetail.html?id="+info.seqid+"\"'><img src='images/tnews/img-1.png'><dl><dt><h4>"+info.title+"</h4></dt><dd><span>网易新闻</span><span>1小时前</span></dd><dd>"+info.abstracts+"</dd></dl></div>";
+	            			strHtml += "<div class='item' onclick='window.location.href=\"tnewsdetail.html?id="+info.seqid+"\"'><img src='"+info.thumbnail+"'><dl><dt><h4>"+info.title+"</h4></dt><dd><span>"+info.sources+"</span><span>"+info.createdtime+"</span></dd><dd>"+info.abstracts+"</dd></dl></div>";
 	            		})  
 	        				content.html(strHtml);
 	        				 new ElasticColumnsDemo();

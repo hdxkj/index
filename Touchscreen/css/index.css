@@ -9,7 +9,7 @@ section .main div {
   float: right;
 }
 section .main div.left {
-  width: 38%;
+  width: 30%;
   min-width: 606px;
 }
 section .main div.right {

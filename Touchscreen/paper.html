@@ -9,6 +9,12 @@
 		<link href="css/mobile.css" rel="stylesheet" />
 		<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
 		<script src="js/main.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquerysession.js" ></script>
+				<script>
+					$(function(){
+						getHtml.paperlayList($("#content"))
+					})
+				</script>
 	</head>
 
 	<body>
@@ -22,8 +28,9 @@
 			<p class="title" style="text-indent: 1em;">
 				<span class="main">人民日报</span>
 			</p>
-			<div class="main" style="text-align: center;">
-				<ol>
+			<div class="main" style="text-align: center;" id="content">
+				
+				<!--<ol>
 					<li onclick="window.location.href='paperlist.html'">
 						<img src="images/mobile/pic-7.png"  />
 					</li>
@@ -70,15 +77,23 @@
 					<li>
 						<b>03</b>版：要闻
 					</li>
-				</ol>
+				</ol>-->
 			</div>
 			<div class="clear">
 				
 			</div>
 			<p class="addsc">
-				<a class="active" href="paper.html">首页</a>
-				<a href="user.html">我的</a>
+				<a class="active" href="paperlist.html">首页</a>
+				<a id="returnuser">我的</a>
 			</p>
+			<script>
+				$(function(){
+					var id = $.session.get('data')
+					$("#returnuser").click(function(){
+						window.location.href='user.html?id='+id''
+					})
+				})
+			</script>
 		</section>
 	</body>
 

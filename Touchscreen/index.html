@@ -11,6 +11,10 @@
 		<script src="js/jquery.cookie.js" type="text/javascript"></script>
 		<script src="js/main.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquerysession.js"></script>
+		<style>
+			i{font-style: normal;float: right;}
+			dl li{text-align: left;line-height: 30px;text-indent: 2em;}
+		</style>
 	</head>
 
 	<body>
@@ -34,16 +38,42 @@
 					</ol>
 				</form>
 				<aside>
+					<script>
+						$(function(){
+							var baseUrl = 'http://192.168.10.249:8080/touchScreen/'
+							var url=baseUrl +'casual';
+						    $.ajax({
+								    type: 'POST',
+								    url: url,
+								    dataType: 'json',
+								    data:'userid='+$.session.get('data'),
+								    success:function(msg){
+								    	var strHtmlPaper = "";
+								    	var strHtmlNews = "";
+								    	var strHtmlBook = "";
+								    	var content = $("#content");
+								    	console.log(msg);
+								    	console.log(msg.data.paper);
+								    	$.each(msg.data.paper,function(infoIndex,info){
+												strHtmlPaper +=	"<div class='collection-list' onclick='window.location.href=\"paper.html?id="+info.seqid+"\"'><div class='main'><dl><dd><span>"+info.author+"</span><i>"+info.createdtime+"</i></dd><dd><img src='"+baseUrl+"source/"+info.thumbnail+"' class='fl' /><ol><li>"+info.title+"</li><li></li></ol></dd></dl></div></div>";
+								    	})
+								    	$.each(msg.data.news,function(infoIndex,info){
+												strHtmlNews +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dd><span>"+info.sources+"</span><i>"+info.pubdate+"</i></dd><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
+								    	})
+								    	$.each(msg.data.book,function(infoIndex,info){
+												strHtmlBook +=	"<div class='collection-list' onclick='window.location.href=\"book.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dd><span>"+info.sources+"</span><i>"+info.pubdate+"</i></dd><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
+								    	})
+				            			content.append(strHtmlPaper+strHtmlNews+strHtmlBook)
+			                		}	
+							})
+						})
+					</script>
 					<p><span></span>随便看看<span></span></p>
-					<dl>
-						<dt>
-							<img src="images/mobile/pic-6.png"  />
-						</dt>
-						<dd>简约的人生不简单(双色)</dd>
-						<dd>作者:向山野</dd>
-						<dd>出版社:电子工业出版社</dd>
-						<dd>出版时间:2012年10月</dd>
+					<div id="content">
+						
 					</dl>
+					</div>
+					
 				</aside>
 			</div>
 		</section>

@@ -10,30 +10,27 @@
 		<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
 		<script src="js/main.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquerysession.js" ></script>
+		<style>
+			.bookdetail p.addsc a{
+				background: url(images/mobile/ico-3.png) no-repeat top center;
+				background-size: 26px;
+			}
+		</style>
 	</head>
 
 	<body>
 		<header>
 			<div class="main">
 				<a class="fl" onclick="javascript:window.history.go(-1)"></a>
-				<h1>我的收藏</h1>
+				<h1>精品图书</h1>
 			</div>
 		</header>
-		<section style="background: none;">
-			<div class="collection">
-			</div>
+		<section class="bookdetail" id="bookdetail">
 		</section>
-		<aside class="tc">
-			<p></p>
-			<ul>
-				<li>删除后不可恢复，确定删除？</li>
-				<li><a class="confirm ">确认</a><i></i><a class="cancel ">取消</a></li>
-			</ul>
-		</aside>
 		<script>
-			$(function(){
-				getHtml.favorite($(".collection"))
-			})
+				$(function(){
+					getHtml.mybookDetail("#bookdetail")
+				})
 		</script>
 	</body>
 

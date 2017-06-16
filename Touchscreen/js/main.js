@@ -289,7 +289,7 @@ var getHtml = {
 						            var strHtml = "";
 						            //alert(msg.title)
 								  	var info = msg.data
-			            				strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='getHtml.collectCancel()' '><input type='hidden' value='"+info.seqid+"'>删除</a></p>";
+			            				strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='getHtml.collectCancel()' '><input type='hidden' value='"+info.seqid+"'>删除</a><a onclick='getHtml.bookViewer()'>查看</a></p>";
 		            				$(tag).html(strHtml);
 						  }
 						});
@@ -445,6 +445,20 @@ var getHtml = {
 									}else{
 										alert("取消失败")
 									}
+								}
+							});
+						},
+						bookViewer: function(){
+							var url = baseUrl+'cancel'
+							var rescodeNum = $("input[type='hidden']").val();
+							var paraString = window.location.href;
+				    		var id= paraString.substring(paraString.indexOf("=")+1,paraString.Length).split("&");
+							$.ajax({
+								type:"post",
+								url:url,
+								data:"id="+rescodeNum,
+								success:function(msg){
+									window.location.href="bookDisc.html?id="+rescodeNum
 								}
 							});
 						},

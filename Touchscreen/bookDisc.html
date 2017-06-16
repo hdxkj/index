@@ -45,7 +45,9 @@
 <script type="text/javascript">
 	$(function(){
 		var num = 1;
-	    var bookid = 11489;
+		var paraString = window.location.href;
+		var id= paraString.substring(paraString.indexOf("=")+1,paraString.Length).split("&");
+	    var bookid = id;
 	    var total = ""
 	    var baseUrl = 'http://192.168.10.249:8080/touchScreen/';
 	    $.ajax({

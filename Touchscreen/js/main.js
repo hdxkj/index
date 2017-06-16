@@ -390,7 +390,7 @@ var getHtml = {
 								success:function(msg){
 									if(msg = "success"){
 										alert("收藏成功")
-										window.location.href="bookDisc.html?id="+bookID
+										window.location.href="user.html?userid="+$.session.get('data')+""
 									}else{
 										alert("收藏失败")
 									}

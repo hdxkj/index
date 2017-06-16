@@ -257,8 +257,8 @@ p.addsc{
 	box-shadow: 0 -2px 12px rgba(0,0,0,.1);
 }
 p.addsc a{
-	background: url(../images/mobile/ico-3.png) no-repeat top center;
-	padding-top: 5px;
+	/*background: url(../images/mobile/ico-3.png) no-repeat top center;
+	padding-top: 5px;*/
 	color: #0f81f3;
 	background-size: 26px;
 	margin-top: 5px;
@@ -296,7 +296,7 @@ p.addsc a{
 	font-size: 16px;
 }
 .bookdetail p.addsc a{
-	background: url(../images/mobile/ico-10.png) no-repeat top center;
+	/*background: url(../images/mobile/ico-10.png) no-repeat top center;*/
 	background-size: 26px;
 }
 .bookdetail ol li{

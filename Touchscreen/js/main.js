@@ -3,7 +3,7 @@ $(function(){
 		getHtml.loginCheck()
 	});
 	thingsFun.bottomNav();
-	thingsFun.searchId();
+	//thingsFun.searchId();
 })
 var baseUrl = 'http://192.168.10.249:8080/touchScreen/'
 var bookID = ""
@@ -19,7 +19,16 @@ var thingsFun = {
 				$(".addsc a").eq(1).attr("href","user.html?userid="+$.session.get('data')+"")
 			},
 			searchId : function(){
-				var url = baseUrl +"search";
+				function GetQueryString(name)
+				{
+				     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+				     var r = window.location.search.substr(1).match(reg);
+				     if(r!=null)return  unescape(r[2]); return null;
+				}
+				//var paperid = GetQueryString("paperid");
+				var id = GetQueryString("id");
+				
+				/*var url = baseUrl +"search";
 				var bookname = "鬼吹灯"
 				$.ajax({
 				    type: 'POST',
@@ -30,14 +39,25 @@ var thingsFun = {
 				    	bookID = msg.data
 				    	return bookID
 			  		}
-				});
+				});*/
 				
 			},
 			ifLogin : function(){
 				var ifTrue =  $.session.get('data')
 				if(ifTrue == undefined){
 					alert("你尚未登录，请登陆后操作")
+					function GetQueryString(name)
+				{
+				     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+				     var r = window.location.search.substr(1).match(reg);
+				     if(r!=null)return  unescape(r[2]); return null;
+				}
+				//var paperid = GetQueryString("paperid");
+				var id = GetQueryString("id");
+					$.session.set('bookId', id)
+					bookID = $.session.get('bookId')
 					window.location.href = 'index.html'
+					return bookID
 				}else{
 					getHtml.collectConfirm()
 				}
@@ -191,8 +211,31 @@ var getHtml = {
 							    	console.log(msg)
 						            var strHtml = "";
 								  	$.each(msg.data,function(infoIndex,info){ 
-			            			strHtml += "<article class='wzitem'><div class='main'><ul><li>"+info.title+"</li><li><p>"+info.fulltxt+"</p></li><li>"+info.author+"</li></dl></div></article>";
+			            			strHtml += "<article onclick='window.location.href=\"paperDetail.html?seqid="+info.seqid+"\"'><div class='main'><ul><li>"+info.title+"</li><li>"+info.author+"</li></dl></div></article>";
 		                		})  
+		            			$(tag).html(strHtml);
+						  }
+						});
+					},
+					paperDetail  : function(tag){
+						var url = baseUrl+'paperContentText';
+						function GetQueryString(name)
+						{
+						     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+						     var r = window.location.search.substr(1).match(reg);
+						     if(r!=null)return  unescape(r[2]); return null;
+						}
+						var seqid = GetQueryString("seqid");
+					    $.ajax({
+							    type: 'POST',
+							    url: url,
+							    dataType: 'json',
+							    data:"seqid="+seqid,
+							    success:function(msg){
+							    	console.log(msg.data)
+							    	var info = msg.data
+						            var strHtml = "";
+			            			strHtml += "<article class='wzitem'><div class='main'><ul><li>"+info.title+"</li><li><p>"+info.fulltxt+"</p></li><li>"+info.author+"</li></dl></div></article>";
 		            			$(tag).html(strHtml);
 						  }
 						});
@@ -227,7 +270,7 @@ var getHtml = {
 						            var strHtml = "";
 								  	var info = msg.data
 								  	//alert(info.pdfpath)
-			            			strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='thingsFun.ifLogin()'><input type='hidden' value='"+info.seqid+"'><input type='hidden' value='"+info.pdfpath+"'>下载</a></p>";
+			            			strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='thingsFun.ifLogin()'><input type='hidden' value='"+info.seqid+"'><input type='hidden' value='"+info.pdfpath+"'>查看</a></p>";
 		            				$(tag).html(strHtml);
 						  }
 						});
@@ -246,7 +289,7 @@ var getHtml = {
 						            var strHtml = "";
 						            //alert(msg.title)
 								  	var info = msg.data
-			            				strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='getHtml.collectCancel()' '><input type='hidden' value='"+info.seqid+"'>取消收藏</a></p>";
+			            				strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='getHtml.collectCancel()' '><input type='hidden' value='"+info.seqid+"'>删除</a></p>";
 		            				$(tag).html(strHtml);
 						  }
 						});
@@ -309,7 +352,7 @@ var getHtml = {
 											$.session.set('data', info)
 											alert("登录成功")
 											if(bookID != ""){
-												window.location.href='book.html?id='+bookID+''
+												window.location.href='bookDetail.html?id='+bookID+''
 											}else{
 												window.location.href='user.html?userid='+info+''
 											}
@@ -347,7 +390,7 @@ var getHtml = {
 								success:function(msg){
 									if(msg = "success"){
 										alert("收藏成功")
-										window.location.href=baseUrl+"source/"+pdfpath
+										window.location.href="bookDisc.html?id="+bookID
 									}else{
 										alert("收藏失败")
 									}

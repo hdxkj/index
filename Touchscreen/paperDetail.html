@@ -10,22 +10,30 @@
 		<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
 		<script src="js/main.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jquerysession.js" ></script>
+		<script>
+			$(function(){
+				getHtml.paperDetail($("#content"))
+			})
+		</script>
 	</head>
 
 	<body>
 		<header>
 			<div class="main">
 				<a class="fl" onclick="javascript:window.history.go(-1)"></a>
-				<h1>精品图书</h1>
+				<h1>新闻内容</h1>
 			</div>
 		</header>
-		<section class="bookdetail" id="bookdetail">
+		<section class="paper paperwz" style="background: none;">
+				<div id="content">
+					
+				</div>
+			
+			<p class="addsc">
+				<a class="active" href="paper.html">首页</a>
+				<a href="user.html">我的</a>
+			</p>
 		</section>
-		<script>
-				$(function(){
-					getHtml.mybookDetail("#bookdetail")
-				})
-		</script>
 	</body>
 
 </html>

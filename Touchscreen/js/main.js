@@ -3,15 +3,20 @@ $(function(){
 		getHtml.loginCheck()
 	});
 	thingsFun.bottomNav();
-	//thingsFun.searchId();
 })
 var baseUrl = 'http://192.168.10.249:8080/touchScreen/'
 var bookID = ""
 var thingsFun = {
 			loginOut : function(){
 				$.session.clear();
-				$.cookie("username", null);
-				$.cookie("passwd", null);
+				//$.cookie("name",null,{path:"/"}); 
+				//$.cookie("passwd",null,{path:"/"});
+                var keys = document.cookie.match(/[^ =;]+(?=\=)/g);  
+                if(keys) {  
+                    for(var i = keys.length; i--;)  
+                        document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()  
+                }  
+				
 				window.location.href="index.html";
 			},
 			bottomNav : function(){
@@ -369,7 +374,7 @@ var getHtml = {
 							});
 						},
 						autoLogin : function(){
-							if($.cookie('username') !="" && $.cookie('username') != ""){
+							if($.cookie('username') !="" && $.cookie('passwd') != "" && $.cookie('id') != undefined && $.cookie('id') != null ){
 								window.location.href='user.html?userid='+$.cookie('id')+''
 							}
 						},

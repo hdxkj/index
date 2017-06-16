@@ -10,13 +10,13 @@ var bookID = ""
 var thingsFun = {
 			loginOut : function(){
 				$.session.clear();
-				$.cookie("username", '', { expires: -1 });
-				$.cookie("password", '', { expires: -1 });
+				$.cookie("username", null);
+				$.cookie("passwd", null);
 				window.location.href="index.html";
 			},
 			bottomNav : function(){
 				$(".addsc a").eq(0).attr("href","index.html")
-				$(".addsc a").eq(1).attr("href","user.html?userid="+$.session.get('data')+"")
+				$(".addsc a").eq(1).attr("href","user.html?userid="+$.cookie('id')+"")
 			},
 			searchId : function(){
 				function GetQueryString(name)
@@ -43,7 +43,7 @@ var thingsFun = {
 				
 			},
 			ifLogin : function(){
-				var ifTrue =  $.session.get('data')
+				var ifTrue =  $.cookie('id')
 				if(ifTrue == undefined){
 					alert("你尚未登录，请登陆后操作")
 					function GetQueryString(name)
@@ -301,7 +301,7 @@ var getHtml = {
 							    type: 'POST',
 							    url: url,
 							    dataType: 'json',
-							    data:'userid='+$.session.get('data'),
+							    data:'userid='+$.cookie('id'),
 							    success:function(msg){
 							    	var strHtmlPaper = "";
 							    	var strHtmlNews = "";
@@ -324,7 +324,7 @@ var getHtml = {
 							    type: 'POST',
 							    url: url,
 							    dataType: 'json',
-							    data:'userid='+$.session.get('data'),
+							    data:'userid='+$.cookie('id'),
 							    success:function(msg){
 							    	var strHtmlBook = "";
 							    	console.log(msg);
@@ -350,10 +350,16 @@ var getHtml = {
 									//alert(info)
 										if(msg == "success"){
 											$.session.set('data', info)
+											$.cookie('username', $("#username").val())
+											$.cookie('passwd', $("#password").val())
+											$.cookie('id',info)
 											alert("登录成功")
 											if(bookID != ""){
 												window.location.href='bookDetail.html?id='+bookID+''
 											}else{
+												//alert($.cookie('username'))
+												//alert($.cookie('passwd'))
+												//alert($.cookie('id'))
 												window.location.href='user.html?userid='+info+''
 											}
 										}else{
@@ -361,6 +367,11 @@ var getHtml = {
 										}
 								}
 							});
+						},
+						autoLogin : function(){
+							if($.cookie('username') !="" && $.cookie('username') != ""){
+								window.location.href='user.html?userid='+$.cookie('id')+''
+							}
 						},
 						userHtml: function(m){
 							var paraString = window.location.href;
@@ -386,11 +397,11 @@ var getHtml = {
 							$.ajax({
 								type:"post",
 								url:url,
-								data:"userid="+$.session.get('data')+"&restype=self_book&"+"rescode="+rescodeNum,
+								data:"userid="+$.cookie('id')+"&restype=self_book&"+"rescode="+rescodeNum,
 								success:function(msg){
 									if(msg = "success"){
 										alert("收藏成功")
-										window.location.href="user.html?userid="+$.session.get('data')+""
+										window.location.href="user.html?userid="+$.cookie('id')+""
 									}else{
 										alert("收藏失败")
 									}
@@ -403,11 +414,11 @@ var getHtml = {
 							$.ajax({
 								type:"post",
 								url:url,
-								data:"userid="+$.session.get('data')+"&restype=self_paper&"+"rescode="+rescodeNum,
+								data:"userid="+$.cookie('id')+"&restype=self_paper&"+"rescode="+rescodeNum,
 								success:function(msg){
 									if(msg = "success"){
 										alert("收藏成功")
-										window.location.href="user.html?userid="+$.session.get('data')+""
+										window.location.href="user.html?userid="+$.cookie('id')+""
 									}else{
 										alert("收藏失败")
 									}
@@ -420,11 +431,11 @@ var getHtml = {
 							$.ajax({
 								type:"post",
 								url:url,
-								data:"userid="+$.session.get('data')+"&restype=self_news&"+"rescode="+rescodeNum,
+								data:"userid="+$.cookie('id')+"&restype=self_news&"+"rescode="+rescodeNum,
 								success:function(msg){
 									if(msg = "success"){
 										alert("收藏成功")
-										window.location.href="user.html?userid="+$.session.get('data')+""
+										window.location.href="user.html?userid="+$.cookie('id')+""
 									}else{
 										alert("收藏失败")
 									}
@@ -437,11 +448,11 @@ var getHtml = {
 							$.ajax({
 								type:"post",
 								url:url,
-								data:"userid="+$.session.get('data')+"&restype=self_book&"+"rescode="+rescodeNum,
+								data:"userid="+$.cookie('id')+"&restype=self_book&"+"rescode="+rescodeNum,
 								success:function(msg){
 									if(msg = "success"){
 										alert("取消成功")
-										window.location.href="user.html?userid="+$.session.get('data')+""
+										window.location.href="user.html?userid="+$.cookie('id')+""
 									}else{
 										alert("取消失败")
 									}
@@ -468,11 +479,11 @@ var getHtml = {
 							$.ajax({
 								type:"post",
 								url:url,
-								data:"userid="+$.session.get('data')+"&restype=self_news&"+"rescode="+rescodeNum,
+								data:"userid="+$.cookie('id')+"&restype=self_news&"+"rescode="+rescodeNum,
 								success:function(msg){
 									if(msg = "success"){
 										alert("取消成功")
-										window.location.href="user.html?userid="+$.session.get('data')+""
+										window.location.href="user.html?userid="+$.cookie('id')+""
 									}else{
 										alert("取消失败")
 									}
@@ -485,11 +496,11 @@ var getHtml = {
 							$.ajax({
 								type:"post",
 								url:url,
-								data:"userid="+$.session.get('data')+"&restype=self_paper&"+"rescode="+rescodeNum,
+								data:"userid="+$.cookie('id')+"&restype=self_paper&"+"rescode="+rescodeNum,
 								success:function(msg){
 									if(msg = "success"){
 										alert("取消成功")
-										window.location.href="user.html?userid="+$.session.get('data')+""
+										window.location.href="user.html?userid="+$.cookie('id')+""
 									}else{
 										alert("取消失败")
 									}

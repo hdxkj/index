@@ -4,7 +4,7 @@
 	});
 	//thingsFun.bottomNav();
 })
-var baseUrl = 'http://touchpad.timebooks.com.cn/touchScreen/'
+var baseUrl = 'http://touchpad.timebooks.com.cn/Touchscreen/'
 var bookID = ""
 var thingsFun = {
 			loginOut : function(){

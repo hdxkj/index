@@ -211,7 +211,18 @@
 					"images/mobile/ico-3.png",
 					"css/reset.css",
 					"collection.html",
-					"booklist.html"
+					"booklist.html",
+					"images/mobile/ico-12.png",
+					"js/main.js",
+					"js/jquery-1.8.0.min.js",
+					"images/mobile/pic-5.png",
+					"js/jquerysession.js",
+					"js/jquery.cookie.js",
+					"images/mobile/ico-11.png",
+					"paper.html",
+					"user.html",
+					"news.html",
+					"book.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -225,7 +236,8 @@
 					"images/mobile/ico-1.png",
 					"index.html",
 					"css/mobile.css",
-					"css/reset.css"
+					"css/reset.css",
+					"user.html"
 				],
 				"refer": [],
 				"priority": 0
@@ -239,6 +251,45 @@
 					"index.html",
 					"css/mobile.css",
 					"css/reset.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"paper.html": {
+				"resources": [
+					"index.html",
+					"images/mobile/retrurn.png",
+					"images/mobile/ico-7.png",
+					"images/mobile/ico-6b.png",
+					"images/mobile/pic-7.png"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"user.html": {
+				"resources": [
+					"images/mobile/ico-4.png",
+					"images/mobile/ico-5.png",
+					"mybooklist.html",
+					"images/mobile/ico-3.png",
+					"collection.html",
+					"index.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"mybooklist.html": {
+				"resources": [
+					"user.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"book.html": {
+				"resources": [
+					"index.html",
+					"images/mobile/ico-9.png",
+					"images/mobile/ico-9b.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -363,13 +414,11 @@
 				"lib/Swiper-master/dist/js/swiper.jquery.umd.min.js",
 				"lib/Waterfall/demo/js/elastic-columns-demo.js",
 				"lib/Swiper-master/src/less/effects.less",
-				"images/mobile/ico-6b.png",
 				"lib/Swiper-master/demos/25-hash-navigation.html",
 				"lib/Swiper-master/README.md",
 				"lib/Swiper-master/package.js",
 				"lib/Swiper-master/demos/27-jquery.html",
 				"lib/Swiper-master/dist/css/swiper.min.css",
-				"images/mobile/ico-7.png",
 				"lib/Swiper-master/demos/10-slides-per-column.html",
 				"lib/Swiper-master/demos/13-scrollbar.html",
 				"lib/Swiper-master/demos/06-slides-per-view-auto.html",

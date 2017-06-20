@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
@@ -6,14 +6,16 @@
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <link rel="stylesheet" type="text/css" href="css/columns.css">
+
 </head>
 <body>
 		<header>
 			<div class="main">
-				<a href="tnews.html"></a>
-				<b>新闻动态</b>
+				
+				<!--<b>新闻动态</b>-->
 			</div>
 		</header>
+		<div style="clear:both"></div>
 <div class="columns">
 </div>
 <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
@@ -21,7 +23,7 @@
 <script type="text/javascript" src="js/elastic-columns-demo.js"></script>
 <script type="text/javascript">
 	$(function(){
-		var url='http://192.168.10.249:8080/touchScreen/newsList';
+		var url='http://touchpad.timebooks.com.cn/touchScreen/newsList';
 				var paraString = window.location.href;
 		    	var id= paraString.substring(paraString.indexOf("=")+1,paraString.Length).split("&");
 			    $.ajax({
@@ -34,7 +36,7 @@
 						  	var content = $(".columns");  
 				            var strHtml = "";
 						  	$.each(msg.data,function(infoIndex,info){ 
-	            			strHtml += "<div class='item' onclick='window.location.href=\"tnewsdetail.html?id="+info.seqid+"\"'><dl><dt><h4>"+info.title+"</h4></dt><dd><span>"+info.sources+"</span><span>"+info.createdtime+"</span></dd><dd>"+info.abstracts+"</dd></dl></div>";
+	            			strHtml += "<div class='item' onclick='window.location.href=\"tnewsdetail.html?id="+info.seqid+"\"'><dl><dt><h4>"+info.title+"</h4></dt><dd><span>"+info.sources+"</span><span>"+info.createdtime.substr(0,10)+"</span></dd><dd>"+info.abstracts+"</dd></dl></div>";
 	            		})  
 	        				content.html(strHtml);
 	        				 new ElasticColumnsDemo();

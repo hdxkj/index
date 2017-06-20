@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!-- WEB应用编码 -->
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+    <!-- 设置默认的locale -->
+    <constant name="struts.locale" value="zh_CN"/>
+    <!-- 默认资源文件 -->
+    <constant name="struts.custom.i18n.resources" value="message"/>
+    <!-- 指定struts的工厂类 -->
+    <constant name="struts.objectFactory" value="spring"/>
+    <!-- 出错时打印更详细的信息，开发阶段打开此功能-->
+    <constant name="struts.devMode" value="true"/>
+    <!-- 当struts.xml配置文件修改后，系统是否重新加载该文件，开发阶段打开此功能 -->
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <!-- 设置struts2不使用模板 -->
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.multipart.saveDir" value ="/temp"/>
+    <!-- 设置默认的上传文件大小  100M -->
+    <constant name= "struts.multipart.maxSize" value="104857600" />
+    <constant name="struts.multipart.handler" value="dcsampleHandler" />
+    <!-- 保证自动装配策略总是有效，防止spring aop 导致service注入失败-->
+    <constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" />
+    <!-- 可以在struts.xml配置“*”的通配符 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    
+	<include file="config/struts/*.xml"></include>
+
+    <!-- 配置全局拦截器 -->
+    <package name="all" extends="json-default">
+        <interceptors>
+            <!-- 定义权限控制拦截器 -->
+           <interceptor name="authority" class="com.dctc.common.struts.interceptor.IllegalCharacterInterceptor" >
+                <!--  参数设置 -->
+                <param name="errorPage">/common/illegalCharacter.jsp</param>
+            </interceptor>
+            
+            <!-- 定义一个包含权限控制的拦截器栈 -->
+            <interceptor-stack name="mydefault">
+                <interceptor-ref name="authority" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        <!-- 定义默认拦截器 -->
+        <default-interceptor-ref name="mydefault" />
+        <!-- 定义全局处理结果 -->
+        <!--<global-results>-->
+            <!--<result name="jsonResult" type="json"></result>-->
+        <!--</global-results>-->
+    </package>
+
+</struts>

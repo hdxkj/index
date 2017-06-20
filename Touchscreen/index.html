@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 
 	<head>
@@ -41,7 +41,7 @@
 					<script>
 						$(function(){
 							getHtml.autoLogin()
-							var baseUrl = 'http://192.168.10.249:8080/touchScreen/'
+							var baseUrl = 'http://touchpad.timebooks.com.cn/touchScreen/'
 							var url=baseUrl +'casual';
 						    $.ajax({
 								    type: 'POST',
@@ -56,13 +56,13 @@
 								    	console.log(msg);
 								    	console.log(msg.data.paper);
 								    	$.each(msg.data.paper,function(infoIndex,info){
-												strHtmlPaper +=	"<div class='collection-list' onclick='window.location.href=\"paper.html?id="+info.seqid+"\"'><div class='main'><dl><dd><span>"+info.author+"</span><i>"+info.createdtime+"</i></dd><dd><img src='"+baseUrl+"source/"+info.thumbnail+"' class='fl' /><ol><li>"+info.title+"</li><li></li></ol></dd></dl></div></div>";
+												strHtmlPaper +=	"<div class='collection-list' onclick='window.location.href=\"paper.html?id="+info.seqid+"\"'><div class='main'><dl><dd><span></span><i>"+info.createdtime.substr(0,10)+"</i></dd><dd><!--<img src='"+baseUrl+"source/"+info.thumbnail+"' class='fl' />--><ol><li>"+info.title+"</li><li></li></ol></dd></dl></div></div>";
 								    	})
 								    	$.each(msg.data.news,function(infoIndex,info){
-												strHtmlNews +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dd><span>"+info.sources+"</span><i>"+info.pubdate+"</i></dd><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
+												strHtmlNews +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dd><span></span><i>"+info.pubdate.substr(0,10)+"</i></dd><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
 								    	})
 								    	$.each(msg.data.book,function(infoIndex,info){
-												strHtmlBook +=	"<div class='collection-list' onclick='window.location.href=\"book.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dd><span>"+info.sources+"</span><i>"+info.pubdate+"</i></dd><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
+												strHtmlBook +=	"<div class='collection-list' onclick='window.location.href=\"book.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dd><span></span><i>"+info.pubdate.substr(0,10)+"</i></dd><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
 								    	})
 				            			content.append(strHtmlPaper+strHtmlNews+strHtmlBook)
 			                		}	

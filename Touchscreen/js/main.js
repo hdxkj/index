@@ -1,10 +1,10 @@
-$(function(){
+﻿$(function(){
 	$("#submit").click(function(){
 		getHtml.loginCheck()
 	});
-	thingsFun.bottomNav();
+	//thingsFun.bottomNav();
 })
-var baseUrl = 'http://192.168.10.249:8080/touchScreen/'
+var baseUrl = 'http://touchpad.timebooks.com.cn/touchScreen/'
 var bookID = ""
 var thingsFun = {
 			loginOut : function(){
@@ -67,6 +67,7 @@ var thingsFun = {
 					getHtml.collectConfirm()
 				}
 			}
+			
 }
 
 var getHtml = {
@@ -99,7 +100,7 @@ var getHtml = {
 							    	console.log(msg)
 						            var strHtml = "";
 								  		$.each(msg.data,function(infoIndex,info){ 
-			            			strHtml +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dt><span>"+info.sources+"</span><i>"+info.pubdate+"</i></dt><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>"
+			            			strHtml +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dt><span>"+info.sources+"</span><i>"+info.pubdate.substr(0,10)+"</i></dt><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>"
 		                		})  
 		            			$(tag).html(strHtml);
 						  }
@@ -118,7 +119,7 @@ var getHtml = {
 							    	console.log(msg)
 						            var strHtml = "";
 						            var info = msg.data
-			            			strHtml += "<div class='main'><dl><dt style='width:100%;line-height:24px'>"+info.title+"</dt><dd>"+info.sources+"<span>"+info.createdtime+"</span></dd><dd class='text'><p>"+info.fulltxt+"</p></dd></dl></div><p class='addsc'><a onclick='getHtml.collectCancelPaper()'><input type='hidden' value='"+info.seqid+"'>取消收藏</a></p>"; 
+			            			strHtml += "<div class='main'><dl><dt style='width:100%;line-height:24px'>"+info.title+"</dt><dd>"+info.sources+"<span>"+info.createdtime.substr(0,10)+"</span></dd><dd class='text'><p>"+info.fulltxt+"</p></dd></dl></div><p class='addsc'><a onclick='getHtml.collectCancelPaper()'><input type='hidden' value='"+info.seqid+"'>取消收藏</a></p>"; 
 		            			$(tag).html(strHtml);
 						  }
 						});
@@ -136,7 +137,7 @@ var getHtml = {
 							    	console.log(msg)
 						            var strHtml = "";
 						            var info = msg.data
-			            			strHtml += "<div class='main'><dl><dt style='width:100%;line-height:24px'>"+info.title+"</dt><dd>"+info.sources+"<span>"+info.createdtime+"</span></dd><dd class='text'><p>"+info.fulltxt+"</p></dd></dl></div>"; 
+			            			strHtml += "<div class='main'><dl><dt style='width:100%;line-height:24px'>"+info.title+"</dt><dd>"+info.sources+"<span>"+info.createdtime.substr(0,10)+"</span></dd><dd class='text'><p>"+info.fulltxt+"</p></dd></dl></div>"; 
 		            			$(tag).html(strHtml);
 						  }
 						});
@@ -154,7 +155,7 @@ var getHtml = {
 							    	console.log(msg)
 						            var strHtml = "";
 						            var info = msg.data
-			            			strHtml += "<div class='main'><dl><dt style='width:100%;line-height:24px'>"+info.title+"</dt><dd>"+info.sources+"<span>"+info.createdtime+"</span></dd><dd class='text'><p>"+info.fulltxt+"</p></dd></dl></div><p class='addsc'><a onclick='getHtml.collectCancelNews()'><input type='hidden' value='"+info.seqid+"'>取消收藏</a></p>"; 
+			            			strHtml += "<div class='main'><dl><dt style='width:100%;line-height:24px'>"+info.title+"</dt><dd>"+info.sources+"<span>"+info.createdtime.substr(0,10)+"</span></dd><dd class='text'><p>"+info.fulltxt+"</p></dd></dl></div><p class='addsc'><a onclick='getHtml.collectCancelNews()'><input type='hidden' value='"+info.seqid+"'>取消收藏</a></p>"; 
 		            			$(tag).html(strHtml);
 						  }
 						});
@@ -169,7 +170,7 @@ var getHtml = {
 							    	console.log(msg)
 						            var strHtml = "";
 								  	$.each(msg.data,function(infoIndex,info){ 
-			            				strHtml += "<a href='paper.html?id="+info["seqid"]+"'><img src='images/mobile/pic-8.png' />"+info["title"]+"</a>";
+			            				strHtml += "<a href='paper.html?id="+info["seqid"]+"'><!--<img src='images/mobile/pic-8.png' />-->"+info["title"]+"</a>";
 		                			})  
 		            			$(tag).html(strHtml);
 						  }
@@ -189,7 +190,7 @@ var getHtml = {
 						            $(".paper .title span").html(msg.title)
 						            var strHtml = "";
 								  	$.each(msg.data,function(infoIndex,info){ 
-			            			strHtml += "<ol><li onclick='window.location.href=\"paperwz.html?paperid="+info.paperid+"&layid="+info.seqid+"\"'><img src='images/mobile/pic-7.png'  /></li><li style='display:inline-block;width:82px;height:16px;overflow:hidden;'><b>"+info.seqid+"</b>版：<span>"+info.title+"</span></li></ol>"
+			            			strHtml += "<ol><li onclick='window.location.href=\"paperwz.html?paperid="+info.paperid+"&layid="+info.sorts+"\"'><img src='images/mobile/pic-7.png'  /></li><li style='display:inline-block;width:82px;height:16px;overflow:hidden;'><b>"+info.sorts+"</b>版：<span>"+info.title+"</span></li></ol>"
 			            			
 		                		})  
 		            			$(tag).html(strHtml);
@@ -313,10 +314,10 @@ var getHtml = {
 							    	console.log(msg);
 							    	console.log(msg.data.paper);
 							    	$.each(msg.data.paper,function(infoIndex,info){
-											strHtmlPaper +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl><dt><a><img src='images/mobile/ico-1.png' /></a><span>"+info.author+"</span><i>"+info.createdtime+"</i></dt><dd><img src='"+baseUrl+"source/"+info.thumbnail+"' class='fl' /><ol><li>"+info.title+"</li><li></li></ol></dd></dl></div></div>";
+											strHtmlPaper +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl><dt><a><!--<img src='images/mobile/ico-1.png' />--></a><span></span><i>"+info.createdtime.substr(0,10)+"</i></dt><dd><!--<img src='"+baseUrl+"source/"+info.thumbnail+"' class='fl' />--><ol><li>"+info.title+"</li><li></li></ol></dd></dl></div></div>";
 							    	})
 							    	$.each(msg.data.news,function(infoIndex,info){
-											strHtmlNews +=	"<div class='collection-list' onclick='window.location.href=\"mynews.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dt><span>"+info.sources+"</span><i>"+info.pubdate+"</i></dt><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
+											strHtmlNews +=	"<div class='collection-list' onclick='window.location.href=\"mynews.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dt><span>"+info.sources+"</span><i>"+info.pubdate.substr(0,10)+"</i></dt><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
 							    	})
 			            			$(tag).append(strHtmlPaper+strHtmlNews)
 		                		}	
@@ -335,7 +336,7 @@ var getHtml = {
 							    	console.log(msg);
 							    	console.log(msg.data.paper);
 							    	$.each(msg.data.book,function(infoIndex,info){
-							    		strHtmlBook += "<dl onclick='window.location.href=\"mybook.html?id="+info.seqid+"\"'><dt class='fl'><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd class='bookname'>"+info.title+"</dd><dd><label>作&emsp;&emsp;者：</label>"+info.auther+"</dd><dd><label>出&nbsp;&nbsp;版&nbsp;&nbsp;社：</label>"+info.press+"</dd><dd><label>出版时间：</label>"+info.createdtime+"</dd></dl>";
+							    		strHtmlBook += "<dl onclick='window.location.href=\"mybook.html?id="+info.seqid+"\"'><dt class='fl'><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd class='bookname'>"+info.title+"</dd><dd><label>作&emsp;&emsp;者：</label>"+info.author+"</dd><dd><label>出&nbsp;&nbsp;版&nbsp;&nbsp;社：</label>"+info.press+"</dd><dd><label>出版时间：</label>"+info.createdtime.substr(0,10)+"</dd></dl>";
 							    	})
 			            			$(tag).append(strHtmlBook)
 		                		}	

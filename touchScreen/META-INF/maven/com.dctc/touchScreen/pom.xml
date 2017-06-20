@@ -1,0 +1,408 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dctc</groupId>
+  <artifactId>touchScreen</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>touchScreen Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <!-- 项目参数 -->
+  <properties>
+	<jdk.version>1.7</jdk.version>
+	<spring.version>3.2.9.RELEASE</spring.version>
+	<struts2.version>2.3.16.3</struts2.version>
+	<log4j.version>1.2.17</log4j.version>
+	<mysql.connector.version>5.1.30</mysql.connector.version>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  <dependency>
+  <groupId>org.jasig.cas.client</groupId>
+  <artifactId>cas-client-core</artifactId>
+  <version>3.3.3</version>
+</dependency>
+<dependency>
+  <groupId>xml-apis</groupId>
+  <artifactId>xml-apis</artifactId>
+  <version>1.4.01</version>
+</dependency>
+  <dependency>
+  <groupId>com.101tec</groupId>
+  <artifactId>zkclient</artifactId>
+  <version>0.4</version>
+</dependency>
+<dependency>
+  <groupId>com.dctc.dubbo</groupId>
+  <artifactId>dubbo</artifactId>
+  <version>1.0</version>
+</dependency>
+
+<dependency>
+  <groupId>org.jboss.netty</groupId>
+  <artifactId>netty</artifactId>
+  <version>3.2.5.Final</version>
+</dependency>
+
+	<dependency>
+	  <groupId>org.javassist</groupId>
+	  <artifactId>javassist</artifactId>
+	  <version>3.15.0-GA</version>
+	</dependency>
+
+	<!--mybatis -->
+	<dependency>
+	  <groupId>org.mybatis</groupId>
+	  <artifactId>mybatis</artifactId>
+	  <version>3.2.7</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.mybatis</groupId>
+	  <artifactId>mybatis-parent</artifactId>
+	  <version>21</version>
+	  <type>pom</type>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.mybatis</groupId>
+	  <artifactId>mybatis-spring</artifactId>
+	  <version>1.2.2</version>
+	</dependency>
+  
+  	<dependency>
+	  <groupId>org.junit4</groupId>
+	  <artifactId>org.junit4</artifactId>
+	  <version>4.3.1</version>
+	</dependency>
+	
+	<!--spring -->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-core</artifactId>
+	  <version>${spring.version}</version>
+	  <exclusions>
+		<exclusion>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</exclusion>
+	  </exclusions>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-beans</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-web</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context-support</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-aop</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-test</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-tx</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-jdbc</artifactId>
+	  <version>${spring.version}</version>
+	</dependency>
+
+	<!-- Struts 2 -->
+	<dependency>
+	  <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-core</artifactId>
+	  <version>${struts2.version}</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-sitemesh-plugin</artifactId>
+	  <version>${struts2.version}</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-spring-plugin</artifactId>
+	  <version>${struts2.version}</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-config-browser-plugin</artifactId>
+	  <version>${struts2.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-json-plugin</artifactId>
+	  <version>${struts2.version}</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>mysql</groupId>
+	  <artifactId>mysql-connector-java</artifactId>
+	  <version>${mysql.connector.version}</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>commons-io</groupId>
+	  <artifactId>commons-io</artifactId>
+	  <version>2.4</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>commons-beanutils</groupId>
+	  <artifactId>commons-beanutils</artifactId>
+	  <version>1.9.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-collections4</artifactId>
+	  <version>4.0</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>commons-logging</groupId>
+	  <artifactId>commons-logging</artifactId>
+	  <version>1.1.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>commons-dbcp</groupId>
+	  <artifactId>commons-dbcp</artifactId>
+	  <version>1.4</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>commons-pool</groupId>
+	  <artifactId>commons-pool</artifactId>
+	  <version>1.6</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>net.sf.ezmorph</groupId>
+	  <artifactId>ezmorph</artifactId>
+	  <version>1.0.6</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>net.sf.json-lib</groupId>
+	  <artifactId>json-lib</artifactId>
+	  <version>2.4</version>
+	  <classifier>jdk15</classifier>
+	</dependency>
+
+	<dependency>
+	  <groupId>log4j</groupId>
+	  <artifactId>log4j</artifactId>
+	  <version>${log4j.version}</version>
+	</dependency>
+	
+	<!--用于slf4j绑定log4j -->
+	<dependency>
+	  <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-log4j12</artifactId>
+	  <version>1.7.7</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>javax.servlet</groupId>
+	  <artifactId>jstl</artifactId>
+	  <version>1.2</version>
+	</dependency>
+
+	<dependency>
+	  <groupId>net.sf.ehcache</groupId>
+	  <artifactId>ehcache-web</artifactId>
+	  <version>2.0.4</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.quartz-scheduler</groupId>
+	  <artifactId>quartz</artifactId>
+	  <version>1.8.5</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>commons-fileupload</groupId>
+	  <artifactId>commons-fileupload</artifactId>
+	  <version>1.2.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.poi</groupId>
+	  <artifactId>poi</artifactId>
+	  <version>3.10.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.poi</groupId>
+	  <artifactId>poi-contrib</artifactId>
+	  <version>3.7-beta3</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.poi</groupId>
+	  <artifactId>poi-ooxml</artifactId>
+	  <version>3.10.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.poi</groupId>
+	  <artifactId>poi-ooxml-schemas</artifactId>
+	  <version>3.10.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.apache.poi</groupId>
+	  <artifactId>poi-scratchpad</artifactId>
+	  <version>3.10-FINAL</version>
+	</dependency>
+
+    <!--序列化-->
+    <dependency>
+       <groupId>com.esotericsoftware</groupId>
+       <artifactId>kryo-shaded</artifactId>
+       <version>3.0.0</version>
+    </dependency>
+       
+    <dependency>
+	  <groupId>nl.captcha</groupId>
+	  <artifactId>simplecaptcha</artifactId>
+	  <version>1.2.1</version>
+	</dependency>
+
+    <dependency>
+       <groupId>org.aspectj</groupId>
+       <artifactId>aspectjweaver</artifactId>
+       <version>1.8.0</version>
+    </dependency>
+
+	<dependency>
+	  <groupId>commons-httpclient</groupId>
+	  <artifactId>commons-httpclient</artifactId>
+	  <version>3.0.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>ws-commons-util</groupId>
+	  <artifactId>ws-commons-util</artifactId>
+	  <version>1.0.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>xmlrpc</groupId>
+	  <artifactId>xmlrpc-client</artifactId>
+	  <version>3.0</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>xmlrpc</groupId>
+	  <artifactId>xmlrpc-common</artifactId>
+	  <version>3.0</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>xmlrpc</groupId>
+	  <artifactId>xmlrpc-server</artifactId>
+	  <version>3.0</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>dom4j</groupId>
+	  <artifactId>dom4j</artifactId>
+	  <version>1.6.1</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>jdom</groupId>
+	  <artifactId>jdom</artifactId>
+	  <version>1.0</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>commons-codec</groupId>
+	  <artifactId>commons-codec</artifactId>
+	  <version>1.6</version>
+	</dependency>
+	
+	<dependency>
+  <groupId>com.dctc</groupId>
+  <artifactId>common-basic</artifactId>
+  <version>1.0.0.13</version>
+</dependency>
+	
+	<dependency>
+	  <groupId>opensymphony</groupId>
+	  <artifactId>oscache</artifactId>
+	  <version>2.4.1</version>
+	  <exclusions>
+	  	<exclusion>
+	  		<artifactId>servlet-api</artifactId>
+	  		<groupId>javax.servlet</groupId>
+	  	</exclusion>
+		<exclusion>
+	  		<artifactId>jms</artifactId>
+			<groupId>javax.jms</groupId>
+		</exclusion>
+		<exclusion>
+	  		<artifactId>javax.jms</artifactId>
+			<groupId>jms</groupId>
+		</exclusion>
+	  </exclusions>
+	</dependency>
+
+	<dependency>
+	  <groupId>net.sf.json-lib</groupId>
+	  <artifactId>json-lib</artifactId>
+	  <version>2.4</version>
+	  <classifier>jdk15</classifier>
+	</dependency>
+  </dependencies>
+  
+  <repositories>
+	<repository>
+	  <id>dctc</id>
+	  <name>dctc</name>
+	  <url>http://123.57.12.82:8081/nexus/content/groups/public/</url>
+	</repository>
+  </repositories>
+  
+  <build>
+    <finalName>touchScreen</finalName>
+  </build>
+  
+</project>

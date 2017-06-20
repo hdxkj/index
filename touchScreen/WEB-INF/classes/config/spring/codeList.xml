@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+    <!--国别地区-->
+    <bean id="countryTypeCodeList" class="com.dctc.common.code.service.impl.DBCodeListLoader"
+        init-method="load">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sql" value="select parameter_code,parameter_name from parameter_info where parent_code = 'C004' ORDER BY parameter_order" />
+    </bean>
+    
+    <!--中国省份-->
+    <bean id="provinceTypeCodeList" class="com.dctc.common.code.service.impl.DBCodeListLoader"
+        init-method="load">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sql" value="select parameter_code,parameter_name from parameter_info where parent_code = 'C005' ORDER BY parameter_order" />
+    </bean>
+
+    <!--性别-->
+    <bean id="sexCodeList" class="com.dctc.common.code.service.impl.DBCodeListLoader"
+        init-method="load">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sql" value="select parameter_code,parameter_name from parameter_info where parent_code = 'C023' ORDER BY parameter_order" />
+    </bean>
+    
+    <!--行业-->
+    <bean id="industryCodeList" class="com.dctc.common.code.service.impl.DBCodeListLoader"
+        init-method="load">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sql" value="select parameter_code,parameter_name from parameter_info where parent_code = 'C021' ORDER BY parameter_order" />
+    </bean>
+    
+    <!--机构-->
+    <bean id="orgCodeList" class="com.dctc.common.code.service.impl.DBCodeListLoader"
+        init-method="load">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sql" value="select org_id,org_name from org_info where status = '1'" />
+    </bean>
+  
+  	<!--热点-->
+    <bean id="hotspotCodeList" class="com.dctc.common.code.service.impl.DBCodeListLoader"
+        init-method="load">
+        <property name="dataSource" ref="dataSource" />
+        <property name="sql" value="select hot_id,hot_name from hotspot_type order by hot_order" />
+    </bean>
+</beans>
+

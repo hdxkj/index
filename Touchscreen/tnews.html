@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -10,10 +10,11 @@
 		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
 		<style>
 			a{width: 100%;height: 80px;overflow: hidden;}
+			
 		</style>
 		<script>
 			$(function(){
-				var url='http://192.168.10.249:8080/touchScreen/newsClass';
+				var url='http://touchpad.timebooks.com.cn/touchScreen/newsClass';
 					    $.ajax({
 							    type: 'POST',
 							    url: url,
@@ -27,12 +28,13 @@
 									html.push('<article onclick="window.location.href=\'tnewslist.html?id='+info[0].classid+'\'">')
 									html.push('	<ol class="fr">')
 									html.push('		<li class="fr"></li><li class="clear"></li>')
-									html.push('		<li style="font-size:39px">'+info[0].classname+'</li>')
+									html.push('		<li style="font-size:28px">'+info[0].classname+'</li>')
+									html.push('		<li class="clear"></li>')
 									html.push('	</ol>')
 									/*公司新闻*/
-									html.push('	<ul>')
+									html.push('	<ul class="fr" style="margin-top:10px">')
 									html.push('		<li>')
-									html.push('			<a href="tnewsDetail.html?id='+classnews[4][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[4][0].title+'</a>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[4][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[4][0].title+'</a>')
 									html.push('		</li>')
 									html.push('	</ul>')
 									html.push('	<div class="clear"></div>')
@@ -45,9 +47,9 @@
 									/*娱乐*/
 									html.push('	<ul>')
 									html.push('		<li>')
-									html.push('			<a href="tnewsDetail.html?id='+classnews[5][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[5][0].title+'</a>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[5][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[5][0].title+'</a>')
 									html.push('		</li>')
-									html.push('			<li><a href="tnewsDetail.html?id='+classnews[5][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[5][1].title+'</a>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[5][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[5][1].title+'</a>')
 									html.push('		</li>')
 									html.push('	</ul>')
 									html.push('</article>')
@@ -64,9 +66,9 @@
 									html.push('	</ol>')
 									/*html.push('	<ul>')
 									html.push('		<li>')
-									html.push('			<a href="tnewsDetail.html?id='+classnews[1][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[4][0].title+'</a>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[1][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[4][0].title+'</a>')
 									html.push('		</li>')
-									html.push('			<li><a href="tnewsDetail.html?id='+classnews[1][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][1].title+'</a>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[1][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][1].title+'</a>')
 									html.push('		</li>')
 									html.push('	</ul>')*/
 									html.push('</article>')
@@ -80,9 +82,9 @@
 									/*党政*/
 									html.push('	<ul>')
 									html.push('		<li>')
-									html.push('			<a href="tnewsDetail.html?id='+classnews[8][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[8][0].title+'</a>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[8][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[8][0].title+'</a>')
 									html.push('		</li>')
-									html.push('			<li><a href="tnewsDetail.html?id='+classnews[8][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[8][1].title+'</a>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[8][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[8][1].title+'</a>')
 									html.push('		</li>')
 									html.push('	</ul>')
 									html.push('	</article>')
@@ -94,9 +96,9 @@
 									/*社会*/
 									html.push('	<ul>')
 									html.push('		<li>')
-									html.push('			<a href="tnewsDetail.html?id='+classnews[1][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][0].title+'</a>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[1][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][0].title+'</a>')
 									html.push('		</li>')
-									html.push('			<li><a href="tnewsDetail.html?id='+classnews[1][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][1].title+'</a>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[1][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][1].title+'</a>')
 									html.push('		</li>')
 									html.push('	</ul>')
 									html.push('	</article>')
@@ -108,7 +110,7 @@
 									/*国际*/
 									html.push('	<ul>')
 									html.push('		<li>')
-									html.push('			<a href="tnewsDetail.html?id='+classnews[3][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[3][0].title+'</a>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[3][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[3][0].title+'</a>')
 									html.push('		</li>')
 									html.push('	</ul>')
 									html.push('	</article>')
@@ -120,7 +122,7 @@
 									/*国内新闻*/
 									/*html.push('	<ul>')
 									html.push('		<li>')
-									html.push('			<a href="tnewsDetail.html?id='+classnews[2][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[2][0].title+'</a>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[2][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[2][0].title+'</a>')
 									html.push('		</li>')
 									html.push('	</ul>')*/
 									html.push('	</article>')
@@ -135,8 +137,8 @@
 	<body>
 		<header>
 			<div class="main">
-				<a></a>
-				<b>新闻动态</b>
+				
+				<!--<b>新闻动态</b>-->
 			</div>
 		</header>
 		<div style="clear: both;"></div>

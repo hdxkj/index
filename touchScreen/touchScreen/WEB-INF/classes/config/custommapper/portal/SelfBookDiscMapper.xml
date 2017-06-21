@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dctc.ts.common.portal.mappercustom.SelfBookDiscCustomMapper" >
+
+  <select id="bookDisc" resultType="java.lang.String" parameterType="java.util.Map">
+  	select fulltxt from self_bookdisc 
+  	where bookid = #{bookid}
+  	and pagerid = #{pagerid}
+  </select>
+  
+  <select id="bookDiscTotal" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+  	select count(*) from self_bookdisc 
+  	where bookid = #{bookid}
+  </select>
+  
+</mapper>

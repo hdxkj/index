@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dctc.ts.common.portal.mapper.ChosenFavoritesMapper" >
+  <resultMap id="BaseResultMap" type="com.dctc.ts.common.portal.bean.ChosenFavorites" >
+    <id column="seqid" property="seqid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="restype" property="restype" jdbcType="VARCHAR" />
+    <result column="rescode" property="rescode" jdbcType="VARCHAR" />
+    <result column="resremark" property="resremark" jdbcType="VARCHAR" />
+    <result column="createdtime" property="createdtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    seqid, userid, restype, rescode, resremark, createdtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from chosen_favorites
+    where seqid = #{seqid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from chosen_favorites
+    where seqid = #{seqid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dctc.ts.common.portal.bean.ChosenFavorites" >
+    insert into chosen_favorites (seqid, userid, restype, 
+      rescode, resremark, createdtime
+      )
+    values (#{seqid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{restype,jdbcType=VARCHAR}, 
+      #{rescode,jdbcType=VARCHAR}, #{resremark,jdbcType=VARCHAR}, #{createdtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.dctc.ts.common.portal.bean.ChosenFavorites" >
+    insert into chosen_favorites
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        seqid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="restype != null" >
+        restype,
+      </if>
+      <if test="rescode != null" >
+        rescode,
+      </if>
+      <if test="resremark != null" >
+        resremark,
+      </if>
+      <if test="createdtime != null" >
+        createdtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seqid != null" >
+        #{seqid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="restype != null" >
+        #{restype,jdbcType=VARCHAR},
+      </if>
+      <if test="rescode != null" >
+        #{rescode,jdbcType=VARCHAR},
+      </if>
+      <if test="resremark != null" >
+        #{resremark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdtime != null" >
+        #{createdtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dctc.ts.common.portal.bean.ChosenFavorites" >
+    update chosen_favorites
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="restype != null" >
+        restype = #{restype,jdbcType=VARCHAR},
+      </if>
+      <if test="rescode != null" >
+        rescode = #{rescode,jdbcType=VARCHAR},
+      </if>
+      <if test="resremark != null" >
+        resremark = #{resremark,jdbcType=VARCHAR},
+      </if>
+      <if test="createdtime != null" >
+        createdtime = #{createdtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where seqid = #{seqid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dctc.ts.common.portal.bean.ChosenFavorites" >
+    update chosen_favorites
+    set userid = #{userid,jdbcType=INTEGER},
+      restype = #{restype,jdbcType=VARCHAR},
+      rescode = #{rescode,jdbcType=VARCHAR},
+      resremark = #{resremark,jdbcType=VARCHAR},
+      createdtime = #{createdtime,jdbcType=TIMESTAMP}
+    where seqid = #{seqid,jdbcType=INTEGER}
+  </update>
+</mapper>

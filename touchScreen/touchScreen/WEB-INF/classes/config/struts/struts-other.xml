@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="other" extends="all" namespace="/">
+	
+		<!-- carousel -->
+		<action name="carousel" class="com.dctc.ts.platform.index.action.CarouselAction" method="carousel">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+	
+		<!-- casual -->
+		<action name="casual" class="com.dctc.ts.platform.index.action.CarouselAction" method="casual">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- newsClass -->
+		<action name="newsClass" class="com.dctc.ts.platform.news.action.NewsAction" method="newsClass">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- newsList -->
+		<action name="newsList" class="com.dctc.ts.platform.news.action.NewsAction" method="newsList">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- newsAll -->
+		<action name="newsAll" class="com.dctc.ts.platform.news.action.NewsAction" method="newsAll">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- newsDetail -->
+		<action name="newsDetail" class="com.dctc.ts.platform.news.action.NewsAction" method="newsDetail">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- paperList -->
+		<action name="paperList" class="com.dctc.ts.platform.paper.action.PaperAction" method="paperList">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- paperlayList -->
+		<action name="paperlayList" class="com.dctc.ts.platform.paper.action.PaperAction" method="paperlayList">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- paperContent -->
+		<action name="paperContent" class="com.dctc.ts.platform.paper.action.PaperAction" method="paperContent">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- paperContentText -->
+		<action name="paperContentText" class="com.dctc.ts.platform.paper.action.PaperAction" method="paperContentText">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- bookList -->
+		<action name="bookList" class="com.dctc.ts.platform.book.action.BookAction" method="bookList">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- bookDetail -->
+		<action name="bookDetail" class="com.dctc.ts.platform.book.action.BookAction" method="bookDetail">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- bookClass -->
+		<action name="bookClass" class="com.dctc.ts.platform.book.action.BookAction" method="bookClass">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- bookDisc -->
+		<action name="bookDisc" class="com.dctc.ts.platform.bookDisc.action.BookDiscAction" method="bookDisc">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- authorization 授权码 -->
+		<action name="authorization" class="com.dctc.ts.platform.authorization.action.AuthorizationAction" method="authorization">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- activation 设备激活 -->
+		<action name="activation" class="com.dctc.ts.platform.authorization.action.AuthorizationAction" method="activation">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- favorite 我的收藏  -->
+		<action name="favorite" class="com.dctc.ts.platform.favorite.action.FavoriteAction" method="favorite">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- collect 保存收藏内容  -->
+		<action name="collect" class="com.dctc.ts.platform.favorite.action.FavoriteAction" method="collect">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- cancel 取消收藏内容  -->
+		<action name="cancel" class="com.dctc.ts.platform.favorite.action.FavoriteAction" method="cancel">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- journal -->
+		<action name="journal" class="com.dctc.ts.platform.journal.action.JournalAction" method="journal">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- journalList -->
+		<action name="journalList" class="com.dctc.ts.platform.journal.action.JournalAction" method="journalList">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- login -->
+		<action name="login" class="com.dctc.ts.platform.login.action.LoginAction" method="login">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!-- search -->
+		<action name="search" class="com.dctc.ts.platform.book.action.BookAction" method="search">
+            <result name="success" type="json">
+                <param name="root">responseJson</param>  
+            </result>
+        </action>
+        
+		<!--  -->
+		<action name="b" class="com.dctc.ts.platform.url_bak.action.CollectAction" method="b"> </action>
+        
+	</package>
+</struts>

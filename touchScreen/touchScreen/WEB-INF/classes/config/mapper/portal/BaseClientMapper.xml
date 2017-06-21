@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dctc.ts.common.portal.mapper.BaseClientMapper" >
+  <resultMap id="BaseResultMap" type="com.dctc.ts.common.portal.bean.BaseClient" >
+    <id column="clientid" property="clientid" jdbcType="INTEGER" />
+    <result column="clientname" property="clientname" jdbcType="VARCHAR" />
+    <result column="featurecode" property="featurecode" jdbcType="VARCHAR" />
+    <result column="authoritycode" property="authoritycode" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="orgid" property="orgid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="lasttime" property="lasttime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="createdtime" property="createdtime" jdbcType="TIMESTAMP" />
+    <result column="keyid" property="keyid" jdbcType="INTEGER" />
+    <result column="column" property="column" jdbcType="VARCHAR" />
+    <result column="authcode" property="authcode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    clientid, clientname, featurecode, authoritycode, remarks, orgid, userid, lasttime, 
+    status, createdtime, keyid, column, authcode
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from base_client
+    where clientid = #{clientid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from base_client
+    where clientid = #{clientid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.dctc.ts.common.portal.bean.BaseClient" >
+    insert into base_client (clientid, clientname, featurecode, 
+      authoritycode, remarks, orgid, 
+      userid, lasttime, status, 
+      createdtime, keyid, column, 
+      authcode)
+    values (#{clientid,jdbcType=INTEGER}, #{clientname,jdbcType=VARCHAR}, #{featurecode,jdbcType=VARCHAR}, 
+      #{authoritycode,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{orgid,jdbcType=INTEGER}, 
+      #{userid,jdbcType=INTEGER}, #{lasttime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, 
+      #{createdtime,jdbcType=TIMESTAMP}, #{keyid,jdbcType=INTEGER}, #{column,jdbcType=VARCHAR}, 
+      #{authcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dctc.ts.common.portal.bean.BaseClient" >
+    insert into base_client
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="clientid != null" >
+        clientid,
+      </if>
+      <if test="clientname != null" >
+        clientname,
+      </if>
+      <if test="featurecode != null" >
+        featurecode,
+      </if>
+      <if test="authoritycode != null" >
+        authoritycode,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="orgid != null" >
+        orgid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="lasttime != null" >
+        lasttime,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createdtime != null" >
+        createdtime,
+      </if>
+      <if test="keyid != null" >
+        keyid,
+      </if>
+      <if test="column != null" >
+        column,
+      </if>
+      <if test="authcode != null" >
+        authcode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="clientid != null" >
+        #{clientid,jdbcType=INTEGER},
+      </if>
+      <if test="clientname != null" >
+        #{clientname,jdbcType=VARCHAR},
+      </if>
+      <if test="featurecode != null" >
+        #{featurecode,jdbcType=VARCHAR},
+      </if>
+      <if test="authoritycode != null" >
+        #{authoritycode,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null" >
+        #{orgid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="lasttime != null" >
+        #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createdtime != null" >
+        #{createdtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keyid != null" >
+        #{keyid,jdbcType=INTEGER},
+      </if>
+      <if test="column != null" >
+        #{column,jdbcType=VARCHAR},
+      </if>
+      <if test="authcode != null" >
+        #{authcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dctc.ts.common.portal.bean.BaseClient" >
+    update base_client
+    <set >
+      <if test="clientname != null" >
+        clientname = #{clientname,jdbcType=VARCHAR},
+      </if>
+      <if test="featurecode != null" >
+        featurecode = #{featurecode,jdbcType=VARCHAR},
+      </if>
+      <if test="authoritycode != null" >
+        authoritycode = #{authoritycode,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null" >
+        orgid = #{orgid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="lasttime != null" >
+        lasttime = #{lasttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createdtime != null" >
+        createdtime = #{createdtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keyid != null" >
+        keyid = #{keyid,jdbcType=INTEGER},
+      </if>
+      <if test="column != null" >
+        column = #{column,jdbcType=VARCHAR},
+      </if>
+      <if test="authcode != null" >
+        authcode = #{authcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where clientid = #{clientid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dctc.ts.common.portal.bean.BaseClient" >
+    update base_client
+    set clientname = #{clientname,jdbcType=VARCHAR},
+      featurecode = #{featurecode,jdbcType=VARCHAR},
+      authoritycode = #{authoritycode,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      orgid = #{orgid,jdbcType=INTEGER},
+      userid = #{userid,jdbcType=INTEGER},
+      lasttime = #{lasttime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      createdtime = #{createdtime,jdbcType=TIMESTAMP},
+      keyid = #{keyid,jdbcType=INTEGER},
+      column = #{column,jdbcType=VARCHAR},
+      authcode = #{authcode,jdbcType=VARCHAR}
+    where clientid = #{clientid,jdbcType=INTEGER}
+  </update>
+</mapper>

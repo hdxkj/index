@@ -1,0 +1,113 @@
+/*
+ * Auther：i@mpengju.com
+   version：0.5
+   description：public css
+ * 
+ */
+section .main div {
+  height: 880px;
+  float: right;
+}
+section .main div.left {
+  width: 50%;
+  /*min-width: 604px;*/
+}
+section .main div.right {
+  width: 50%;
+  /*min-width:602px;*/
+  
+}
+section .main div article {
+  margin: 0 20px 20px 0;
+  float: right;
+}
+section .main div.right article {
+  float: left;
+  
+}
+section .right article:nth-child(1) {
+  background: url(../images/tnews/bg-1.png) no-repeat right bottom;
+  width: 44%;
+   height: 330px;
+  background-size: cover;
+}
+section .right article:nth-child(2) {
+  background: url(../images/tnews/bg-2.png) no-repeat right top;
+  width: 48%;
+  height: 330px;
+  background-size: cover;
+}
+section .left article:nth-child(1) {
+  background: url(../images/tnews/bg-3.png) no-repeat left top;
+  width: 100%;
+  height: 280px;
+  margin-right: 14px;
+  background-size: cover;
+}
+section .right article:nth-child(3) {
+  background: url(../images/tnews/bg-4.png) no-repeat left bottom;
+  width: 48%;
+  height: 280px;
+  background-size: cover;
+}
+section .right article:nth-child(4) {
+  background: url(../images/tnews/bg-5.png) no-repeat right bottom;
+  width: 44%;
+  height: 280px;
+  background-size: cover;
+}
+section .left article:nth-child(2) {
+  background: url(../images/tnews/bg-6.png) no-repeat right bottom;
+  width: 48%;
+  height: 330px;
+  float: left;
+  background-size: cover;
+}
+section .left article:nth-child(3) {
+  background: url(../images/tnews/bg-7.png) no-repeat right bottom;
+  width: 44%;
+  height: 150px;
+  margin-bottom: 28px;
+  background-size: cover;
+}
+section .left article:nth-child(4) {
+  background: url(../images/tnews/bg-8.png) no-repeat right bottom;
+  width: 44%;
+  height: 150px;
+  background-size: cover;
+}
+section article{
+	color: white;
+}
+section article{
+	color: white;
+}
+section article ol{
+	margin-right: 60px;
+	margin-left: 30px;
+	height: 78px;
+}
+section article ol li:nth-child(1){
+	margin-top: 36px;
+	width: 62px;
+	height: 8px;
+	background: white;
+	margin-bottom: 16px;
+}
+section article ol li:nth-child(2){
+	font-size: 28px;
+}
+section article ul{
+	width: 90%;
+	margin: auto;
+}
+section article ul a{
+	font-size: 24px;
+	line-height: 30px;
+}
+section article ul a img{
+	margin-right: 30px;
+}
+section article ul li{
+	margin-bottom: 20px;
+}

@@ -54,7 +54,7 @@
 	    var baseUrl = 'http://touchpad.timebooks.com.cn/touchScreen/';
 	    $.ajax({
 			    type: 'POST',
-			    url: baseUrl + "bookDisc",
+			    url: baseUrl + "bookDiscA",
 			    async: false,
 			    dataType: 'json',
 			    data:"bookid="+bookid+"&pagerid="+num,
@@ -71,7 +71,7 @@
 			}else if(num -=1){
 				$.ajax({
 				    type: 'POST',
-				    url: baseUrl + "bookDisc",
+				    url: baseUrl + "bookDiscA",
 				    async: false,
 				    dataType: 'json',
 				    data:"bookid="+bookid+"&pagerid="+num,
@@ -88,7 +88,7 @@
 			}else if(num +=1){
 				$.ajax({
 			    type: 'POST',
-			    url: baseUrl + "bookDisc",
+			    url: baseUrl + "bookDiscA",
 			    async: false,
 			    dataType: 'json',
 			    data:"bookid="+bookid+"&pagerid="+num,

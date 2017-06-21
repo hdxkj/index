@@ -475,7 +475,7 @@ var getHtml = {
 								url:url,
 								data:"id="+rescodeNum,
 								success:function(msg){
-									window.location.href="bookDisc.html?id="+rescodeNum
+									window.location.href="bookdisc.html?id="+rescodeNum
 								}
 							});
 						},

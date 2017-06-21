@@ -59,10 +59,9 @@ var thingsFun = {
 				}
 				//var paperid = GetQueryString("paperid");
 				var id = GetQueryString("id");
-					$.session.set('bookId', id)
-					bookID = $.session.get('bookId')
+					$.cookie('bookId', id)
+					bookID = $.cookie("bookId")
 					window.location.href = 'index.html'
-					return bookID
 				}else{
 					getHtml.collectConfirm()
 				}
@@ -360,8 +359,9 @@ var getHtml = {
 											$.cookie('passwd', $("#password").val())
 											$.cookie('id',info)
 											alert("登录成功")
-											if(bookID != ""){
-												window.location.href='bookDetail.html?id='+bookID+''
+											//alert(bookID)
+											if($.cookie('bookId') != ""){
+												window.location.href='book.html?id='+$.cookie('bookId')+''
 											}else{
 												//alert($.cookie('username'))
 												//alert($.cookie('passwd'))
@@ -406,10 +406,10 @@ var getHtml = {
 								data:"userid="+$.cookie('id')+"&restype=self_book&"+"rescode="+rescodeNum,
 								success:function(msg){
 									if(msg = "success"){
-										alert("收藏成功")
+										alert("已成功添加至我的图书")
 										window.location.href="user.html?userid="+$.cookie('id')+""
 									}else{
-										alert("收藏失败")
+										alert("添加至我的图书失败")
 									}
 								}
 							});

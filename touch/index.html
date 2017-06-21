@@ -63,7 +63,7 @@
 												strHtmlNews +=	"<div class='collection-list' onclick='window.location.href=\"news.html?id="+info.seqid+"\"'><div class='main'><dl style='min-height:auto'><dd><span></span><i>"+info.pubdate.substr(0,10)+"</i></dd><dd><ol><li>"+info.title+"</li></ol></dd></dl></div></div>";
 								    	})
 								    	$.each(msg.data.book,function(infoIndex,info){
-												strHtmlBook +=	"<dl onclick='window.location.href=\"mybook.html?id="+info.seqid+"\"'><dt class='fl'><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd class='bookname'>"+info.title+"</dd><dd><label>作&emsp;&emsp;者：</label>"+info.author+"</dd><dd><label>出&nbsp;&nbsp;版&nbsp;&nbsp;社：</label>"+info.press+"</dd><dd><label>出版时间：</label>"+info.createdtime.substr(0,10)+"</dd></dl>";
+												strHtmlBook +=	"<dl onclick='window.location.href=\"book.html?id="+info.seqid+"\"'><dt class='fl'><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd class='bookname'>"+info.title+"</dd><dd><label>作&emsp;&emsp;者：</label>"+info.author+"</dd><dd><label>出&nbsp;&nbsp;版&nbsp;&nbsp;社：</label>"+info.press+"</dd><dd><label>出版时间：</label>"+info.createdtime.substr(0,10)+"</dd></dl>";
 								    	})
 				            			content.append(strHtmlPaper+strHtmlNews+strHtmlBook)
 			                		}	

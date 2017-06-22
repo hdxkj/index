@@ -275,7 +275,7 @@ var getHtml = {
 						            var strHtml = "";
 								  	var info = msg.data
 								  	//alert(info.pdfpath)
-			            			strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='thingsFun.ifLogin()'><input type='hidden' value='"+info.seqid+"'><input type='hidden' value='"+info.pdfpath+"'>查看</a></p>";
+			            			strHtml += "<div class='main'><dl><dt><img src='"+baseUrl+"source/"+info.thumbnail+"' /></dt><dd>"+info.title+"</dd><dd><i class='active'></i><i></i><i></i><i></i><i></i></dd><dd>作&emsp;者：<span>"+info.author+"</span></dd><dd>出版社：<span>"+info.press+"</span></dd><dd>34.7万</dd></dl><ol><li>内容简介</li><li>"+info.abstracts+"</li></ol></div><p class='addsc'><a onclick='thingsFun.ifLogin()'><input type='hidden' value='"+info.seqid+"'><input type='hidden' value='"+info.pdfpath+"'>查看</a><a href='https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU5NTEwMDgxMQ==&scene=124#wechat_redirect'>关注</a></p>";
 		            				$(tag).html(strHtml);
 						  }
 						});

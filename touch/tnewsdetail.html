@@ -5,7 +5,10 @@
 <title></title>
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/styles.css">
-
+<style>
+	img{width:40%;height: 40%;padding:0 30%;margin: auto; vertical-align: top;}
+	*{font-family: "微软雅黑";}
+</style>
 	
 </head>
 <body>
@@ -17,7 +20,7 @@
 		</header>
 		<div style="clear:both"></div>
 <section style="padding-top: 50px;">
-	<div class="main" style="height: 470px; overflow-y: auto;border: 1px solid white;">
+	<div class="main" style="height: 470px; overflow-y: auto;border: 1px solid white;background: #f7f7f7;border-radius:30px;text-align: center;">
 	</div>
 </section>
 <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
@@ -35,10 +38,10 @@
 							    	console.log(msg)
 						            var html = [];
 						            var info = msg.data;
-			            			html.push('<dl style="color:white;font-size:24px;width:95%;margin:auto;line-height:32px">')
-									html.push('<dt style="font-size:30px;margin:20px auto">'+info.title+'</dt>')
-									html.push('<dd>'+info.createdtime.substr(0,10)+'</dd>')
-									html.push('<dd>'+info.fulltxt+'</dd>')
+			            			html.push('<dl style="color:white;font-size:24px;width:95%;margin:auto;line-height:32px;text-align:left;">')
+									html.push('<dt style="font-size:30px;margin:20px auto;color:#333333;">'+info.title+'</dt>')
+									html.push('<dd style="border-bottom:1px solid #d7d7d7;color:#565656;padding-bottom:20px;margin-bottom:30px">'+info.createdtime.substr(0,10)+'</dd>')
+									html.push('<dd style="color:#333333">'+info.fulltxt+'</dd>')
 									html.push('</dl>')
 									
 		            				$("section .main").append(html.join(""))

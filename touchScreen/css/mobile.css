@@ -1,0 +1,477 @@
+html{font-size: 62.5%;}  /*62.5%是相对于16px计算得来的，相当于10个计量单位，为了后面计算字体大小*/  
+body{
+	background: #f2f2f2;
+	font-size: 16px;
+}
+.main{
+	width: 94%;
+	margin: auto;
+}
+header{
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	background: #1687f8;
+	line-height: 60px;
+	margin-top: 0;
+	overflow: hidden;
+	
+}
+header a{
+	width: 28px;
+	height: 44px;
+	vertical-align: middle;
+	margin-top: 11px;
+	background: url(../images/mobile/retrurn.png) no-repeat top center;
+	background-size: 40%;
+}
+header h1{
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+section{
+	width: 100%;
+	height: 100%;
+	margin-top: 24px;
+	background: white;
+	padding-bottom: 80px;
+}
+section dl{
+	width: 100%;
+	padding: 5% 0;
+	min-height: 176px;
+	border-bottom: 1px solid #bfc8cf;
+	background: white;
+}
+section dl dt{
+	margin-right: 30px;
+	width:90px;
+	height: 100%;
+}
+section dl dt img{
+	width: 100%;
+}
+section dl dd{
+	margin: 12px 0 0 0;
+	color: #666666;
+	font-size: 1rem;
+}
+section dl dd.bookname{
+	font-size: 2rem;
+	color: #333838;
+	font-weight: 500;
+}
+section dl dd label{
+	display: inline-block;
+	text-align: right;
+	font-size: 1rem;
+	color: #333333;
+}
+
+
+.tc{
+	display: none;
+}
+.tc p{
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	top: 0;
+	left: auto;0
+}
+.tc ul{
+	width: 80%;
+	height:108px;
+	position: fixed;
+	z-index: 1;
+	background: white;
+	top: 50%;
+	left: 50%;
+	margin-top: -92px;
+	margin-left: -40%;
+	border-radius: 5px;
+}
+.tc ul li{
+	height: 52px;
+	line-height: 52px;
+	text-align: center;
+	font-size: 1.5rem;
+	color: #333333;
+	border-bottom: 1px solid #d9dbe4;
+}
+.tc ul li:nth-child(2){
+	border: none;
+}
+.tc ul li a{
+	color: #2995f8;
+	font-size: 1.5rem;
+}
+.tc ul li i{
+	height: 35px;
+	width: 1px;
+	display: inline-block;
+	margin: 0 35px;
+	background: #d9dbe4;
+	vertical-align: middle;
+}
+.tc ul li a.cancel{
+	color: #a4a9ae;
+}
+
+
+.collection dl{
+	margin-bottom: 10px;
+	border: none;
+}
+.collection .collection-list{
+	width: 100%;
+	background: white;
+}
+.collection .collection-list dt{
+	width: 100%;
+	font-size: 2rem;
+	color: #878e94;
+}
+.collection .collection-list dt a{
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.collection .collection-list dt a img{
+	width: 100%;
+}
+.collection .collection-list dt i{
+	font-style: normal;
+	float: right;
+	vertical-align: middle;
+	margin-top: 12px;
+	font-size: 1.5rem;
+}
+.collection .collection-list dd img{
+	width: 90px;
+	margin-right: 10px;
+}
+.collection .collection-list dd ol li{
+	font-size: 2rem;
+	color: #333333;
+	margin: 10px 0;
+}
+.collection .collection-list dd ol li:nth-child(2){
+	color: #878e94;
+	font-size: 1.5rem;
+}
+
+
+.user-center{
+	background:#eceff3;
+	margin-top: 0;
+}
+.user-center header{
+	height: 170px;
+}
+.user-center dl{
+	border: none;
+	margin-top: -104px;
+	background: none;
+}
+.user-center dl dt,.user-center dl dd{
+	width: 100%;
+	border-radius: 5px;
+	background: white;
+	font-size: 2rem;
+	text-align: left;
+}
+.user-center dl dt{
+	height: 150px;
+	line-height: 150px;
+}
+.user-center dl a{
+	color: #333333;
+	font-size: 1.5rem;
+}
+.user-center dl dt a{
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.user-center dl dd a{
+	width: 90%;
+	height: 56px;
+	line-height: 56px;
+	text-align: left;
+}
+.user-center dl dd:last-child a{
+	text-align: center;
+}
+.user-center dl dd a img:nth-child(1){
+	width: 26px;
+	float: left;
+	margin-top: 18px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.user-center dl dd a img:nth-child(2){
+	width: 8px;
+	float: right;
+	margin-top: 18px;
+}
+
+.newsdetail dl{
+	padding: 10px 0;
+	font-size: 18px;
+	border: 0;
+}
+.newsdetail dl dt{
+	color: #4c5257;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.newsdetail dl dd:nth-child(2){
+	color: #7f868c;
+	font-size: 16px;
+	border-bottom: 1px solid #cfd9e3;
+	padding-bottom: 20px;
+}
+.newsdetail dl dd:nth-child(2) span{
+	margin-left: 20px;
+}
+.newsdetail dl dd p{
+	text-indent: 2em;
+	margin: 20px 0;
+	font-size: 16px;
+	color: #7f868c;
+	line-height: 24px;
+}
+.newsdetail dl dd.text{
+	border: 0;
+}
+p.addsc{
+	position: fixed;
+	bottom: 0;
+	height: 60px;
+	line-height: 60px;
+	background: white;
+	width: 100%;
+	text-align: center;
+	box-shadow: 0 -2px 12px rgba(0,0,0,.1);
+}
+p.addsc a{
+	/*background: url(../images/mobile/ico-3.png) no-repeat top center;
+	padding-top: 5px;*/
+	color: #0f81f3;
+	background-size: 26px;
+	margin-top: 5px;
+}
+.bookdetail dl{
+	padding: 20px 0;
+}
+.bookdetail dl dt{
+	float: left;
+	margin-right: 20px;
+}
+.bookdetail dl dd{
+	font-size: 14px;
+	color: #333333;
+}
+.bookdetail dl dd:last-child{
+	color: #999999;
+}
+.bookdetail dl dd span{
+	color: #1687f8;
+}
+.bookdetail dl dd i{
+	background: url(../images/mobile/ico-9.png) no-repeat center center;
+	background-size: 100%;
+	margin-right: 5px;
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+}
+.bookdetail dl dd i.active{
+	background: url(../images/mobile/ico-9b.png) no-repeat center center;
+	background-size: 100%;
+}
+.bookdetail dl dd:nth-child(2){
+	font-size: 16px;
+}
+.bookdetail p.addsc a{
+	/*background: url(../images/mobile/ico-10.png) no-repeat top center;*/
+	background-size: 26px;
+}
+.bookdetail ol li{
+	line-height: 24px;
+}
+.bookdetail ol li:nth-child(1){
+	margin-top: 20px;
+	text-indent: 1em;
+	border-left: 2px solid #1687f8;
+	margin-bottom: 10px;
+	color: #222222;
+}
+
+.login{
+	margin-top: 0;
+}
+.login ol{
+	margin-top: 40px;
+	text-align: center;
+}
+.login ol li{
+	margin-bottom: 20px;
+}
+.login ol li input{
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #23a3f9;
+	width: 80%;
+	border-radius: 30px;
+	text-align: left;
+	text-indent: 4em;
+	color: #acb2b7;
+}
+.login ol li:nth-child(1) input{
+	background: url(../images/mobile/ico-11.png) no-repeat 20px center;
+	background-size: 20px;
+}
+.login ol li:nth-child(2) input{
+	background: url(../images/mobile/ico-12.png) no-repeat 20px center;
+	background-size: 20px;
+}
+.login ol li:nth-child(3) input{
+	background: url(../images/mobile/ico-13.png) no-repeat 20px center;
+	background-size: 20px;
+}
+.login ol li a{
+	height: 30px;
+	line-height: 30px;
+	background: #23A3F9;
+	width: 80%;
+	color: white;
+	border-radius: 30px;
+}
+.login aside p{
+	text-align: center;
+}
+.login aside p span{
+	margin: 0 10px;
+	height: 1px;
+	display: inline-block;
+	width: 30px;
+	background: #23A3F9;
+	vertical-align: middle;
+}
+.login dl{
+	padding: 20px 0;
+}
+.login dl dt{
+	float: left;
+	margin-right: 10px;
+}
+.login dl dd:nth-child(2){
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.paper{
+	margin: 0;
+}
+.paper p.title{
+	height: 40px;
+	line-height: 40px;
+	background: #F2F2F2;
+	text-indent: -1em;
+}
+.paper ol{
+	width: 30%;
+	display: inline-block;
+	margin-top: 20px;
+}
+.paper ol:nth-child(odd){
+	margin:  0 1%;
+}
+.paper ol li img{
+	width: 100%;
+}
+.paper ol li:last-child{
+	color: #c3c9d0;
+	margin-top: 10px;
+}
+.paper ol li:last-child b{
+	color: #333333;
+	margin-right: 5px;
+}
+.paper p.addsc a{
+	margin: 6px 18%;
+}
+.paper p.addsc a:nth-child(1){
+	background: url(../images/mobile/ico-6.png) no-repeat top center;
+	background-size: 24px;
+	color: #a9adb7;
+}
+.paper p.addsc a:nth-child(2){
+	background: url(../images/mobile/ico-7.png) no-repeat top center;
+	background-size: 24px;
+	color: #a9adb7;
+}
+.paper p.addsc a:nth-child(1).active{
+	background: url(../images/mobile/ico-6b.png) no-repeat top center;
+	background-size: 24px;
+	color: #23A3F9;
+}
+.paper p.addsc a:nth-child(2).active{
+	background: url(../images/mobile/ico-7b.png) no-repeat top center;
+	background-size: 24px;
+	color: #23A3F9;
+}
+.paperlist .main{
+	text-align: center;
+	padding-top: 20px;
+}
+.paperlist .main a{
+	text-indent: 0;
+	border: 1px solid #C9c9c9;
+	border-top: 0;
+	border-left:0;
+	width: 30%;
+	margin: 0;
+	color: #333333;
+	text-align: center;
+	padding: 10px 0;
+}
+.paperlist .main a:nth-child(3n){
+	border-right: 0;
+}
+.paperlist .main a:nth-last-child(1),.paperlist .main a:nth-last-child(2),.paperlist .main a:nth-last-child(3){
+	border-bottom: 0;
+}
+.paperlist .main a img{
+	margin: 10px 0;
+	width: 90%;
+}
+
+.paperwz ul li:nth-child(1){
+	font-size: 18px;
+	margin-top: 10px;
+	padding-top: 10px;
+	color: #333333;
+	line-height: 30px;
+	font-weight: bold;
+}
+.paperwz ul li p{
+	text-indent: 1em;
+	margin: 10px 0;
+	line-height: 24px;
+}
+.paperwz ul li:last-child{
+	color: #aab3bb;
+	float: right;
+}
+.paperwz .wzitem{
+	background: white;
+	padding-bottom: 30px;
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dctc.ts.common.portal.mappercustom.SelfNewsCustomMapper" >
+
+  <resultMap id="BaseResultMap" type="com.dctc.ts.common.portal.bean.SelfNews" >
+    <id column="seqid" property="seqid" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="classid" property="classid" jdbcType="INTEGER" />
+    <result column="abstracts" property="abstracts" jdbcType="VARCHAR" />
+    <result column="thumbnail" property="thumbnail" jdbcType="VARCHAR" />
+    <result column="pubdate" property="pubdate" jdbcType="TIMESTAMP" />
+    <result column="creatorid" property="creatorid" jdbcType="INTEGER" />
+    <result column="createdtime" property="createdtime" jdbcType="TIMESTAMP" />
+    <result column="sources" property="sources" jdbcType="VARCHAR" />
+    <result column="hits" property="hits" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <!-- 新闻列表 -->
+  <select id="find_news_list" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select seqid,title,abstracts,thumbnail,createdtime
+	from self_news
+	where classid = #{classid}
+  </select>
+  
+  <!-- 新闻(不做区分所有内容) -->
+  <select id="find_news_All" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select seqid,title,abstracts,thumbnail,createdtime
+	from self_news
+  </select>
+  
+  <!-- 新闻详情 -->
+  <select id="find_news_detail" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select *
+	from self_news
+	where seqid = #{id}
+  </select>
+  
+  <!-- 新闻收藏部分 -->
+  <select id="find_favorite_news" resultMap="BaseResultMap">
+	select *
+	from self_news
+	where seqid in
+	<foreach item="item" index="index" collection="list"   
+	     open="(" separator="," close=")">  
+	    #{item}  
+	</foreach>  
+  </select>
+  
+  <!-- 随便看看 -->
+  <select id="find_casual_news" resultMap="BaseResultMap">
+    select * from self_news order by seqid asc limit 0,2
+  </select>
+  
+  <!-- 新闻框内 -->
+  <select id="find_class_news" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select seqid,title,classid from self_news where classid = #{classid} limit 0,2
+  </select>
+  
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dctc.ts.common.portal.mappercustom.SelfPapercontentCustomMapper" >
+
+  <resultMap id="BaseResultMap" type="com.dctc.ts.common.portal.bean.SelfPapercontent" >
+    <id column="seqid" property="seqid" jdbcType="INTEGER" />
+    <result column="paperid" property="paperid" jdbcType="INTEGER" />
+    <result column="layid" property="layid" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="author" property="author" jdbcType="VARCHAR" />
+    <result column="pubdate" property="pubdate" jdbcType="DATE" />
+  </resultMap>
+  
+  <select id="find_paperContent" resultMap="BaseResultMap" parameterType="java.util.Map">
+	select seqid,title from self_papercontent
+	where layid = #{layid} and paperid = #{paperid}
+  </select>
+  
+  <select id="find_paperContentText" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select * from self_papercontent
+	where seqid = #{seqid}
+  </select>
+  
+</mapper>

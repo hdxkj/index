@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dctc.ts.common.portal.mappercustom.SelfBookCustomMapper" >
+
+  <resultMap id="BaseResultMap" type="com.dctc.ts.common.portal.bean.SelfBook" >
+    <id column="seqid" property="seqid" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="author" property="author" jdbcType="VARCHAR" />
+    <result column="press" property="press" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="createdtime" property="createdtime" jdbcType="TIMESTAMP" />
+    <result column="hits" property="hits" jdbcType="INTEGER" />
+    <result column="bookclass" property="bookclass" jdbcType="VARCHAR" />
+    <result column="pubdate" property="pubdate" jdbcType="DATE" />
+    <result column="isbn" property="isbn" jdbcType="VARCHAR" />
+    <result column="barcode" property="barcode" jdbcType="VARCHAR" />
+    <result column="keyword" property="keyword" jdbcType="VARCHAR" />
+    <result column="pagid" property="pagid" jdbcType="INTEGER" />
+    <result column="abstracts" property="abstracts" jdbcType="VARCHAR" />
+    <result column="thumbnail" property="thumbnail" jdbcType="VARCHAR" />
+    <result column="pdfpath" property="pdfpath" jdbcType="VARCHAR" />
+    <result column="clc" property="clc" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- list -->
+  <select id="find_book_list" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select *
+    from self_book
+      <if test="bookClass != null and bookClass != '' " >
+        where bookclass like #{bookClass}
+      </if>
+    limit #{pageIndex},#{pageSize}
+  </select>
+  
+  <!-- titlePage -->
+  <select id="find_book_title" resultType="java.lang.Integer">
+    select count(*) from self_book
+  </select>
+  
+  <!-- book详情 -->
+  <select id="find_book_detail" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select * 
+    from self_book
+    where seqid = #{id}
+  </select>
+  
+  <!-- book收藏部分 -->
+  <select id="find_favorite_book" resultMap="BaseResultMap">
+    select * 
+    from self_book
+    where seqid in 
+	<foreach item="item" index="index" collection="list"   
+	     open="(" separator="," close=")">  
+	    #{item}  
+	</foreach>  
+  </select>
+  
+  <!-- book随便看看 -->
+  <select id="find_casual_book" resultMap="BaseResultMap">
+    select * from self_book order by seqid asc limit 0,2
+  </select>
+  
+  <!-- find_book_class -->
+  <select id="find_book_class" resultType="java.lang.String">
+    select bookclass from self_book group by bookclass
+  </select>
+  
+  <!-- search -->
+  <select id="search" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select seqid from self_book where replace(title,' ','') like replace(#{bname},' ','')
+  </select>
+  
+  <!-- bookid -->
+  <select id="bookid" resultMap="BaseResultMap">
+    select * from self_book
+  </select>
+  
+</mapper>

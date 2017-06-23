@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>触摸屏</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script type="text/javascript" src="js/jquery-1.8.0.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.cookie.js" ></script>
+		<style>
+			a{width: 100%;height: 62px;overflow: hidden;}
+			
+		</style>
+		<script>
+			$(function(){
+				var url='http://touchpad.timebooks.com.cn/touchScreen/newsClass';
+					    $.ajax({
+							    type: 'POST',
+							    url: url,
+							    dataType: 'json',
+							    success:function(msg){
+							    	console.log(msg)
+						            var html = [];
+						            var info = msg.data;
+						            var classnews = msg.classNews
+			            			html.push('<div class="left">')
+									html.push('<article onclick="window.location.href=\'tnewslist.html?id='+info[0].classid+'\'">')
+									html.push('	<ol class="fr">')
+									html.push('		<li class="fr"></li><li class="clear"></li>')
+									html.push('		<li style="font-size:28px">'+info[0].classname+'</li>')
+									html.push('		<li class="clear"></li>')
+									html.push('	</ol>')
+									/*公司新闻*/
+									html.push('	<ul class="fr" style="margin-top:40px;padding-right:20px">')
+									html.push('		<li>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[4][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[4][0].title+'</a>')
+									html.push('		</li>')
+									html.push('	</ul>')
+									html.push('	<div class="clear"></div>')
+									html.push('</article>')
+									html.push('<article onclick="window.location.href=\'tnewslist.html?id='+info[1].classid+'\'">')
+									html.push('	<ol>')
+									html.push('		<li></li>')
+									html.push('		<li>'+info[1].classname+'</li>')
+									html.push('	</ol>')
+									/*娱乐*/
+									html.push('	<ul>')
+									html.push('		<li>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[5][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[5][0].title+'</a>')
+									html.push('		</li>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[5][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[5][1].title+'</a>')
+									html.push('		</li>')
+									html.push('	</ul>')
+									html.push('</article>')
+									html.push('<article onclick="window.location.href=\'tnewslist.html?id='+info[2].classid+'\'">')
+									html.push('	<ol>')
+									html.push('		<li></li>')
+									html.push('		<li>'+info[2].classname+'</li>')
+									html.push('	</ol>')
+									html.push('</article>')
+									html.push('<article onclick="window.location.href=\'tnewslist.html?id='+info[3].classid+'\'">')
+									html.push('	<ol>')
+									html.push('		<li></li>')
+									html.push('		<li>'+info[3].classname+'</li>')
+									html.push('	</ol>')
+									/*html.push('	<ul>')
+									html.push('		<li>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[1][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[4][0].title+'</a>')
+									html.push('		</li>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[1][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][1].title+'</a>')
+									html.push('		</li>')
+									html.push('	</ul>')*/
+									html.push('</article>')
+									html.push('</div>')
+									html.push('<div class="right">')
+									html.push('	<article onclick="window.location.href=\'tnewslist.html?id='+info[4].classid+'\'">')
+									html.push('		<ol>')
+									html.push('			<li></li>')
+									html.push('			<li>'+info[4].classname+'</li>')
+									html.push('		</ol>')
+									/*党政*/
+									html.push('	<ul>')
+									html.push('		<li>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[8][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[8][0].title+'</a>')
+									html.push('		</li>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[8][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[8][1].title+'</a>')
+									html.push('		</li>')
+									html.push('	</ul>')
+									html.push('	</article>')
+									html.push('	<article>')
+									html.push('<ol onclick="window.location.href=\'tnewslist.html?id='+info[5].classid+'\'">')
+									html.push('			<li></li>')
+									html.push('			<li>'+info[5].classname+'</li>')
+									html.push('		</ol>')
+									/*社会*/
+									html.push('	<ul>')
+									html.push('		<li>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[1][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][0].title+'</a>')
+									html.push('		</li>')
+									html.push('			<li><a href="tnewsdetail.html?id='+classnews[1][1].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[1][1].title+'</a>')
+									html.push('		</li>')
+									html.push('	</ul>')
+									html.push('	</article>')
+									html.push('	<article>')
+									html.push('		<ol class="fl"  onclick="window.location.href=\'tnewslist.html?id='+info[6].classid+'\'">')
+									html.push('			<li></li>')
+									html.push('			<li>'+info[6].classname+'</li>')
+									html.push('			<li class="clear"></li>')
+									html.push('		</ol>')
+									/*国际*/
+									html.push('	<ul style="float:left;margin-top:40px;margin-left:20px">')
+									html.push('		<li>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[3][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[3][0].title+'</a>')
+									html.push('		</li>')
+									html.push('	</ul>')
+									html.push('	</article>')
+									html.push('	<article>')
+									html.push('		<ol onclick="window.location.href=\'tnewslist.html?id='+info[7].classid+'\'">')
+									html.push('			<li></li>')
+									html.push('			<li>'+info[7].classname+'</li>')
+									html.push('		</ol>')
+									/*国内新闻*/
+									/*html.push('	<ul>')
+									html.push('		<li>')
+									html.push('			<a href="tnewsdetail.html?id='+classnews[2][0].seqid+'"><img src="images/tnews/icon-2.png" />'+classnews[2][0].title+'</a>')
+									html.push('		</li>')
+									html.push('	</ul>')*/
+									html.push('	</article>')
+									html.push('</div>')
+		            				$("section .main").append(html.join(""))
+						  }
+						});
+						$("iframe").remove()
+			})
+		</script>
+	</head>
+
+	<body>
+		<header>
+			<div class="main">
+				
+				<!--<b>新闻动态</b>-->
+			</div>
+		</header>
+		<div style="clear: both;"></div>
+		<section>
+			<div class="main">
+				
+			</div>
+		</section>
+		
+		
+	</body>
+
+</html>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+<style>
+</style>
+{% endblock %}
+
+{% block body %}
+<h1>这是首页</h1>
+
+<!--使用表单-->
+<form method="POST">    
+    {{form.hidden_tag()}}    
+    <p>{{form.name.label}}</p>  
+    {{form.name()}}    
+    <br>{{form.submit }}    
+</form>    
+<h6>flashed message</h6>  
+ <p>  
+    {% for message in get_flashed_messages() %}  
+        {{ message }}  
+    {% endfor %}   
+    </p>  
+
+{% endblock %}

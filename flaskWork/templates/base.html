@@ -1,0 +1,21 @@
+<html>
+<head>
+{% block head %}
+<title>{% block title %}FLASK WEB{% endblock %}</title>
+{% endblock %}
+<link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+{% block header%}
+        头部内容
+{% endblock %}
+
+{% block body%}
+    主体内容
+{% endblock %}
+
+{% block footer%}
+        页尾内容
+{% endblock %}
+</body>
+</html>

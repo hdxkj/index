@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PI</title>
+{% load static %}
+<link rel="stylesheet" href="{% static "css/reset.css" %}" />
+<link rel="stylesheet" href="{% static "css/style.css" %}" />
+<script type="text/javascript" src="{% static "js/jquery-1.8.0.min.js" %}" ></script>
+<script>
+	$(function(){
+		var h = $(window).height()
+		h = h - 140
+		$("section").height(h)
+	})
+</script>
+</head>
+<body>
+	<header>
+    	<p>RASPBERRY CONSOLE</p>
+	</header>
+    {% block mainbody %}
+       <section>original</section>
+    {% endblock %}
+    <footer>
+    	<p>COPYRIGHT</p>
+    </footer>
+</body>
+</html>

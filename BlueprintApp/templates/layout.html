@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+{% block title %}
+    <title>
+    FLASKWEB
+    </title>
+{% endblock %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>    
+</head>
+    
+<body>
+{% block header%}
+        头部内容
+{% endblock %}
+
+{% block body%}
+    主体内容
+{% endblock %}
+
+{% block footer%}
+        页尾内容
+{% endblock %}
+</body>
+</html>
+

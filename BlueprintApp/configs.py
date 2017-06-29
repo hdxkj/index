@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+
+DEBUG = True
+MONGODB_DB = 'test'
+MONGODB_HOST = '127.0.0.1'
+MONGODB_PORT = 27017
+MONGODB_USERNAME = ''
+MONGODB_PASSWORD = ''

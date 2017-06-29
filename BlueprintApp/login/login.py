@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from flask import Blueprint, url_for, render_template, request, flash, redirect, make_response, session
-import json #解析json所用库
+
+import json
+
 
 import pymongo
 db = pymongo.MongoClient('localhost', 27017).test
@@ -16,24 +18,20 @@ login_bp = Blueprint(
 
 @login_bp.route('/login')
 def index():
-    #for i in db.person.find():
-    #    print i
-    #return ("success")
     return render_template("/login/index.html")
-   
-
 
 @login_bp.route('/login/loginCheck', methods=['POST'])
 def loginCheck():
     username = request.form.get('username')
     password = request.form.get('password')
-    idNum = ""
     userList = db.person.find({},{"name":username,"password":password})
-    for username in userList:
-        print username
-        idNum = username["_id"]
-        print idNum
-    return(idNum)
+
+    for i in userList:
+        print i
+        if  i.has_key('name'):
+            print i['name']
+    
+    return('s')
    
    
     

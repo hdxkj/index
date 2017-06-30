@@ -24,30 +24,15 @@ def index():
 def loginCheck():
     username = request.form.get('username')
     password = request.form.get('password')
-    userList = db.person.find({},{"name":username,"password":password})
-
-    for i in userList:
-        print i
-        if  i.has_key('name'):
-            print i['name']
+    userList = db.person.find({"name":username})
+    if True :
+        for i in userList:
+            i2 = dict(zip(i.values(), i.keys()))
+            if str(password) == str(i2.keys()[0]) and password != "":
+                useRId = str(i["userid"])
+    return redirect(url_for('login.hello',  user_name = useRId))
+              
     
-    return('s')
-   
-   
-    
-
-
-
-'''
-@login_bp.route('/checkLogin', methods=['POST'])
-def checkLogin():
-    # password = request.form.get('password')
-    # username = request.args.get('username')
- 
-    data = json.loads(request.form.get('data'))
-    username = data['username']
-    password = data['username']
-    print (username)
-    print (password)
-    return "46575"
-'''
+@login_bp.route("/<user_name>")
+def hello(user_name):
+    return '<h1>Hello, %s!</h1>' % user_name

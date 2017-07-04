@@ -55,7 +55,7 @@
 
 .mosaic-wide .mosaic-block {
     width: 210px;
-    height: 105px;
+    height: 280px;
 }
 
 /* Two custom dimensions (for only features page) */
@@ -78,6 +78,7 @@
         height: 100%;
         width: 100%;
         background: #F5F5F5;
+		text-align:center;
     }
     
     .mosaic-overlay {

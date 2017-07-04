@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Casework | Design Studio</title>
+<meta name="robots" content="index, follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<!-- Basic CSS Style (other styles are included in this file) -->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie8.css" media="all" />
+<![endif]-->
+
+<!-- JavaScript Files -->
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/jquery.quicksand.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+<script type="text/javascript" src="js/portfolio.filter.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.dimensions.js"></script>
+<script type="text/javascript" src="js/jquery.tooltip.js"></script>
+<script type="text/javascript" src="js/mosaic.1.0.1.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    // Image Overlays
+
+    $('.lower-panel').mosaic({
+        animation: 'slide'
+    });
+
+    $('.upper-panel').mosaic({
+        animation: 'slide',
+        anchor_y: 'top'
+    });
+
+    $('.zoom').mosaic({
+        opacity: 0.7
+    });
+
+    // Image Tooltip
+
+    //<![CDATA[
+    $(".imageTooltip .imagebox a").tooltip({
+        showTitle: true,
+        track: true, 
+        bodyHandler: function() {
+            return $("<img/>").attr("src", $(this).attr("rel"));
+        }
+    });
+    //]]>
+
+    // prettyPhoto
+
+    $(".mosaic-block a[rel^='prettyPhoto']").prettyPhoto({
+        theme: 'light_square', // or "dark_square" for dark style
+        animation_speed: 'fast',
+        overlay_gallery: false
+    });
+
+});
+		    
+</script>
+
+</head>
+
+<body>
+
+<!-- Start Wrapper -->
+<div id="wrapper">
+
+    <!-- Start Header -->
+    <div class="top-header"></div>
+
+    <div id="header">
+        <div class="into-header">
+
+            <!-- Start Logo -->
+            <div class="logo">
+                <a href="index-2.html"><img src="images/logo.png" alt="Casework | Design Studio" title="Casework | Design Studio" /></a>
+            </div>
+            <!-- End Logo -->
+
+            <!-- Start Top Menu -->
+            <div class="topmenu">
+
+                <!-- Start Dropdown Menu -->
+                <ul id="menu" class="menu-nav">
+
+                    <li class="parent"><a href="index-2.html">Home</a>
+                        <ul class="child">
+                            <li><a href="index-2.html">With Nivo Slider</a></li>
+                            <li><a href="index_alter.html">With Thumbnail Slider</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent current"><a href="#">Portfolio</a>
+                        <ul class="child">
+                            <li><a href="portfolio_full.html">Full Description Portfolio</a></li>
+                            <li><a href="portfolio_2col.html">2-Column Portfolio</a></li>
+                            <li><a href="portfolio_3col.html">3-Column Portfolio</a></li>
+                            <li><a href="portfolio_4col.html">4-Column Portfolio</a></li>
+                            <li><a href="portfolio_nav.html">Portfolio with Pagination</a></li>
+                            <li class="current"><a href="portfolio_post.html">Portfolio Item Details</a></li>
+                            <li><a href="quick_gallery.html">Quick Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent"><a href="#">Blog</a>
+                        <ul class="child">
+                            <li><a href="blog_overview.html">Blog Overview</a></li>
+                            <li><a href="blog_post.html">Blog Post Page</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent"><a href="#">Features</a>
+                        <ul class="child">
+                            <li><a href="typography_shortcodes.html">Typography &amp; Shortcodes</a></li>
+                            <li><a href="columns_pricing_table.html">Columns &amp; Pricing Table</a></li>
+                            <li><a href="javascript_additions.html">JavaScript Additions</a></li>
+                            <li><a href="#">Page Layouts</a>
+                                <ul class="grandchild">
+                                    <li><a href="right_sidebar.html">Page with Right Sidebar</a></li>
+                                    <li><a href="left_sidebar.html">Page with Left Sidebar</a></li>
+                                    <li><a href="full_width_page.html">Full Width Page</a></li>
+                                    <li><a href="half_width_page.html">Half Width Page</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="images_overview.html">Image Display Overview</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+                <!-- End Dropdown Menu -->
+
+                <!-- Start Social -->
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><img src="images/social/twitter_off.png" alt="Twitter" title="Twitter" /></a></li>
+                        <li><a href="#"><img src="images/social/facebook_off.png" alt="Facebook" title="Facebook" /></a></li>   
+                        <li><a href="#"><img src="images/social/vimeo_off.png" alt="Vimeo" title="Vimeo" /></a></li>
+                        <li><a href="#"><img src="images/social/flickr_off.png" alt="Flickr" title="Flickr" /></a></li>
+                    </ul>
+                </div>
+                <!-- End Social -->
+
+            </div>
+            <!-- End Top Menu -->
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="horizon-line"></div>  
+    <div class="header-shadow"></div>
+    <!-- End Header -->
+
+    <!-- Start Content -->
+    <div id="content">
+
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="left"><h1>Portfolio / <em>Our completed works</em></h1></div>
+
+            <!-- Start Portfolio Categories -->
+            <div class="right">
+                <ul id="filter-list">
+                    <li class="list-item current"><a href="#" id="all">All Works</a></li>
+                    <li class="list-item"><a href="#" id="brand">Brand Identity</a></li>
+                    <li class="list-item"><a href="#" id="graphic">Graphic Design</a></li>
+                    <li class="list-item"><a href="#" id="photo">Photography</a></li>
+                    <li class="list-item"><a href="#" id="web">Web Design</a></li>
+                </ul>
+            </div>
+            <!-- End Portfolio Categories -->
+
+        </div>
+        <!-- End Topbar -->
+        
+        <!-- Start Portfolio Item Details -->
+        <div class="sidebars">
+           
+           <!-- Start Left Sidebar --> 
+           <div class="sidebar one-half-seg nodivider left">
+
+            <!-- Start Project Images -->
+            <ul class="project-images mosaic-large">
+                
+                <li>
+                    <div class="imagebox">
+                        <div class="mosaic-block zoom">
+                            <a href="images/content/portfolio/portfolio_post_image_1.jpg" class="mosaic-overlay" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit." rel="prettyPhoto[portfolio]">&nbsp;</a>
+                            <div class="mosaic-backdrop"><img src="images/content/portfolio/portfolio_post_thumb_1.jpg" alt="" /></div>
+                        </div>
+                    </div>
+                </li> 
+
+                <li>
+                    <div class="imagebox">
+                        <div class="mosaic-block lower-panel">
+                            <div class="mosaic-overlay">
+                                <div class="mosaic-caption">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                            <div class="mosaic-backdrop"><img src="images/content/portfolio/portfolio_post_thumb_2.jpg" alt="" /></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="imagebox last">
+                        <div class="mosaic-block upper-panel">
+                            <div class="mosaic-overlay">
+                                <div class="mosaic-caption">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                            <div class="mosaic-backdrop"><img src="images/content/portfolio/portfolio_post_thumb_3.jpg" alt="" /></div>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- End Project Images -->
+
+            </div>
+            <!-- End Left Sidebar --> 
+
+            <!-- Start Right Sidebar --> 
+            <div class="sidebar one-half-seg nodivider right">
+
+            <!-- Start Project Details -->
+            <div class="project-info">
+                <h3>Morbi Sodales</h3>
+                <p>Phasellus ligula felis, sodales consectetur sagittis tellus. Mauris id nulla enim purus. Duis euismod eget tristique eu, molestie sit amet turpis un massa non risus auctor erat volutpat.</p>
+                <div class="project-details">
+                    <span><strong>Client:</strong> DriveBox Consulting (<a href="http://www.drivebox.co/" rel="external">www.drivebox.co</a>)</span>
+                    <span><strong>Project:</strong> Logo Design, Corporate Brochure</span>
+                    <span><strong>Completed:</strong> February, 2012</span>
+                    <span><strong>Work Team:</strong> Julio Agostini, Tia Larabee</span>
+                    <span class="share"><strong>Share:</strong><a href="#" title="Twitter"><img src="images/social/twitter_small.png" alt="Twitter" /></a><a href="#" title="Facebook"><img src="images/social/facebook_small.png" alt="Facebook" /></a><a href="#" title="Flickr"><img src="images/social/flickr_small.png" alt="Flickr" /></a></span>
+                </div>
+            </div>
+            <!-- End Project Details -->
+
+            <!-- Start Other Works -->
+            <div class="title"><h2>Other Works</h2></div>
+
+            <ul id="filter" class="other-works imageTooltip">
+
+                <li id="id-1" class="photo">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_1.jpg" title="Lorem Ipsum"><img src="images/content/portfolio/portfolio_thumb_1.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-2" class="web">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_2.jpg" title="Mauris Lacus"><img src="images/content/portfolio/portfolio_thumb_2.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-3" class="web">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_3.jpg" title="Lacinia Porta"><img src="images/content/portfolio/portfolio_thumb_3.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-4" class="graphic">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_4.jpg" title="Morbi Sodales"><img src="images/content/portfolio/portfolio_thumb_4.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-5" class="web">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_5.jpg" title="Donec Gravida"><img src="images/content/portfolio/portfolio_thumb_5.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-6" class="brand">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_6.jpg" title="Pellentesque"><img src="images/content/portfolio/portfolio_thumb_6.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-7" class="photo">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_7.jpg" title="Class Aptent"><img src="images/content/portfolio/portfolio_thumb_7.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-8" class="brand">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_8.jpg" title="Nam Lacus"><img src="images/content/portfolio/portfolio_thumb_8.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-9" class="graphic">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_9.jpg" title="Malesuada"><img src="images/content/portfolio/portfolio_thumb_9.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-10" class="graphic">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_10.jpg" title="Vestibulum Fermentum"><img src="images/content/portfolio/portfolio_thumb_10.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-11" class="brand">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_11.jpg" title="Phasellus Nulla"><img src="images/content/portfolio/portfolio_thumb_11.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+                <li id="id-12" class="graphic">
+                    <div class="imagebox">
+                        <div><a href="portfolio_post.html" rel="images/content/portfolio/portfolio_2col_thumb_12.jpg" title="Condimentum"><img src="images/content/portfolio/portfolio_thumb_12.jpg" alt="" /></a></div>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- End Other Works -->
+
+            </div>
+            <!-- End Right Sidebar --> 
+
+        <div class="clear"></div>
+        </div>
+        <!-- End Portfolio Item Details -->
+
+    <div class="horizon-line"></div>
+    </div>
+    <!-- End Content -->
+
+</div>
+<!-- End Wrapper -->
+
+<!-- Start Footer -->
+<div id="footer">
+    
+    <div class="footer-shadow"></div>
+    <div class="horizon-line"></div>
+
+    <!-- Start Footer Blocks -->
+    <div class="footer-bg">
+    <div class="into-footer">
+
+        <!-- Start Subscribe -->
+        <div class="subscribe left">
+
+            <div class="footer-title"><h3>Subscribe</h3></div>
+
+            <div class="footer-block">
+                <p>Subscribe to our newsletter today! Receive updates, tips, support and inspiration once a month.</p>
+
+                <!-- Start Subscribe Form -->
+                <div class="subscribe-form">
+                    <form id="sub_form" method="post" action="#">
+                        <fieldset>
+                            <input class="subscribe-field" type="text" name="sub_email" id="sub_email" value="Subscribe via Email" onfocus="if (this.value == 'Subscribe via Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Subscribe via Email';}"  />
+                            <div class="subscribe-button"><a href="#" onclick="this.blur(); return false;" class="blue-button" title="Click to Subscribe"><img src="images/subscribe_icon.png" alt="Subscribe" /></a></div>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- End Subscribe Form -->
+
+                <p>As well subscribe to our <a href="#" title="Click to Subscribe">RSS Feed</a></p>
+            </div>
+        </div>
+        <!-- End Subscribe -->
+
+        <!-- Start Recent Posts -->
+        <div class="recent-posts left">
+
+            <div class="footer-title"><h3>Recent Posts</h3></div>
+
+            <div class="footer-block">
+
+                <!-- Start Recent Posts 1 -->
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_1.jpg" alt="Vestibulum adipiscing commodo via tellus volutpat" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Vestibulum adipiscing commodo tellus volutpat</a></h4>
+                    <span class="info">March 28, 2012 | 12 comments</span>
+                </div>
+                <!-- End Recent Posts 1 -->
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_2.jpg" alt="Pellentesque magna luctus maecenas" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Pellentesque magna luctus maecenas</a></h4>
+                    <span class="info">March 19, 2012 | 4 comments</span>
+                </div>
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_3.jpg" alt="Euismod vitae viverra quis eu massa condimentum" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Euismod vitae viverra quis eu massa condimentum</a></h4>
+                    <span class="info">March 15, 2012 | 23 comments</span>
+                </div>
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_4.jpg" alt="Quisque gravida aliquet sapien" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Quisque gravida aliquet sapien</a></h4>
+                    <span class="info">March 11, 2012 | 10 comments</span>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Recent Posts -->
+
+        <!-- Start Get in Touch -->
+        <div class="get-in-touch right">
+
+            <div class="footer-title"><h3>Get in Touch</h3></div>
+
+            <div class="footer-block">
+                <span class="location">Street Road 12/34, City Town, Country State</span>
+                <span class="phone">+1 (123) 456-7890</span>
+                <span class="email">info@yourstudioname.com</span>
+                <span class="feedback">Send email via <a href="contact.html">contact form</a></span>
+            </div>
+        </div>
+        <!-- End Get in Touch -->
+
+    </div>
+    </div>
+    <!-- End Footer Blocks -->
+
+    <!-- Start Bottom Panel -->
+    <div id="bottom">
+        <div class="into-bottom">
+            <span class="left">Casework &copy; 2013. All Rights Reserved.</span>            <div class="backtop" id="toTop" title="Back to Top"></div>
+        </div>
+    </div>
+    <!-- End Bottom Panel -->
+
+</div>
+<!-- End Footer -->
+
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

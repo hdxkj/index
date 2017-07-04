@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Casework | Design Studio</title>
+<meta name="robots" content="index, follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<!-- Basic CSS Style (other styles are included in this file) -->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie8.css" media="all" />
+<![endif]-->
+
+<!-- JavaScript Files -->
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/sdmenu.js"></script>
+<script type="text/javascript" src="js/ddaccordion.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+<script type="text/javascript">
+
+// Sidebar Menu
+
+var sidebarMenu;
+window.onload = function() {
+    sidebarMenu = new SDMenu("sidebar_menu");
+    sidebarMenu.speed = 5;                     // Menu sliding speed (1 - 5 recomended)
+    sidebarMenu.remember = true;               // Store menu states (expanded or collapsed) in cookie and restore later
+    sidebarMenu.oneSmOnly = false;             // One expanded submenu at a time
+    sidebarMenu.markCurrent = true;            // Mark current link / page (link.href == location.href)
+    sidebarMenu.init();
+
+    var firstSubmenu = sidebarMenu.submenus[0];
+    sidebarMenu.expandMenu(firstSubmenu);      // Expand a submenu
+};
+
+// Tabbed Content
+    
+$(document).ready(function(){
+    //<![CDATA[
+
+    function createCookie(name,value,days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    $('ul.tabs').each(function(i) {
+        var cookie = readCookie('tabCookie'+i);
+        if (cookie) $(this).find('li').eq(cookie).addClass('current').siblings().removeClass('current')
+            .parents('div.tabbed-content').find('div.box').hide().eq(cookie).show();
+    })
+
+    $('ul.tabs').delegate('li:not(.current)', 'click', function() {
+        $(this).addClass('current').siblings().removeClass('current')
+            .parents('div.tabbed-content').find('div.box').hide().eq($(this).index()).show();
+        var ulIndex = $('ul.tabs').index($(this).parents('ul.tabs'));
+        eraseCookie('tabCookie'+ulIndex);
+        createCookie('tabCookie'+ulIndex, $(this).index(), 365);
+    })
+
+    //]]>
+});
+
+// Toggle Panel
+
+ddaccordion.init({
+    //<![CDATA[
+
+    headerclass: "toggle-title", 
+    contentclass: "toggle-content", 
+    revealtype: "click", 
+    mouseoverdelay: 2000, 
+    collapseprev: true, 
+    defaultexpanded: [3], 
+    onemustopen: true, 
+    animatedefault: true,
+    persiststate: true,
+    toggleclass: ["close-toggle", "open-toggle"], 
+    togglehtml: ["prefix", "<img src='images/minus.png' alt='' style='width:11px; height:11px; margin-top:13px; float:left;' /> ", "<img src='images/plus.png' alt='' style='width:11px; height:11px; margin-top:13px; float:left;' /> "], 
+    animatespeed: "fast", 
+    oninit:function(expandedindices){ 
+    },
+    onopenclose:function(header, index, state, isuseractivated){        
+    }
+
+    //]]>
+})
+
+</script>
+
+</head>
+
+<body>
+
+<!-- Start Wrapper -->
+<div id="wrapper">
+
+    <!-- Start Header -->
+    <div class="top-header"></div>
+
+    <div id="header">
+        <div class="into-header">
+
+            <!-- Start Logo -->
+            <div class="logo">
+                <a href="index-2.html"><img src="images/logo.png" alt="Casework | Design Studio" title="Casework | Design Studio" /></a>
+            </div>
+            <!-- End Logo -->
+
+            <!-- Start Top Menu -->
+            <div class="topmenu">
+
+                <!-- Start Dropdown Menu -->
+                <ul id="menu" class="menu-nav">
+
+                    <li class="parent"><a href="index-2.html">Home</a>
+                        <ul class="child">
+                            <li><a href="index-2.html">With Nivo Slider</a></li>
+                            <li><a href="index_alter.html">With Thumbnail Slider</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent"><a href="#">Portfolio</a>
+                        <ul class="child">
+                            <li><a href="portfolio_full.html">Full Description Portfolio</a></li>
+                            <li><a href="portfolio_2col.html">2-Column Portfolio</a></li>
+                            <li><a href="portfolio_3col.html">3-Column Portfolio</a></li>
+                            <li><a href="portfolio_4col.html">4-Column Portfolio</a></li>
+                            <li><a href="portfolio_nav.html">Portfolio with Pagination</a></li>
+                            <li><a href="portfolio_post.html">Portfolio Item Details</a></li>
+                            <li><a href="quick_gallery.html">Quick Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent"><a href="#">Blog</a>
+                        <ul class="child">
+                            <li><a href="blog_overview.html">Blog Overview</a></li>
+                            <li><a href="blog_post.html">Blog Post Page</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent current"><a href="#">Features</a>
+                        <ul class="child">
+                            <li><a href="typography_shortcodes.html">Typography &amp; Shortcodes</a></li>
+                            <li><a href="columns_pricing_table.html">Columns &amp; Pricing Table</a></li>
+                            <li class="current"><a href="javascript_additions.html">JavaScript Additions</a></li>
+                            <li><a href="#">Page Layouts</a>
+                                <ul class="grandchild">
+                                    <li><a href="right_sidebar.html">Page with Right Sidebar</a></li>
+                                    <li><a href="left_sidebar.html">Page with Left Sidebar</a></li>
+                                    <li><a href="full_width_page.html">Full Width Page</a></li>
+                                    <li><a href="half_width_page.html">Half Width Page</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="images_overview.html">Image Display Overview</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+                <!-- End Dropdown Menu -->
+
+                <!-- Start Social -->
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><img src="images/social/twitter_off.png" alt="Twitter" title="Twitter" /></a></li>
+                        <li><a href="#"><img src="images/social/facebook_off.png" alt="Facebook" title="Facebook" /></a></li>   
+                        <li><a href="#"><img src="images/social/vimeo_off.png" alt="Vimeo" title="Vimeo" /></a></li>
+                        <li><a href="#"><img src="images/social/flickr_off.png" alt="Flickr" title="Flickr" /></a></li>
+                    </ul>
+                </div>
+                <!-- End Social -->
+
+            </div>
+            <!-- End Top Menu -->
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="horizon-line"></div>  
+    <div class="header-shadow"></div>
+    <!-- End Header -->
+
+    <!-- Start Content -->
+    <div id="content">
+    
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <h1>Features / <em>JavaScript additions</em></h1>
+        </div>
+        <!-- End Topbar -->
+        
+        <!-- Start Features -->
+        <div class="sidebars three-fourth-divider">
+
+            <!-- Start Left Side --> 
+            <div class="sidebar three-fourth-seg left">
+
+                <div class="title left-pos"><h2>Toggle Panel</h2></div>
+
+                <!-- Start Toggle Panel -->
+                <div class="toggle-panel">
+
+                    <div class="toggle-title"><a href="#">Nunc feugiat ligula at dolor elementum dignissim</a></div>
+                    <div class="toggle-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat ligula at dolor elementum dignissim. Fusce suscipit cursus metus rutrum consequat. Fusce nisl magna, feugiat feugiat venenatis nec, pulvinar et nunc. Sed aliquet, ipsum quis porta semper, nisi nulla sodales justo, at ornare eros nunc id turpis. Maecenas in ante sem. Proin eget nisl ut nunc scelerisque pharetra sed vel nisl.</p>
+                    </div>
+
+                    <div class="toggle-title"><a href="#">Pellentesque aliquet iaculis blandit</a></div>
+                    <div class="toggle-content">
+                        <p>Duis quis lectus libero, ut porta nisl. Aliquam non tortor quam. Nulla in consectetur velit. Pellentesque aliquet iaculis blandit. Sed euismod leo eget justo lobortis dignissim. Etiam volutpat porttitor felis et cursus.</p>
+                        <ul class="check">
+                            <li>Quis autem iure reprehenderit voluptate molestiae</li>
+                            <li>Et harum quidem rerum facilis est et expedita distinctio</li>
+                            <li>Temporibus autem quibusdam et aut officiis debitis</li>                            
+                        </ul>
+                        <p>Ut egestas, augue vel lobortis viverra, ipsum justo bibendum quam, in ullamcorper libero turpis ut metus. Aenean eget erat est. Maecenas ac est eu purus consequat bibendum sed eget diam. Sed ac est vel erat pulvinar venenatis. Praesent sagittis eleifend augue id dignissim.</p>
+                    </div>
+
+                    <div class="toggle-title"><a href="#">Proin imperdiet tempus molestie</a></div>
+                    <div class="toggle-content">
+                        <div class="imagebox right-margin"><img src="images/content/features/feature_image.jpg" alt="" /></div>
+                        <p>Nam vulputate gravida scelerisque. Cras sagittis mollis lorem non iaculis. Cras nec enim leo, eu semper metus. Aliquam non mattis adipiscing tellus iaculis. Etiam pretium scelerisque felis quis semper. Maecenas volutpat, urna vitae sollicitudin accumsan, enim arcu dapibus sapien, sed luctus nulla justo turpis. Ut nisi magna, sodales laoreet eget, iaculis tincidunt lorem. Fusce feugiat, velit imperdiet posuere, nibh neque semper libero, eget iaculis augue eros a purus. Proin cursus velit non lorem urna fermentum at rhoncus dolor tempor. Nullam elementum, magna elementum pellentesque, dui dolor commodo elit, eget malesuada augue libero tempor leo. Praesent sagittis eleifend augue id dignissim. In habitasse platea dictumst.</p>
+                    </div>
+
+                    <div class="toggle-title"><a href="#">Aliquam tristique tempus lacus sit amet pharetra</a></div>
+                    <div class="toggle-content">
+                        <div class="imagebox left-margin"><img src="images/content/features/feature_image.jpg" alt="" /></div>
+                        <p>Nam vulputate gravida scelerisque. Cras sagittis mollis lorem non iaculis. Cras nec enim leo, eu semper metus. Aliquam non mattis adipiscing tellus iaculis. Etiam pretium scelerisque felis quis semper. Maecenas volutpat, urna vitae sollicitudin accumsan, enim arcu dapibus sapien, sed luctus nulla justo turpis. Ut nisi magna, sodales laoreet eget, iaculis tincidunt lorem. Fusce feugiat, velit imperdiet posuere, nibh neque semper libero, eget iaculis augue eros a purus. Proin cursus velit non lorem urna fermentum at rhoncus dolor tempor. Nullam elementum, magna elementum pellentesque, dui dolor commodo elit, eget malesuada augue libero tempor leo. Praesent sagittis eleifend augue id dignissim. In habitasse platea dictumst.</p>
+                    </div>
+
+                    <div class="toggle-title"><a href="#">Donec lacinia ultrices diam vitae vulputate</a></div>
+                    <div class="toggle-content">                           
+                        <div>
+                            <h4>Duis faucibus scelerisque auctor</h4>
+                            <p>Duis faucibus scelerisque auctor. Ut dui nisi, lobortis sed tristique quis, luctus pulvinar orci. Donec lacinia ultrices diam vitae vulputate. Proin ut eros turpis. Quisque varius, ante ut fermentum faucibus, orci dolor porta magna, nec feugiat magna lacus eget magna. Nullam tortor arcu, auctor quis ornare in, convallis in felis. In elementum eleifend vulputate. Aliquam eleifend nunc sed lacus sagittis varius. Nunc semper magna vel lorem adipiscing ultricies.</p>
+                        </div>                                
+                        <div>
+                            <h4>Praesent massa dui</h4>
+                            <p>Praesent massa dui, lobortis quis eleifend non, dignissim id libero. Sed sit amet elit id nibh imperdiet mattis malesuada ut ipsum. Nulla dolor nisl, commodo eget vestibulum ut, dapibus non mi. Sed volutpat tempus euismod. Aliquam eu ipsum quam. Cras scelerisque ullamcorper arcu vel porta. Suspendisse vestibulum enim iaculis arcu suscipit tempus.</p>
+                        </div>
+                        <div class="last">
+                            <h4>Mauris quis tortor velit</h4>
+                            <p>Mauris quis tortor velit, sed gravida velit. Nunc fermentum suscipit tellus id facilisis. Donec lacinia turpis et nibh porta scelerisque. Duis pellentesque mi sed quam consectetur sit amet vestibulum tortor tempus. In sed lorem at enim bibendum sodales vel non purus. Curabitur a justo justo. Duis bibendum, dolor sed vulputate tincidunt, magna magna adipiscing diam, non tempus urna dui velit.</p>
+                        </div>
+                    </div>
+
+                    <div class="toggle-shadow"></div>
+
+                </div>
+                <!-- End Toggle Panel -->
+
+                <!-- Start Tabbed Content -->
+                <div class="title left-pos"><h2>Tabbed Content</h2></div>
+
+                <!-- Start Horizontal Tabs -->
+                <div class="tabbed-content">
+
+                    <ul class="tabs">
+                        <li class="current">First Tab</li>
+                        <li>Second Tab</li>
+                        <li>Third Tab</li>
+                        <li>Fourth Tab</li>
+                    </ul>
+
+                    <div class="box visible">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam pellentesque enim vulputate pretium. Duis a magna velit. Vivamus porttitor aliquam lectus eget feugiat. Nullam ut ligula mi, quis rhoncus risus. Proin non pharetra libero. Donec rutrum massa at ligula malesuada dapibus. Nunc eleifend facilisis leo at blandit. Fusce est ipsum, sollicitudin non accumsan et, euismod eget urna. Nulla et neque blandit ante euismod faucibus. Maecenas vehicula, felis at porta pulvinar, felis sem congue tellus, non ultrices arcu urna a magna. Donec est dolor, imperdiet eget egestas et, dignissim at diam.</p><br />
+                        <p>Mauris lorem ligula, commodo at sodales nec, condimentum quis magna. Aliquam erat volutpat. Integer feugiat ante eget quam venenatis quis pellentesque nulla dictum. Pellentesque dapibus velit elementum sem rhoncus venenatis. Nullam at enim erat. Fusce vel arcu id tortor ultricies commodo. Cras elit ipsum, tristique sit amet gravida et, aliquam tempus magna. Vestibulum porttitor magna eget nisl ultrices feugiat.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Sed dapibus enim vitae risus laoreet ac pharetra dolor malesuada. Morbi sed justo vitae libero elementum eleifend. Pellentesque vestibulum consequat pellentesque. Duis congue molestie ultrices. Maecenas velit nisi, tristique quis feugiat ac, rhoncus nec sem. Aliquam semper bibendum sollicitudin. Sed elit nisi, cursus fringilla ultricies eu, lobortis ac metus. Etiam tempor lacinia sem.</p><br />
+                        <p>Aenean dapibus massa imperdiet metus pretium dictum. Nullam commodo rhoncus malesuada. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis at lorem purus. Ut non diam sapien, quis elementum lectus. Quisque id nisl aliquet sapien hendrerit mattis in scelerisque justo. Maecenas blandit auctor urna ut sollicitudin. Phasellus id quam metus. Duis lacinia feugiat dictum. Cras molestie placerat urna, nec varius felis facilisis eget. Phasellus in massa quam, quis adipiscing eros.</p><br />
+                        <p>Nunc scelerisque, odio vitae volutpat bibendum, odio tellus tincidunt mauris, a commodo urna quam ut augue. Nunc vitae massa non lectus suscipit convallis. Pellentesque lacinia ligula vitae felis commodo rutrum. Duis semper volutpat nisi, eleifend pretium erat vulputate vel. Nulla vestibulum, dui quis gravida molestie, nisi nunc sagittis purus, eget luctus lectus lectus ut erat. Fusce vitae odio sit amet ante sodales porta at eu neque. Integer eu mauris ac orci dignissim ultricies vulputate eleifend ligula. In egestas euismod dictum.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Nulla scelerisque fermentum tortor at fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus laoreet varius arcu, a volutpat sapien scelerisque eu. Sed sem nulla, porttitor non facilisis in, faucibus luctus ligula. Curabitur imperdiet augue eget leo varius nec tincidunt metus mollis. Sed pellentesque eros eu nunc vehicula sit amet iaculis sapien faucibus. Etiam ut metus quis sapien suscipit posuere.</p><br />
+                        <p>Nullam non sem ut lectus blandit volutpat eu quis velit. Maecenas vitae neque bibendum velit tincidunt fringilla eu et ligula. Aenean convallis tempus fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus risus lectus, venenatis id eleifend a, commodo vel arcu. Morbi vel enim dui. Phasellus laoreet adipiscing nunc, eget fermentum elit scelerisque in. Donec scelerisque vulputate sem, a rhoncus erat ultrices ut. Sed eu lacus mauris, eget iaculis felis.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Aenean fermentum, ipsum feugiat congue luctus, nibh nibh sodales mauris, sed tristique odio magna eget purus. Aliquam odio purus, vulputate vitae luctus non, egestas a justo. Integer tempor dolor quis massa commodo porttitor. In quis arcu justo, vitae semper nulla. Nulla interdum erat sit amet elit mollis bibendum. Fusce dictum dictum eros, eu faucibus elit adipiscing quis. Nunc mauris ligula, egestas posuere condimentum ut, porta sit amet dui.</p><br />
+                        <p>Praesent elementum mollis vulputate. Integer sed sagittis arcu. Nulla vel suscipit magna. Phasellus lacus turpis, pretium vitae commodo vulputate, dapibus vitae nunc. Donec lobortis cursus purus sit amet ultricies. Donec cursus purus at orci sodales consectetur. Etiam venenatis mattis arcu, et dapibus quam dictum sit amet. Donec tincidunt vehicula libero, sed sodales urna cursus in.</p><br />
+                        <p>Suspendisse egestas facilisis felis ac suscipit. Cras nec nisi ligula. Vivamus in tincidunt nisi. Nulla vitae diam quis dui ultrices vestibulum. Donec ullamcorper, lorem non condimentum malesuada, purus mauris interdum augue, ac bibendum augue diam vel sem. Nam justo urna, congue sit amet tristique vitae, egestas sit amet velit. Proin odio purus, molestie non pretium sit amet, sagittis vel tellus.</p><br />
+                        <p>Morbi suscipit, odio sed dictum pharetra, odio velit pulvinar metus, in ullamcorper mauris nunc et leo. Mauris et diam in lectus cursus facilisis. Quisque ut leo orci, ut tincidunt dui. Proin pharetra vestibulum ultrices. In condimentum porttitor blandit. Ut lacus nisi, consectetur nec egestas et, sagittis sed tortor. Fusce ornare dictum diam ac convallis.</p>
+                    </div>
+
+                </div>
+                <!-- End Horizontal Tabs -->
+
+                <!-- Start Vertical Tabs -->
+                <div class="tabbed-content vertical">
+
+                    <ul class="tabs">
+                        <li class="current">First Tab</li>
+                        <li>Second Tab</li>
+                        <li>Third Tab</li>
+                        <li>Fourth Tab</li>
+                    </ul>
+
+                    <div class="box visible">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam pellentesque enim vulputate pretium. Duis a magna velit. Vivamus porttitor aliquam lectus eget feugiat. Nullam ut ligula mi, quis rhoncus risus. Proin non pharetra libero. Donec rutrum massa at ligula malesuada dapibus. Nunc eleifend facilisis leo at blandit. Fusce est ipsum, sollicitudin non accumsan et, euismod eget urna. Nulla et neque blandit ante euismod faucibus. Maecenas vehicula, felis at porta pulvinar, felis sem congue tellus, non ultrices arcu urna a magna. Donec est dolor, imperdiet eget egestas et, dignissim at diam.</p><br />
+                        <p>Mauris lorem ligula, commodo at sodales nec, condimentum quis magna. Aliquam erat volutpat. Integer feugiat ante eget quam venenatis quis pellentesque nulla dictum. Pellentesque dapibus velit elementum sem rhoncus venenatis. Nullam at enim erat. Fusce vel arcu id tortor ultricies commodo. Cras elit ipsum, tristique sit amet gravida et, aliquam tempus magna. Vestibulum porttitor magna eget nisl ultrices feugiat.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Sed dapibus enim vitae risus laoreet ac pharetra dolor malesuada. Morbi sed justo vitae libero elementum eleifend. Pellentesque vestibulum consequat pellentesque. Duis congue molestie ultrices. Maecenas velit nisi, tristique quis feugiat ac, rhoncus nec sem. Aliquam semper bibendum sollicitudin. Sed elit nisi, cursus fringilla ultricies eu, lobortis ac metus. Etiam tempor lacinia sem.</p><br />
+                        <p>Aenean dapibus massa imperdiet metus pretium dictum. Nullam commodo rhoncus malesuada. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis at lorem purus. Ut non diam sapien, quis elementum lectus. Quisque id nisl aliquet sapien hendrerit mattis in scelerisque justo. Maecenas blandit auctor urna ut sollicitudin. Phasellus id quam metus. Duis lacinia feugiat dictum. Cras molestie placerat urna, nec varius felis facilisis eget. Phasellus in massa quam, quis adipiscing eros.</p><br />
+                        <p>Nunc scelerisque, odio vitae volutpat bibendum, odio tellus tincidunt mauris, a commodo urna quam ut augue. Nunc vitae massa non lectus suscipit convallis. Pellentesque lacinia ligula vitae felis commodo rutrum. Duis semper volutpat nisi, eleifend pretium erat vulputate vel. Nulla vestibulum, dui quis gravida molestie, nisi nunc sagittis purus, eget luctus lectus lectus ut erat. Fusce vitae odio sit amet ante sodales porta at eu neque. Integer eu mauris ac orci dignissim ultricies vulputate eleifend ligula. In egestas euismod dictum.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Nulla scelerisque fermentum tortor at fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus laoreet varius arcu, a volutpat sapien scelerisque eu. Sed sem nulla, porttitor non facilisis in, faucibus luctus ligula. Curabitur imperdiet augue eget leo varius nec tincidunt metus mollis. Sed pellentesque eros eu nunc vehicula sit amet iaculis sapien faucibus. Etiam ut metus quis sapien suscipit posuere.</p><br />
+                        <p>Nullam non sem ut lectus blandit volutpat eu quis velit. Maecenas vitae neque bibendum velit tincidunt fringilla eu et ligula. Aenean convallis tempus fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus risus lectus, venenatis id eleifend a, commodo vel arcu. Morbi vel enim dui. Phasellus laoreet adipiscing nunc, eget fermentum elit scelerisque in. Donec scelerisque vulputate sem, a rhoncus erat ultrices ut. Sed eu lacus mauris, eget iaculis felis.</p>
+                    </div>
+
+                    <div class="box">
+                        <p>Aenean fermentum, ipsum feugiat congue luctus, nibh nibh sodales mauris, sed tristique odio magna eget purus. Aliquam odio purus, vulputate vitae luctus non, egestas a justo. Integer tempor dolor quis massa commodo porttitor. In quis arcu justo, vitae semper nulla. Nulla interdum erat sit amet elit mollis bibendum. Fusce dictum dictum eros, eu faucibus elit adipiscing quis. Nunc mauris ligula, egestas posuere condimentum ut, porta sit amet dui.</p><br />
+                        <p>Praesent elementum mollis vulputate. Integer sed sagittis arcu. Nulla vel suscipit magna. Phasellus lacus turpis, pretium vitae commodo vulputate, dapibus vitae nunc. Donec lobortis cursus purus sit amet ultricies. Donec cursus purus at orci sodales consectetur. Etiam venenatis mattis arcu, et dapibus quam dictum sit amet. Donec tincidunt vehicula libero, sed sodales urna cursus in.</p><br />
+                        <p>Suspendisse egestas facilisis felis ac suscipit. Cras nec nisi ligula. Vivamus in tincidunt nisi. Nulla vitae diam quis dui ultrices vestibulum. Donec ullamcorper, lorem non condimentum malesuada, purus mauris interdum augue, ac bibendum augue diam vel sem. Nam justo urna, congue sit amet tristique vitae, egestas sit amet velit. Proin odio purus, molestie non pretium sit amet, sagittis vel tellus.</p><br />
+                        <p>Morbi suscipit, odio sed dictum pharetra, odio velit pulvinar metus, in ullamcorper mauris nunc et leo. Mauris et diam in lectus cursus facilisis. Quisque ut leo orci, ut tincidunt dui. Proin pharetra vestibulum ultrices. In condimentum porttitor blandit. Ut lacus nisi, consectetur nec egestas et, sagittis sed tortor. Fusce ornare dictum diam ac convallis.</p>
+                    </div>
+
+                </div>
+                <!-- End Vertical Tabs -->
+
+            </div>
+            <!-- End Left Side -->
+
+            <!-- Start Right Side -->
+            <div class="sidebar one-fourth-seg right">
+
+                <div class="corner-shadow right-one-fourth"></div>
+
+                <!-- Start Sidebar Menu -->
+                <div class="title right-pos"><h2>Sidebar Menu</h2></div>
+
+                <div class="sidebar-menu">
+
+                    <span class="menu-top">
+                        <a onclick="sidebarMenu.expandAll()" class="expand" title="Expand All"></a>
+                        <a onclick="sidebarMenu.collapseAll()" class="collapse" title="Collapse All"></a>
+                    </span>
+
+                    <div id="sidebar_menu" class="sdmenu">
+                        <div>
+                            <span>Sidebar Menu 1</span>
+                            <a href="javascript_additions.html">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                            <a href="#">Sidebar Submenu 4</a>
+                            <a href="#">Sidebar Submenu 5</a>
+                            <a href="#">Sidebar Submenu 6</a>
+                        </div>
+                        <div>
+                            <span>Sidebar Menu 2</span>
+                            <a href="#">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                        </div>
+                        <div>
+                            <span>Sidebar Menu 3</span>
+                            <a href="#">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                            <a href="#">Sidebar Submenu 4</a>
+                        </div>
+                        <div>
+                            <span>Sidebar Menu 4</span>
+                            <a href="#">Sidebar Submenu 1</a>
+                            <a href="#">Sidebar Submenu 2</a>
+                            <a href="#">Sidebar Submenu 3</a>
+                            <a href="#">Sidebar Submenu 4</a>
+                        </div>
+                    </div>
+
+                    <div class="menu-bottom"></div>
+
+                </div>
+                <!-- End Sidebar Menu -->
+
+            </div>
+            <!-- End Right Side -->
+
+        <div class="clear"></div>
+        </div>
+        <!-- End Features -->
+
+    <div class="horizon-line"></div>
+    </div>
+    <!-- End Content -->
+
+</div>
+<!-- End Wrapper -->
+
+<!-- Start Footer -->
+<div id="footer">
+    
+    <div class="footer-shadow"></div>
+    <div class="horizon-line"></div>
+
+    <!-- Start Footer Blocks -->
+    <div class="footer-bg">
+    <div class="into-footer">
+
+        <!-- Start Subscribe -->
+        <div class="subscribe left">
+
+            <div class="footer-title"><h3>Subscribe</h3></div>
+
+            <div class="footer-block">
+                <p>Subscribe to our newsletter today! Receive updates, tips, support and inspiration once a month.</p>
+
+                <!-- Start Subscribe Form -->
+                <div class="subscribe-form">
+                    <form id="sub_form" method="post" action="#">
+                        <fieldset>
+                            <input class="subscribe-field" type="text" name="sub_email" id="sub_email" value="Subscribe via Email" onfocus="if (this.value == 'Subscribe via Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Subscribe via Email';}"  />
+                            <div class="subscribe-button"><a href="#" onclick="this.blur(); return false;" class="blue-button" title="Click to Subscribe"><img src="images/subscribe_icon.png" alt="Subscribe" /></a></div>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- End Subscribe Form -->
+
+                <p>As well subscribe to our <a href="#" title="Click to Subscribe">RSS Feed</a></p>
+            </div>
+        </div>
+        <!-- End Subscribe -->
+
+        <!-- Start Recent Posts -->
+        <div class="recent-posts left">
+
+            <div class="footer-title"><h3>Recent Posts</h3></div>
+
+            <div class="footer-block">
+
+                <!-- Start Recent Posts 1 -->
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_1.jpg" alt="Vestibulum adipiscing commodo via tellus volutpat" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Vestibulum adipiscing commodo tellus volutpat</a></h4>
+                    <span class="info">March 28, 2012 | 12 comments</span>
+                </div>
+                <!-- End Recent Posts 1 -->
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_2.jpg" alt="Pellentesque magna luctus maecenas" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Pellentesque magna luctus maecenas</a></h4>
+                    <span class="info">March 19, 2012 | 4 comments</span>
+                </div>
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_3.jpg" alt="Euismod vitae viverra quis eu massa condimentum" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Euismod vitae viverra quis eu massa condimentum</a></h4>
+                    <span class="info">March 15, 2012 | 23 comments</span>
+                </div>
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_4.jpg" alt="Quisque gravida aliquet sapien" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Quisque gravida aliquet sapien</a></h4>
+                    <span class="info">March 11, 2012 | 10 comments</span>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Recent Posts -->
+
+        <!-- Start Get in Touch -->
+        <div class="get-in-touch right">
+
+            <div class="footer-title"><h3>Get in Touch</h3></div>
+
+            <div class="footer-block">
+                <span class="location">Street Road 12/34, City Town, Country State</span>
+                <span class="phone">+1 (123) 456-7890</span>
+                <span class="email">info@yourstudioname.com</span>
+                <span class="feedback">Send email via <a href="contact.html">contact form</a></span>
+            </div>
+        </div>
+        <!-- End Get in Touch -->
+
+    </div>
+    </div>
+    <!-- End Footer Blocks -->
+
+    <!-- Start Bottom Panel -->
+    <div id="bottom">
+        <div class="into-bottom">
+            <span class="left">Casework &copy; 2013. All Rights Reserved.</span>            <div class="backtop" id="toTop" title="Back to Top"></div>
+        </div>
+    </div>
+    <!-- End Bottom Panel -->
+
+</div>
+<!-- End Footer -->
+
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

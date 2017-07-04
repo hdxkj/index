@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Casework | Design Studio</title>
+<meta name="robots" content="index, follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<!-- Basic CSS Style (other styles are included in this file) -->
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="css/ie8.css" media="all" />
+<![endif]-->
+
+<!-- JavaScript Files -->
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/jquery.carouFredSel-5.5.5-packed.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+<script type="text/javascript">
+
+// Quick Gallery Filtering
+
+$(document).ready(function(){
+    $('#filter-list li a').click(function() {
+
+        $('#filter-list li.current').removeClass('current');
+        $('#images img').removeClass( 'first' );
+        $(this).parent().addClass('current');
+        $('#thumbs li').removeClass( 'selected' );
+
+        var filterVal = $(this).text().toLowerCase().replace(/ /g,'-');
+        var AllCategories = $('.all').text().toLowerCase().replace(/ /g,'-');
+
+        if(filterVal == AllCategories) {
+
+            $('#thumbs li').find('img').fadeTo('slow', 1);
+            $('#images img').show();
+            $('#thumbs li.itm0').addClass( 'selected' );
+            $('#images').trigger( 'slideTo', [0, 0, true] );
+            $('#thumbs').trigger( 'slideToPage', 0 );
+
+        } else {
+            
+            $('#thumbs li').each(function() {
+                if(!$(this).hasClass(filterVal)) {
+                    $(this).find('img').fadeTo('slow', 0.0);
+                } else {
+                    $(this).find('img').fadeTo('slow', 1);
+                }
+            });
+            
+            $('#images img').each(function() {
+                if(!$(this).hasClass(filterVal)) {
+                    $(this).hide();
+                } else {
+                    $(this).show();
+                }
+            });
+
+            $("#images img:visible").eq(0).addClass("first");
+
+            var activeImg = $('#images img.first').attr('id').replace(/i/, '');
+            var page = Math.floor( (activeImg-1) / 10 );
+            
+            $('#thumbs').trigger( 'slideToPage', page );
+
+            $('#thumbs li').each(function() {
+                if($(this).attr('id').replace(/t/, '') == activeImg) {
+                    $(this).addClass( 'selected' );
+                }
+            });
+        }
+
+        return false;
+    });
+});
+
+// Quick Gallery
+
+$(window).load(function() {
+
+    $ul = null;
+
+    //<![CDATA[
+    $('#thumbs').children().each(function(i) {
+        if ( i % 10 == 0) {
+            $ul = $( '<ul />' );
+            $ul.appendTo( '#thumbs' );
+        }
+
+        $(this).appendTo( $ul );
+        $(this).addClass( 'itm'+i );
+
+        $(this).click(function() {
+
+            var filterVal = $('#filter-list li.current').text().toLowerCase().replace(/ /g,'-');
+            var AllCategories = $('.all').text().toLowerCase().replace(/ /g,'-');
+
+            if(filterVal == AllCategories) {
+                $('#images').trigger( 'slideTo', [i, 0, true] )
+            }else {
+                if($(this).hasClass(filterVal)) {
+                    $('#images').trigger( 'slideTo', [i, 0, true] );
+                }
+
+                return false;
+            }
+
+        });
+
+    });
+    //]]>
+
+    $('#thumbs li.itm0').addClass( 'selected' );
+
+    $('#images').carouFredSel({
+        direction: 'left',
+        circular: true,
+        infinite: false,
+        width: 772,
+        height: 524,
+        items: { visible: 1, filter: ":visible" },
+        auto: false,
+        prev: '.images-nav .prev',
+        next: '.images-nav .next',
+        scroll: {
+            fx: 'fade',
+            pauseOnHover: true,
+            duration: 300,
+            onBefore: function() {
+                var pos = $(this).triggerHandler( 'currentPosition' );
+                $('#thumbs li').removeClass( 'selected' );
+                $('#thumbs li.itm'+pos).addClass( 'selected' );
+
+                var page = Math.floor( pos / 10 );
+                $('#thumbs').trigger( 'slideToPage', page );
+            }
+        }
+    });
+    $('#thumbs').carouFredSel({
+        direction: 'up',
+        circular: false,
+        infinite: false,
+        width: 800,
+        height: 207,
+        items: 1,
+        align: false,
+        auto: false,
+        prev: '.thumbs-nav .up',
+        next: '.thumbs-nav .down',
+    });
+
+    $('.gallery-thumbs').fadeIn('slow');
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<!-- Start Wrapper -->
+<div id="wrapper">
+
+    <!-- Start Header -->
+    <div class="top-header"></div>
+
+    <div id="header">
+        <div class="into-header">
+
+            <!-- Start Logo -->
+            <div class="logo">
+                <a href="index-2.html"><img src="images/logo.png" alt="Casework | Design Studio" title="Casework | Design Studio" /></a>
+            </div>
+            <!-- End Logo -->
+
+            <!-- Start Top Menu -->
+            <div class="topmenu">
+
+                <!-- Start Dropdown Menu -->
+                <ul id="menu" class="menu-nav">
+
+                    <li class="parent"><a href="index-2.html">Home</a>
+                        <ul class="child">
+                            <li><a href="index-2.html">With Nivo Slider</a></li>
+                            <li><a href="index_alter.html">With Thumbnail Slider</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent current"><a href="#">Portfolio</a>
+                        <ul class="child">
+                            <li><a href="portfolio_full.html">Full Description Portfolio</a></li>
+                            <li><a href="portfolio_2col.html">2-Column Portfolio</a></li>
+                            <li><a href="portfolio_3col.html">3-Column Portfolio</a></li>
+                            <li><a href="portfolio_4col.html">4-Column Portfolio</a></li>
+                            <li><a href="portfolio_nav.html">Portfolio with Pagination</a></li>
+                            <li><a href="portfolio_post.html">Portfolio Item Details</a></li>
+                            <li class="current"><a href="quick_gallery.html">Quick Gallery</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent"><a href="#">Blog</a>
+                        <ul class="child">
+                            <li><a href="blog_overview.html">Blog Overview</a></li>
+                            <li><a href="blog_post.html">Blog Post Page</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="parent"><a href="#">Features</a>
+                        <ul class="child">
+                            <li><a href="typography_shortcodes.html">Typography &amp; Shortcodes</a></li>
+                            <li><a href="columns_pricing_table.html">Columns &amp; Pricing Table</a></li>
+                            <li><a href="javascript_additions.html">JavaScript Additions</a></li>
+                            <li><a href="#">Page Layouts</a>
+                                <ul class="grandchild">
+                                    <li><a href="right_sidebar.html">Page with Right Sidebar</a></li>
+                                    <li><a href="left_sidebar.html">Page with Left Sidebar</a></li>
+                                    <li><a href="full_width_page.html">Full Width Page</a></li>
+                                    <li><a href="half_width_page.html">Half Width Page</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="images_overview.html">Image Display Overview</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">Contact</a></li>
+
+                </ul>
+                <!-- End Dropdown Menu -->
+
+                <!-- Start Social -->
+                <div class="social">
+                    <ul>
+                        <li><a href="#"><img src="images/social/twitter_off.png" alt="Twitter" title="Twitter" /></a></li>
+                        <li><a href="#"><img src="images/social/facebook_off.png" alt="Facebook" title="Facebook" /></a></li>   
+                        <li><a href="#"><img src="images/social/vimeo_off.png" alt="Vimeo" title="Vimeo" /></a></li>
+                        <li><a href="#"><img src="images/social/flickr_off.png" alt="Flickr" title="Flickr" /></a></li>
+                    </ul>
+                </div>
+                <!-- End Social -->
+
+            </div>
+            <!-- End Top Menu -->
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="horizon-line"></div>  
+    <div class="header-shadow"></div>
+    <!-- End Header -->
+
+    <!-- Start Content -->
+    <div id="content">
+
+        <!-- Start Topbar -->
+        <div class="topbar">
+            <div class="left"><h1>Gallery / <em>Quick photo gallery</em></h1></div>
+
+            <!-- Start Gallery Categories -->
+            <div class="right">
+                <ul id="filter-list">
+                    <li class="current"><a href="#" class="all">All Photos</a></li>
+                    <li><a href="#">Nature</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Travel</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Conceptual</a></li>
+                </ul>
+            </div>
+            <!-- End Gallery Categories -->
+
+        </div>
+        <!-- End Topbar -->
+
+        <!-- Start Quick Gallery -->
+
+        <div class="fullwidth">
+            <div class="complex one">
+
+                <!-- Start Gallery Wrapper -->
+                <div class="gallery-wrapper">
+
+                    <!-- Start Gallery Images -->
+                    <div class="gallery-images">
+                        <div class="frame">
+
+                        <div class="images-nav"><a href="#" class="prev">&uArr;</a></div>
+                            <div id="images">
+                                <img id="i1" class="nature" src="images/content/gallery/gallery_image_1.jpg" alt="" />
+                                <img id="i2" class="people" src="images/content/gallery/gallery_image_2.jpg" alt="" />
+                                <img id="i3" class="fashion" src="images/content/gallery/gallery_image_3.jpg" alt="" />
+                                <img id="i4" class="conceptual" src="images/content/gallery/gallery_image_4.jpg" alt="" />
+                                <img id="i5" class="people" src="images/content/gallery/gallery_image_5.jpg" alt="" />
+                                <img id="i6" class="fashion" src="images/content/gallery/gallery_image_6.jpg" alt="" />
+                                <img id="i7" class="people" src="images/content/gallery/gallery_image_7.jpg" alt="" />
+                                <img id="i8" class="nature" src="images/content/gallery/gallery_image_8.jpg" alt="" />
+                                <img id="i9" class="conceptual" src="images/content/gallery/gallery_image_9.jpg" alt="" />
+                                <img id="i10" class="nature" src="images/content/gallery/gallery_image_10.jpg" alt="" />
+                                <img id="i11" class="travel" src="images/content/gallery/gallery_image_11.jpg" alt="" />
+                                <img id="i12" class="people" src="images/content/gallery/gallery_image_12.jpg" alt="" />
+                                <img id="i13" class="nature" src="images/content/gallery/gallery_image_13.jpg" alt="" />
+                                <img id="i14" class="travel" src="images/content/gallery/gallery_image_14.jpg" alt="" />
+                                <img id="i15" class="nature" src="images/content/gallery/gallery_image_15.jpg" alt="" />
+                                <img id="i16" class="travel" src="images/content/gallery/gallery_image_16.jpg" alt="" />
+                                <img id="i17" class="conceptual" src="images/content/gallery/gallery_image_17.jpg" alt="" />
+                                <img id="i18" class="nature" src="images/content/gallery/gallery_image_18.jpg" alt="" />
+                            </div>
+                        <div class="images-nav"><a href="#" class="next">&uArr;</a></div>
+                        <div class="clear"></div>
+
+                        </div>
+                    </div>
+                    <!-- End Gallery Images -->
+
+                    <!-- Start Gallery Thumbnails -->
+                    <div class="gallery-thumbs">
+
+                      <div class="thumbs-nav"><a href="#" class="up">&uArr;</a></div>
+                            <ul id="thumbs">
+                                <li id="t1" class="imagebox nature"><img src="images/content/gallery/gallery_thumb_1.jpg" alt="" /></li>
+                                <li id="t2" class="imagebox people"><img src="images/content/gallery/gallery_thumb_2.jpg" alt="" /></li>
+                                <li id="t3" class="imagebox fashion"><img src="images/content/gallery/gallery_thumb_3.jpg" alt="" /></li>
+                                <li id="t4" class="imagebox conceptual"><img src="images/content/gallery/gallery_thumb_4.jpg" alt="" /></li>
+                                <li id="t5" class="imagebox people"><img src="images/content/gallery/gallery_thumb_5.jpg" alt="" /></li>
+                                <li id="t6" class="imagebox fashion"><img src="images/content/gallery/gallery_thumb_6.jpg" alt="" /></li>
+                                <li id="t7" class="imagebox people"><img src="images/content/gallery/gallery_thumb_7.jpg" alt="" /></li>
+                                <li id="t8" class="imagebox nature"><img src="images/content/gallery/gallery_thumb_8.jpg" alt="" /></li>
+                                <li id="t9" class="imagebox conceptual"><img src="images/content/gallery/gallery_thumb_9.jpg" alt="" /></li>
+                                <li id="t10" class="imagebox nature"><img src="images/content/gallery/gallery_thumb_10.jpg" alt="" /></li>
+                                <li id="t11" class="imagebox travel"><img src="images/content/gallery/gallery_thumb_11.jpg" alt="" /></li>
+                                <li id="t12" class="imagebox people"><img src="images/content/gallery/gallery_thumb_12.jpg" alt="" /></li>
+                                <li id="t13" class="imagebox nature"><img src="images/content/gallery/gallery_thumb_13.jpg" alt="" /></li>
+                                <li id="t14" class="imagebox travel"><img src="images/content/gallery/gallery_thumb_14.jpg" alt="" /></li>
+                                <li id="t15" class="imagebox nature"><img src="images/content/gallery/gallery_thumb_15.jpg" alt="" /></li>
+                                <li id="t16" class="imagebox travel"><img src="images/content/gallery/gallery_thumb_16.jpg" alt="" /></li>
+                                <li id="t17" class="imagebox conceptual"><img src="images/content/gallery/gallery_thumb_17.jpg" alt="" /></li>
+                                <li id="t18" class="imagebox nature"><img src="images/content/gallery/gallery_thumb_18.jpg" alt="" /></li>
+                            </ul>
+                        <div class="thumbs-nav"><a href="#" class="down">&dArr;</a></div>
+
+                    </div>
+                    <!-- End Gallery Thumbnails -->
+
+                </div>
+                <!-- End Gallery Wrapper -->
+
+            </div>
+        </div>
+        <!-- End Quick Gallery -->
+
+    <div class="horizon-line"></div>
+    </div>
+    <!-- End Content -->
+
+</div>
+<!-- End Wrapper -->
+
+<!-- Start Footer -->
+<div id="footer">
+    
+    <div class="footer-shadow"></div>
+    <div class="horizon-line"></div>
+
+    <!-- Start Footer Blocks -->
+    <div class="footer-bg">
+    <div class="into-footer">
+
+        <!-- Start Subscribe -->
+        <div class="subscribe left">
+
+            <div class="footer-title"><h3>Subscribe</h3></div>
+
+            <div class="footer-block">
+                <p>Subscribe to our newsletter today! Receive updates, tips, support and inspiration once a month.</p>
+
+                <!-- Start Subscribe Form -->
+                <div class="subscribe-form">
+                    <form id="sub_form" method="post" action="#">
+                        <fieldset>
+                            <input class="subscribe-field" type="text" name="sub_email" id="sub_email" value="Subscribe via Email" onfocus="if (this.value == 'Subscribe via Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Subscribe via Email';}"  />
+                            <div class="subscribe-button"><a href="#" onclick="this.blur(); return false;" class="blue-button" title="Click to Subscribe"><img src="images/subscribe_icon.png" alt="Subscribe" /></a></div>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- End Subscribe Form -->
+
+                <p>As well subscribe to our <a href="#" title="Click to Subscribe">RSS Feed</a></p>
+            </div>
+        </div>
+        <!-- End Subscribe -->
+
+        <!-- Start Recent Posts -->
+        <div class="recent-posts left">
+
+            <div class="footer-title"><h3>Recent Posts</h3></div>
+
+            <div class="footer-block">
+
+                <!-- Start Recent Posts 1 -->
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_1.jpg" alt="Vestibulum adipiscing commodo via tellus volutpat" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Vestibulum adipiscing commodo tellus volutpat</a></h4>
+                    <span class="info">March 28, 2012 | 12 comments</span>
+                </div>
+                <!-- End Recent Posts 1 -->
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_2.jpg" alt="Pellentesque magna luctus maecenas" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Pellentesque magna luctus maecenas</a></h4>
+                    <span class="info">March 19, 2012 | 4 comments</span>
+                </div>
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_3.jpg" alt="Euismod vitae viverra quis eu massa condimentum" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Euismod vitae viverra quis eu massa condimentum</a></h4>
+                    <span class="info">March 15, 2012 | 23 comments</span>
+                </div>
+
+                <div class="imagebox">
+                    <a href="blog_post.html"><img src="images/content/blog/blog_thumb_4.jpg" alt="Quisque gravida aliquet sapien" /></a>
+                </div>
+                <div class="text">
+                    <h4><a href="blog_post.html">Quisque gravida aliquet sapien</a></h4>
+                    <span class="info">March 11, 2012 | 10 comments</span>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Recent Posts -->
+
+        <!-- Start Get in Touch -->
+        <div class="get-in-touch right">
+
+            <div class="footer-title"><h3>Get in Touch</h3></div>
+
+            <div class="footer-block">
+                <span class="location">Street Road 12/34, City Town, Country State</span>
+                <span class="phone">+1 (123) 456-7890</span>
+                <span class="email">info@yourstudioname.com</span>
+                <span class="feedback">Send email via <a href="contact.html">contact form</a></span>
+            </div>
+        </div>
+        <!-- End Get in Touch -->
+
+    </div>
+    </div>
+    <!-- End Footer Blocks -->
+
+    <!-- Start Bottom Panel -->
+    <div id="bottom">
+        <div class="into-bottom">
+            <span class="left">Casework &copy; 2013. All Rights Reserved.</span>            <div class="backtop" id="toTop" title="Back to Top"></div>
+        </div>
+    </div>
+    <!-- End Bottom Panel -->
+
+</div>
+<!-- End Footer -->
+
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>
